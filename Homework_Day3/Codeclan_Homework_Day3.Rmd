@@ -1,0 +1,32 @@
+---
+title: "Homework_day3"
+output: html_document
+date: '2022-03-09'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(CodeClanData)
+library(janitor)
+library(dplyr)
+```
+```{r}
+movie_data <- read.csv('/Users/markfojas/CodeClan/codeclan_homework_MarkAntFojas/codeclan_homework_MarkAntFojas/Homework_Day3/movies.csv')
+(movie_data)
+
+glimpse(movie_data)
+```
+
+```{r}
+movie_data %>% 
+  list(movie_data)
+
+```
+
+```{r}
+glimpse(movie_data)
+```
+
