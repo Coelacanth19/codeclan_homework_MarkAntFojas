@@ -60,7 +60,9 @@ Ok, now take your subsetted data movies_selected, and count the number of missin
 
 ```{r}
 movies_selected %
-  
+  summarise(count = sum(is.na(budget)))
+
+movies_selected(count = sum)
 ```
 
 
