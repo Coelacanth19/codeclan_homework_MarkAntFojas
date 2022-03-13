@@ -1,0 +1,68 @@
+---
+title: "Homework_day3"
+output: html_document
+date: '2022-03-09'
+---
+
+Question 1.
+
+After you’ve read in the data and assigned it to a variable with a useful name, investigate it. Write down some ideas for what you could do to further investigate/clean this data using what you’ve learned today (no need to code it though, just jot down thoughts and ideas). Feel free to also write down any general thoughts you get looking at the data - this task is just to get you thinking about data and data cleaning/prepping.
+
+
+The vote average and vote count columns seem to be a good starting point for useful insights in terms of customer engagement and satisfaction. Popularity is also an interesting column with which to start.
+Questions that pop up:
+*What role does language and genre play in customer engagement (as illustrated by vote count) and satisfaction (as illustrated by vote average)? 
+*Are there patterns in story narrative, language,  that correlate to increased engagement and satisfaction? 
+*What column sorts
+*Why is there no geographical or locational data for further insight?
+*Detailed demographic values for account holder would be helpful.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(CodeClanData)
+library(janitor)
+library(dplyr)
+```
+```{r}
+movie_data <- read.csv('/Users/markfojas/CodeClan/codeclan_homework_MarkAntFojas/codeclan_homework_MarkAntFojas/Homework_Day3/movies.csv')
+(movie_data)
+
+glimpse(movie_data)
+```
+
+```{r}
+movie_data %>% 
+  list(movie_data)
+
+```
+
+```{r}
+glimpse(movie_data)
+```
+
+```{r}
+head(movie_data, n = 10)
+```
+#Question 2.
+
+A lot of interesting stuff in there! But for now, we are only interested in the movies’ titles, their runtime as well as their budget. Select the three columns that contain this information and save them into a new variable called movies_selected. Hint: you will have to make a choice between original_title and title.
+
+```{r}
+movies_selected <- movie_data %>% 
+  select(title, runtime, budget)
+movies_selected
+```
+Question 3.
+
+Ok, now take your subsetted data movies_selected, and count the number of missing values in each column.
+
+```{r}
+movies_selected %
+  summarise(count = sum(is.na(budget)))
+
+movies_selected(count = sum)
+```
+
+
