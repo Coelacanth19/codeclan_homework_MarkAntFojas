@@ -1,1 +1,0 @@
-quacumque sunt = true
