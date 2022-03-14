@@ -60,4 +60,6 @@ missing_books
 
 #Conclusion: unless isbn is specifically needed, it can be a redundant identifier when making relations between columns. It can be dropped.
 
-#Let's do something slightly more interesting. I want to summarise and mutate and maybe consolidate eng and eng-us into a capital
+#Let's do something slightly more interesting. I want to summarise and mutate and maybe consolidate eng and eng-us, replacing both with value 'ENG'
+
+#First, I'm going to select only the columns I find of interest and create a second df--- to clean things up in the resulting tibble
