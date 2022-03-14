@@ -103,7 +103,11 @@ dated_observation
 
 ```{r}
 dated_observation %>% 
-select(date, hat_type, observation_count)
+select(date, hat_type, observation_count) %>% 
+  group_by(hat_type) %>% 
+slice_max(observation_count)
+
+
                   
 
 ```
