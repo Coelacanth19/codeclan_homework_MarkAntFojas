@@ -1,0 +1,63 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(janitor)
+library(tidyverse)
+library(CodeClanData)
+```
+
+```{r}
+books_data <- read_csv("/Users/markfojas/CodeClan/codeclan_homework_MarkAntFojas/week1/weekend/books.csv")
+
+glimpse(books_data)
+
+```
+
+#Curious to see how many rows have missing values
+
+```{r}
+nrow(books_data) - nrow(drop_na(books_data))
+
+```
+
+#I don't believe it! No missing data?! Let's try a different technique. Going to attempt an across function and sum missing data across all columns
+
+```{r}
+
+books_data %>%   
+  summarise(across(fns= ~sum(is.na(.x))))
+```
+
+#I'm still skeptical that there are no missing values, but spent considerable time visually checking the data. I haven't gone through every single row IRL, but I'm moving forward with the idea that my coding doesn't contain serious logical errors or assumptions.
+
+#Create a dataframe that selects for columns of interest to reduce processor useage. Initially isbn and isbn13 seems redundant. I want to check that all isbn entries have a corresponding isbn13 entry. The older pre 2007 isbns have 10 characters vs the modern isbn13 (13 character) standard. I want to determine na's for isbn and isbn13
+
+```{r}
+isbn_data <- books_data %>% 
+  select(isbn,isbn13)
+
+
+#summarise and categorize via columns any na's in all rows
+#tidyverse::map(isbn_data, ~sum(is.na(.))) is also a valid technique. Have used three separate techniques! Q to ask on a tangent: purrr is a tidyverse package, but is it's own library?
+
+#creating a dataframe for the work we've done using across
+missing_books <- books_data %>%   
+  summarise(across(fns= ~sum(is.na(.x))))
+
+missing_books
+
+
+
+
+
+
+  
+```
+
+#Conclusion: unless isbn is specifically needed, it can be a redundant identifier when making relations between columns. It can be dropped.
+
+#Let's do something slightly more interesting. I want to summarise and mutate and maybe consolidate eng and eng-us into a capital
