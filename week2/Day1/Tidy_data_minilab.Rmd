@@ -44,8 +44,8 @@ country_wider
 Task 3.
 Separate the country variable so you have the name in one column and the number in another.
 ```{r}
-country_wider%>% 
-  separate(country, into c("country_code", "Country"), sep = "\\. " ))
+sep_country <- country_wider%>% 
+  separate(country, into = c("country_code", "Nation"), sep = "\\. " )
 
 ```
 
@@ -54,4 +54,13 @@ country_wider%>%
 
 
 Task 4.
-Unite the code_letter and code_numb variables so that they are both in one column, with no spaces separating them.
+Unite the code_letter and code_numb variables so that they are both in one column, with no spaces separating them. 
+
+```{r}
+unite_value <- sep_country%>% 
+  unite ("Code", code_letter, code_numb, sep = "", remove = TRUE, na.rm = FALSE)
+  
+
+unite_value
+```
+

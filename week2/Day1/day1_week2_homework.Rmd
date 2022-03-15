@@ -59,10 +59,13 @@ Join the data containing card details with transaction details so rows from the 
 ```{r}
 #We want to left_join sorting by Card Number where x = cardbase, so that Card Number is the primary key. In the transactions details, Credit_Card_ID is not unique. We will also need to correspond the values of Credit_Card_ID to Card Number.
 
+#semi_join instinctively is the answer but the dropped columns may throw you for a loop
 
-left_join(cardbase, 
+semi_join(cardbase, 
           transactionbase, 
           by = c("Card_Number" = "Credit_Card_ID" ))
+
+
 
 ```
 
@@ -104,7 +107,8 @@ dated_observation
 ```{r}
 dated_observation %>% 
 select(date, hat_type, observation_count) %>% 
-  group_by(hat_type) %>% 
+  filter(hat_type == "beret") %>%
+#  group_by(hat_type) %>% 
 slice_max(observation_count)
 
 

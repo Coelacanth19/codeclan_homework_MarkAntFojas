@@ -1800,22 +1800,30 @@ be made longer. -type needs to be spread into rows.</p>
 column and the number in another.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY291bnRyeV93aWRlciU+JSBcbiAgc2VwYXJhdGUoY291bnRyeSwgaW50byBjKFwiY291bnRyeV9jb2RlXCIsIFwiQ291bnRyeVwiKSwgc2VwID0gXCJcXFxcLiBcIiApKVxuYGBgIn0= -->
-<pre class="r"><code>country_wider%&gt;% 
-  separate(country, into c(&quot;country_code&quot;, &quot;Country&quot;), sep = &quot;\\. &quot; ))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VwX2NvdW50cnkgPC0gY291bnRyeV93aWRlciU+JSBcbiAgc2VwYXJhdGUoY291bnRyeSwgaW50byA9IGMoXCJjb3VudHJ5X2NvZGVcIiwgXCJOYXRpb25cIiksIHNlcCA9IFwiXFxcXC4gXCIgKVxuXG5gYGAifQ== -->
+<pre class="r"><code>sep_country &lt;- country_wider%&gt;% 
+  separate(country, into = c(&quot;country_code&quot;, &quot;Nation&quot;), sep = &quot;\\. &quot; )
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IHVuZXhwZWN0ZWQgc3ltYm9sIGluOlxuXCJjb3VudHJ5X3dpZGVyJT4lIFxuICBzZXBhcmF0ZShjb3VudHJ5LCBpbnRvIGNcIlxuIn0= -->
-<pre><code>Error: unexpected symbol in:
-&quot;country_wider%&gt;% 
-  separate(country, into c&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Task 4. Unite the code_letter and code_numb variables so that they
 are both in one column, with no spaces separating them.</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pdGVfdmFsdWUgPC0gc2VwX2NvdW50cnklPiUgXG4gIHVuaXRlIChcIkNvZGVcIiwgY29kZV9sZXR0ZXIsIGNvZGVfbnVtYiwgc2VwID0gXCJcIiwgcmVtb3ZlID0gVFJVRSwgbmEucm0gPSBGQUxTRSlcbiAgc2VsZWN0KC1jb3VudHJ5X2NvZGUpXG5gYGAifQ== -->
+<pre class="r"><code>unite_value &lt;- sep_country%&gt;% 
+  unite (&quot;Code&quot;, code_letter, code_numb, sep = &quot;&quot;, remove = TRUE, na.rm = FALSE)
+  select(-country_code)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gc2VsZWN0KC1jb3VudHJ5X2NvZGUpIDogb2JqZWN0ICdjb3VudHJ5X2NvZGUnIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error in select(-country_code) : object &#39;country_code&#39; not found</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGlkeSBEYXRhIE1pbmktTGFiCkR1cmF0aW9uOiAzMCBtaW51dGVzCgpOb3cgaXTigJlzIHlvdXIgdHVybiB0byBwcmFjdGljZSB0aGUgdmVyYnMgb24gYSBuZXcgZGF0YXNldC4gQ29tcGxldGUgdGhlIGZvbGxvd2luZyB0YXNrOgoKMSBNVlAKVGFzayAxLgpMb2FkIGluIHRoZSBjb3VudHJ5X2RhdGEuY3N2IGZpbGUgYW5kIHRha2UgYSBsb29rIGF0IGl0LiBXaGF0IG5lZWRzIGNoYW5nZWQgaW4gdGhpcyB0byBtYWtlIGl0IHRpZHk/IFdoaWNoIGNvbHVtbnMgbmVlZCBtYWRlIGludG8gbG9uZyBmb3JtYXQsIGFuZCB3aGljaCBuZWVkIHNwcmVhZCB0byByb3dzPwoteWVhcnMgdmFsdWVzIG5lZWQgdG8gYmUgbWFkZSBsb25nZXIuCi10eXBlIG5lZWRzIHRvIGJlIHNwcmVhZCBpbnRvIHJvd3MuCmBgYHtyfQpjb3VudHJ5X2RhdGEgPC0gcmVhZF9jc3YoIi9Vc2Vycy9tYXJrZm9qYXMvQ29kZUNsYW4vZGUxM19jbGFzc25vdGVzL3dlZWtfMDIvZGF5XzEvNF90aWR5X2RhdGFfbWluaV9sYWIvZGF0YS9jb3VudHJ5X2RhdGEuY3N2IikKCgpgYGAKCgoKVGFzayAyLgpEbyB0aGUgYXBwcm9wcmlhdGUgcGl2b3Rpbmcgb2YgeW91ciBjb2x1bW5zIHVzaW5nIFIKCmBgYHtyfQpjb3VudHJ5X2xvbmdlciA8LSBjb3VudHJ5X2RhdGEgJT4lIAogIHBpdm90X2xvbmdlcihjb2xzID0gc3RhcnRzX3dpdGgoIlkiKSwKICAgICAgICAgICAgICAgbmFtZXNfdG8gPSAiWWVhciIsCiAgICAgICAgICAgICAgIHZhbHVlc190byA9ICJZZWFyX1ZhbHVlIiwKICAgICAgICAgICAgICAgbmFtZXNfcHJlZml4ID0gIlkiKQpjb3VudHJ5X2xvbmdlcgoKY291bnRyeV93aWRlciA8LSBjb3VudHJ5X2xvbmdlciAlPiUgCiAgICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gInR5cGUiLAogICAgICAgICAgICAgICAgdmFsdWVzX2Zyb20gPSAiWWVhcl9WYWx1ZSIpCgpjb3VudHJ5X3dpZGVyCmBgYAoKCgpUYXNrIDMuClNlcGFyYXRlIHRoZSBjb3VudHJ5IHZhcmlhYmxlIHNvIHlvdSBoYXZlIHRoZSBuYW1lIGluIG9uZSBjb2x1bW4gYW5kIHRoZSBudW1iZXIgaW4gYW5vdGhlci4KYGBge3J9CmNvdW50cnlfd2lkZXIlPiUgCiAgc2VwYXJhdGUoY291bnRyeSwgaW50byBjKCJjb3VudHJ5X2NvZGUiLCAiQ291bnRyeSIpLCBzZXAgPSAiXFwuICIgKSkKCmBgYAoKCgoKClRhc2sgNC4KVW5pdGUgdGhlIGNvZGVfbGV0dGVyIGFuZCBjb2RlX251bWIgdmFyaWFibGVzIHNvIHRoYXQgdGhleSBhcmUgYm90aCBpbiBvbmUgY29sdW1uLCB3aXRoIG5vIHNwYWNlcyBzZXBhcmF0aW5nIHRoZW0uCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGlkeSBEYXRhIE1pbmktTGFiCkR1cmF0aW9uOiAzMCBtaW51dGVzCgpOb3cgaXTigJlzIHlvdXIgdHVybiB0byBwcmFjdGljZSB0aGUgdmVyYnMgb24gYSBuZXcgZGF0YXNldC4gQ29tcGxldGUgdGhlIGZvbGxvd2luZyB0YXNrOgoKMSBNVlAKVGFzayAxLgpMb2FkIGluIHRoZSBjb3VudHJ5X2RhdGEuY3N2IGZpbGUgYW5kIHRha2UgYSBsb29rIGF0IGl0LiBXaGF0IG5lZWRzIGNoYW5nZWQgaW4gdGhpcyB0byBtYWtlIGl0IHRpZHk/IFdoaWNoIGNvbHVtbnMgbmVlZCBtYWRlIGludG8gbG9uZyBmb3JtYXQsIGFuZCB3aGljaCBuZWVkIHNwcmVhZCB0byByb3dzPwoteWVhcnMgdmFsdWVzIG5lZWQgdG8gYmUgbWFkZSBsb25nZXIuCi10eXBlIG5lZWRzIHRvIGJlIHNwcmVhZCBpbnRvIHJvd3MuCmBgYHtyfQpjb3VudHJ5X2RhdGEgPC0gcmVhZF9jc3YoIi9Vc2Vycy9tYXJrZm9qYXMvQ29kZUNsYW4vZGUxM19jbGFzc25vdGVzL3dlZWtfMDIvZGF5XzEvNF90aWR5X2RhdGFfbWluaV9sYWIvZGF0YS9jb3VudHJ5X2RhdGEuY3N2IikKCgpgYGAKCgoKVGFzayAyLgpEbyB0aGUgYXBwcm9wcmlhdGUgcGl2b3Rpbmcgb2YgeW91ciBjb2x1bW5zIHVzaW5nIFIKCmBgYHtyfQpjb3VudHJ5X2xvbmdlciA8LSBjb3VudHJ5X2RhdGEgJT4lIAogIHBpdm90X2xvbmdlcihjb2xzID0gc3RhcnRzX3dpdGgoIlkiKSwKICAgICAgICAgICAgICAgbmFtZXNfdG8gPSAiWWVhciIsCiAgICAgICAgICAgICAgIHZhbHVlc190byA9ICJZZWFyX1ZhbHVlIiwKICAgICAgICAgICAgICAgbmFtZXNfcHJlZml4ID0gIlkiKQpjb3VudHJ5X2xvbmdlcgoKY291bnRyeV93aWRlciA8LSBjb3VudHJ5X2xvbmdlciAlPiUgCiAgICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gInR5cGUiLAogICAgICAgICAgICAgICAgdmFsdWVzX2Zyb20gPSAiWWVhcl9WYWx1ZSIpCgpjb3VudHJ5X3dpZGVyCmBgYAoKCgpUYXNrIDMuClNlcGFyYXRlIHRoZSBjb3VudHJ5IHZhcmlhYmxlIHNvIHlvdSBoYXZlIHRoZSBuYW1lIGluIG9uZSBjb2x1bW4gYW5kIHRoZSBudW1iZXIgaW4gYW5vdGhlci4KYGBge3J9CnNlcF9jb3VudHJ5IDwtIGNvdW50cnlfd2lkZXIlPiUgCiAgc2VwYXJhdGUoY291bnRyeSwgaW50byA9IGMoImNvdW50cnlfY29kZSIsICJOYXRpb24iKSwgc2VwID0gIlxcLiAiICkKCmBgYAoKCgoKClRhc2sgNC4KVW5pdGUgdGhlIGNvZGVfbGV0dGVyIGFuZCBjb2RlX251bWIgdmFyaWFibGVzIHNvIHRoYXQgdGhleSBhcmUgYm90aCBpbiBvbmUgY29sdW1uLCB3aXRoIG5vIHNwYWNlcyBzZXBhcmF0aW5nIHRoZW0uIAoKYGBge3J9CnVuaXRlX3ZhbHVlIDwtIHNlcF9jb3VudHJ5JT4lIAogIHVuaXRlICgiQ29kZSIsIGNvZGVfbGV0dGVyLCBjb2RlX251bWIsIHNlcCA9ICIiLCByZW1vdmUgPSBUUlVFLCBuYS5ybSA9IEZBTFNFKQogIAoKdW5pdGVfdmFsdWUKYGBgCgo=</div>
 
 
 

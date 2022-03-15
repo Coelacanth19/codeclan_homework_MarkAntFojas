@@ -1,0 +1,142 @@
+---
+title: "stringr"
+output: html_document
+date: '2022-03-15'
+---
+
+Try to use double quotes in your code to avoid single apostrophe issues
+
+ex.
+`
+
+```{r}
+'this won't work'
+
+#you can avoid using 'esc' characters this way
+
+'this won\'t work'
+
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+employees <- tibble(
+  first_name = c("Sally", "steven", "Mary", "John"),
+  last_name = c("Smith", "hasTings", "Milne", "Davidson"),
+  postcode = c("EH10 6GH", "EH3 7HL", "G1 7FR", NA), 
+  location = c(" ", "Edinburgh", "", "Stirling")
+  num = c(4)
+)
+
+employees %>% 
+  group_by(location) %>% 
+  summarise(count = nchar(location))
+```
+```{r}
+employees %>% 
+  mutate(name_place = str_c(first_name, postcode, sep = "_"))
+
+```
+
+paste
+```{r}
+employees %>% 
+  mutate(name_place = paste(first_name, postcode, sep = "_"))
+```
+
+```{r}
+pangram <- "The quick brown fox jumped over the lazy dog"
+
+whack <- "THE Quick brOwn FOX jumped over the lazy dog."
+```
+
+```{r}
+pangram %>% 
+  str_to_upper()
+```
+
+```{r}
+pangram %>% 
+  str_to_lower()
+```
+
+```{r}
+pangram %>% 
+  str_to_title()
+  
+whack %>% 
+  str_to_sentence()
+```
+
+```{r}
+employees %>% 
+  mutate(first_name = str_to_title(first_name),
+         last_name = str_to_title(last_name))
+```
+```{r}
+unbroken_string <- "We're going to break this up."
+```
+
+
+```{r}
+unbroken_string %>% 
+  str_split("") %>% 
+  flatten_chr() 
+
+#class()
+
+```
+```{r}
+employees %>% 
+  mutate(postcode_new = str_split(postcode, " ")) %>% 
+  unnest(postcode_new)
+```
+```{r}
+employees %>% 
+  separate(postcode, c("postcode_outer", "postcode_inner"), " ")
+```
+
+Task - 10 mins
+
+Concatenate the strings "Manipulating" "strings" "is" "fun!"
+Capitalise the result and save it in a new variable
+Split the formatted string into individual characters
+
+```{r}
+stringthing <- str_c("Manipulating","strings","is","fun!", sep = " ") 
+str1 <- "Manipulating"
+str2 <- "strings"
+str3 <- "is"
+str4 <- "fun!"
+
+stringthing
+```
+
+stringthing 
+```{r}
+strung <- cat(stringthing)
+
+upper <- stringthing %>% 
+  str_to_upper()
+
+```
+```{r}
+full_string <- "Let's grab a substring from this!"
+```
+```{r}
+full_string %>% 
+  str_sub(start = 1 , end = 5)
+```
+
+```{r}
+full_string %>% 
+  str_sub(start = 6)
+```
+
+```{r}
+full_string %>% 
+  str_sub(start = -5, end = -5)
+```
