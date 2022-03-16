@@ -160,8 +160,12 @@ Winston writes the date in a specific format: month nth, year eg. August 5th, 20
 pattern <- 
 str_extract_all ()
 ```{r}
+#ugly
 pattern <- "[Jan|Feb|Mar|Apr|Jul|Aug|Sep|Nov|Dec]+\ [0-9]th,\ [0-9]+"
 str_extract_all(whole_text, pattern)
+
+#attempting date.as statement again
+pattern <- date = date.as
 ```
 
 Question 5.

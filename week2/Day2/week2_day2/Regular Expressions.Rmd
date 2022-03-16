@@ -15,7 +15,7 @@ og_string
 
 This previous technique is not dynamic
 
-Regex lets us deine a search pattern
+Regex lets us define a search pattern
 
 `stringr function(string, pattern, some_other_arguments)`
 
@@ -114,9 +114,9 @@ pattern_codeclan <- "CodeClan"
 str_detect(fun_vector, pattern_codeclan)
 
 
-str_detect(fun_vector, "[A-B]{2}")
+str_extract_all(fun_vector, "[A-B]{2}")
 
-pattern <- "(?i)castle")
+pattern <- "[Cc]astle")
 str_detect(fun_vector, pattern, negate = TRUE)
 
 ```
@@ -215,17 +215,47 @@ Insert your name an where you live into the fourth string
 
 ## Other helpful
 
-^ anything but
-$ end of string
-
+^     start of string
+$     end of string
+.     match all characters
+-. 
+\     literal
 ```{r}
 str_extract(challenge, "^[A-Za-z]")
 #grab the first letter
+
+
 
 str_extract(challenge, "[:punct:]$")
 #grab the last character
 ```
 ```{r}
 str_extract(challenge, ".+[1]")
+```
+
+### Working with Tibbles
+```{r}
+student <- c("Abigail", "Bjorn", "Caitlin")
+age <- c(25, 56, 40)
+emails <- c("abigal12@company.co.uk", "bsmith@gmail.co.uk", "caitlin_1980")
+
+student_info <- tibble(student, age, emails)
+
+student_info %>% 
+  filter(str_detect(student, "^[C|c]"))
+```
+```{r}
+glimpse(student_info)
+```
+
+```{r}
+valid_email <- "[a-z0-9_.]+@[a-z_.]+"
+student_info %>% 
+  mutate(valid = str_detect(emails, valid_email))
+```
+
+```{r}
+student_info %>% 
+  mutate(emails = str_replace(emails, valid_email, "REDACTED"))
 ```
 

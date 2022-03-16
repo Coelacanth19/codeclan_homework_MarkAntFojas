@@ -2,6 +2,8 @@
 title: "R Notebook"
 output: html_notebook
 ---
+
+
 Lab - strings & regex
 Regular Expression Practice
 
@@ -11,6 +13,14 @@ It’s time to look at regular expressions in the context of a much bigger block
 Question 1.
 Are the Thought Police ever mentioned?
 
+
+
+```{r}
+library(tidyverse)
+read_file{"/Users/markfojas/CodeClan/de13_classnotes/week_02/day_2/3_lab_strings_and_regex/start_point.Rmd"}
+pattern <- "pattern <- "Thought\ Police+"
+str_detect()
+```
 
 
 Question 2.

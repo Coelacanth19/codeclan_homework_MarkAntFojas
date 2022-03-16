@@ -16,7 +16,36 @@ spotify_songs <- read_csv("/Users/markfojas/CodeClan/de13_classnotes/week_02/day
 head(spotify_songs)
 ```
 ```{r}
-spotify_songs %>% 
-  str_to_upper(playlist_name)
+upper_spot <- spotify_songs %>% 
+  mutate(playlist_name = str_to_upper(playlist_name))
+
+upper_spot
+```
+```{r}
+track_lowercase_artist <- spotify_songs %>% 
+  mutate(track_artist = str_to_lower(track_artist))
+
+track_lowercase_artist
 ```
 
+Task - 10 mins
+Here are some more questions for you to practice with. Remember, the point of these questions is not to do something that makes sense for this dataset, but rather to allow you to practice using the techniques we’ve learnt today on a real dataset. When it comes to your projects, you will be in charge of deciding how to work with the strings in your dataset.
+We are going to use some Spotify data for this task:
+spotify_songs <- read_csv("data/spotify_sample.csv")
+Upcase the text in the playlist_name column. Overwrite the existing column to store the result.
+Lowcase the text in the track_artist column. Store the result in a new column called track_artist_lowcase.
+Take the first 5 characters of the playlist_id column, and save it in a new column called playlist_start.
+Take the first 4 characters of the track_album_release_date column and save it in a new column called year.
+What else can you do to this dataset to practice? Can you work with the numbers? This is open ended - have fun!
+
+spotify_songs <- spotify_songs %>% 
+  mutate(
+    playlist_name = str_to_upper(playlist_name),
+    track_artist_lowcase = str_to_lower(track_artist),
+    playlist_start = str_sub(playlist_id, end = 5),
+    year = str_sub(track_album_release_date, end = 4),
+    duration_s = format(duration_ms) %>% 
+      str_sub(end = 3),
+    frequency = tempo/60
+    
+  ) 
