@@ -1,0 +1,120 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+nchar("hello", "chars", TRUE, NA)
+```
+```{r}
+nchar(keepNA = NA, "chars", x = "hello", allowNA = TRUE)
+```
+
+```{r}
+nchar("hello")
+```
+
+```{r}
+paste("hello", "bye")
+```
+
+```{r}
+nchar(c("hello", "bye", "yo"))
+```
+```{r}
+function_name <- function(arg_1, arg_2, arg_3 = 5) {
+  
+  do something
+  
+  return(output)
+}
+  
+```
+```{r}
+mult5x <- function(x) {
+  return(x*5) #you don't need to use return, but it is best practices
+  }
+```
+```{r}
+mult5x(5)
+```
+
+```{r}
+x=5
+mult_by <- function(x, y=100) {
+  return(x*y)
+}
+```
+
+
+
+Task - 5 minutes
+Write a function make_price() that takes as input any whole number, and returns it written as a price (i.e. with a ‘£’ in front of the number). For example 5 would become £5, and 123 would become £123. Try out your function a few times to test that it works.
+
+```{r}
+make_price <- function(x){
+ x <- paste("£",x, sep = "")
+  return(x)
+}
+
+make_price(5)
+```
+
+Write a function that takes as input a whoe number n, and returns the n-th triangle number.
+
+nth_tri = function(n){
+  (n*(n+1))%%2 -> x
+  return(x)
+}
+```{r}
+nth_tri = function(n){
+  (n * (n + 1)) /2 -> x
+  return(x)
+}
+```
+```{r}
+nth_tri(3)
+```
+
+Scope in programming
+Suddenly we are using this term ‘scope’. What does it mean? Well, the ‘scope’ of a variable is basically all the places in our code that we can use that variable name without causing an error (the error being that R will complain that it can’t find the variable we are trying to use).
+```{r}
+multiply_by_3_add_2 <- function(x){
+  
+  times_3 <- x*3
+  add_2 <- times_3 + 2
+  
+  return(add_2)
+}
+```
+
+```{r}
+add_3()
+format_number()
+```
+
+```{r}
+add_3 <- function(x){
+  x + 3
+}
+```
+```{r}
+animals <- c("Cat", "Dog", "Monkey", "Elephant", "Frog")
+hats <- c("Bowler", "Sun Hat", "Baseball Cap", "Fez")
+trees <- c("Ash", "Elm", "Oak", "Willow", "Fir")
+
+make_ordered <- function(my_vec){
+  animals_sorted <- sort(my_vec)
+  animals_joined <- str_c(animals_sorted, collapse = ', ')
+  str_c("Ordered List:", animals_joined)
+
+}
+
+make_ordered(animals)
+```
+
+make function, index matrices

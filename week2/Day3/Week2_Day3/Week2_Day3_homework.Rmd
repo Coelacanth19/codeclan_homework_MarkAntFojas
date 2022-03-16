@@ -1,0 +1,53 @@
+---
+title: "week2_day3_homework"
+author: "Mark Fojas"
+date: '2022-03-16'
+output: html_document
+---
+
+
+Thursday
+Temperature: 12
+Precipitation: 20%
+Humidity: 69%
+Wind: 21 mph
+
+Friday
+Temperature: 13
+Precipitation: 10%
+Humidity: 65%
+Wind: 10 mph
+
+Saturday
+Temperature: 14
+Precipitation: 10%
+Humidity: 63%
+Wind: 8 mph
+
+```{r}
+library(tidyverse
+        )
+Day <- c("Thursday", "Friday", "Saturday")
+Temp <- c(12, 13, 14)
+Precip <- c(20, 10, 10)
+Humidity <- c(69, 65, 63)
+Wind <- c(21, 10, 8)
+stats <- c(Temp, Precip, Humidity, Wind)
+
+weather_matrix <- matrix(c(stats),
+                  nrow = 4, ncol = 3,
+                  dimnames = list(c("Temperature", 
+                                    "Precipitation","Humidity","Wind"),
+                                  c(Day)))
+```
+```{r}
+weather_matrix
+```
+
+```{r}
+weather_matrix[[3, 1]]
+```
+```{r}
+str
+```
+

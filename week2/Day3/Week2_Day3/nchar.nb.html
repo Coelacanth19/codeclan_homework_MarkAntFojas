@@ -1771,698 +1771,191 @@ pre code {
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
 <pre class="r"><code>library(tidyverse)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4xIOKUgOKUgFxu4pyTIGdncGxvdDIgMy4zLjUgICAgIOKckyBwdXJyciAgIDAuMy40XG7inJMgdGliYmxlICAzLjEuNiAgICAg4pyTIGRwbHlyICAgMS4wLjhcbuKckyB0aWR5ciAgIDEuMi4wICAgICDinJMgc3RyaW5nciAxLjQuMFxu4pyTIHJlYWRyICAgMi4xLjIgICAgIOKckyBmb3JjYXRzIDAuNS4xXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG54IGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbnggZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
-<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      
-── Attaching packages ─────────────────────────────────────────────────────── tidyverse 1.3.1 ──
-✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-✓ tibble  3.1.6     ✓ dplyr   1.0.8
-✓ tidyr   1.2.0     ✓ stringr 1.4.0
-✓ readr   2.1.2     ✓ forcats 0.5.1
-── Conflicts ────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-x dplyr::filter() masks stats::filter()
-x dplyr::lag()    masks stats::lag()</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Review of Day 2 Lab work</p>
-<p>Other peoples code</p>
-<p>whole_text %&gt;% str_replace_all(c(“GIN” = “VODKA”, “gin” = “vodka”,
-“Gin” = “Vodka”))</p>
-<p>Chris P 10:09 AM</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hvbGVfdGV4dCAlPiUgXG4gIHN0cl9leHRyYWN0X2FsbChcIig/aSkoRGVwYXJ0bWVudHxNaW5pc3RyeXxNaW5pc3RyaWV8TWluaVthLXpdKylcIilcbmBgYCJ9 -->
-<pre class="r"><code>whole_text %&gt;% 
-  str_extract_all(&quot;(?i)(Department|Ministry|Ministrie|Mini[a-z]+)&quot;)</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hvbGVfdGV4dCAlPiVcbiAgc3RyX3JlcGxhY2VfYWxsKFwiRGVwYXJ0bWVudFwiLCBcIlNlY3Rpb25cIikgJT4lXG4gIHN0cl9yZXBsYWNlX2FsbChcIk1pbmlzdHJ5fE1pbmlzdHJpZVwiLCBcIkRlcGFydG1lbnRcIikgJT4lXG4gIHN0cl9yZXBsYWNlX2FsbChcIk1pbmlcIiwgXCJEZXBcIikgXG5gYGAifQ== -->
-<pre class="r"><code>whole_text %&gt;%
-  str_replace_all(&quot;Department&quot;, &quot;Section&quot;) %&gt;%
-  str_replace_all(&quot;Ministry|Ministrie&quot;, &quot;Department&quot;) %&gt;%
-  str_replace_all(&quot;Mini&quot;, &quot;Dep&quot;) </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGF0dGVybiA8LSBcIlsgLFxcXFwuLV1bZ0ddW2lJXVtuTl1bICxcXFxcLi1dXCJcblxud2hvbGVfdGV4dCAlPiVcbiAgc3RyX2V4dHJhY3RfYWxsKHBhdHRlcm4pICU+JVxuICBmbGF0dGVuX2NocigpXG5gYGAifQ== -->
-<pre class="r"><code>pattern &lt;- &quot;[ ,\\.-][gG][iI][nN][ ,\\.-]&quot;
-
-whole_text %&gt;%
-  str_extract_all(pattern) %&gt;%
-  flatten_chr()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>lists</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSAxOjVcblxuYXMubGlzdCh4KVxuYGBgIn0= -->
-<pre class="r"><code>x &lt;- 1:5
-
-as.list(x)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSAxXG5cbltbMl1dXG5bMV0gMlxuXG5bWzNdXVxuWzFdIDNcblxuW1s0XV1cblsxXSA0XG5cbltbNV1dXG5bMV0gNVxuIn0= -->
-<pre><code>[[1]]
-[1] 1
-
-[[2]]
-[1] 2
-
-[[3]]
-[1] 3
-
-[[4]]
-[1] 4
-
-[[5]]
-[1] 5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>list[[1]]]</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZWRfbGlzdCA8LSBsaXN0KGEgPSBcIkkgbG92ZSBSXCIsIGIgPSAxOjEwKVxuXG5gYGAifQ== -->
-<pre class="r"><code>named_list &lt;- list(a = &quot;I love R&quot;, b = 1:10)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoXCJoZWxsb1wiLCBcImNoYXJzXCIsIFRSVUUsIE5BKVxuXG5gYGAifQ== -->
+<pre class="r"><code>nchar(&quot;hello&quot;, &quot;chars&quot;, TRUE, NA)
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZWRfbGlzdCRhXG5gYGAifQ== -->
-<pre class="r"><code>named_list$a</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiSSBsb3ZlIFJcIlxuIn0= -->
-<pre><code>[1] &quot;I love R&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudF9pbmZvIDwtIGxpc3QoXG4gICAgICAgICAgICAgICAgXCJBZ25lc1wiID0gbGlzdChoZWlnaHQgPSAxLjgsIHNob2Vfc2l6ZSA9IDhMKSxcbiAgICAgICAgICAgICAgICBcIkJvYmJ5XCIgPSBsaXN0KGhlaWdodCA9IDIuMSwgZ2VuZGVyID0gXCJNYWxlXCIpLFxuICAgICAgICAgICAgICAgIFwiQ2hhcmxpZVwiID0gbGlzdChnZW5kZXIgPSBcIkZlbWFsZVwiLCBsaWtlc19iZWV0cyA9IFRSVUUpXG4pXG5gYGAifQ== -->
-<pre class="r"><code>student_info &lt;- list(
-                &quot;Agnes&quot; = list(height = 1.8, shoe_size = 8L),
-                &quot;Bobby&quot; = list(height = 2.1, gender = &quot;Male&quot;),
-                &quot;Charlie&quot; = list(gender = &quot;Female&quot;, likes_beets = TRUE)
-)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudF9pbmZvJEJvYmJ5JGhlaWdodFxuYGBgIn0= -->
-<pre class="r"><code>student_info$Bobby$height</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIuMVxuIn0= -->
-<pre><code>[1] 2.1</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudF9pbmZvWzFdXG5gYGAifQ== -->
-<pre class="r"><code>student_info[1]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJEFnbmVzXG4kQWduZXMkaGVpZ2h0XG5bMV0gMS44XG5cbiRBZ25lcyRzaG9lX3NpemVcblsxXSA4XG4ifQ== -->
-<pre><code>$Agnes
-$Agnes$height
-[1] 1.8
-
-$Agnes$shoe_size
-[1] 8</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Task - 5 minutes Make a named list that contains a numeric vector and
-a character vector. Access the second element of your list using double
-square brackets [[]]. What is it’s class? Access the second element of
-your list using single square brackets []. What is it’s class? Access
-the second element of your list by name. What is it’s class?</p>
-<p>numcharlist &lt;- list(numeric = c(21,45,70), character =
-(“Forever”,“Never”,“Sometimes”)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtY2hhcmxpc3QgPSBsaXN0KG51bSA9IGMoMjEsIDQ1LCA3MCksIGNoYXIgPSBjKFwiRm9yZXZlclwiLCBcIk5ldmVyXCIsIFwiU29tZXRpbWVzXCIpKVxuYGBgIn0= -->
-<pre class="r"><code>numcharlist = list(num = c(21, 45, 70), char = c(&quot;Forever&quot;, &quot;Never&quot;, &quot;Sometimes&quot;))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubSA8LSBtYXRyaXgoMTo2LCBucm93ID0gMiwgbmNvbCA9IDIsIGJ5cm93ID0gVClcbmBgYCJ9 -->
-<pre class="r"><code>m &lt;- matrix(1:6, nrow = 2, ncol = 2, byrow = T)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>m &lt;- matrix(1:6, nrow = 2, ncol = 2, byrow = T)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubVssMV1cbmBgYCJ9 -->
-<pre class="r"><code>m[,1]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgM1xuIn0= -->
-<pre><code>[1] 1 3</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubVsyLGMoMiwzKV1cbmBgYCJ9 -->
-<pre class="r"><code>m[2,c(2,3)]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbVsyLCBjKDIsIDMpXSA6IHN1YnNjcmlwdCBvdXQgb2YgYm91bmRzXG4ifQ== -->
-<pre><code>Error in m[2, c(2, 3)] : subscript out of bounds</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubSAtMlxuYGBgIn0= -->
-<pre class="r"><code>m -2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gICAtMSAgICAwXG5bMixdICAgIDEgICAgMlxuIn0= -->
-<pre><code>     [,1] [,2]
-[1,]   -1    0
-[2,]    1    2</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm93U3VtcyhtKVxuYGBgIn0= -->
-<pre class="r"><code>rowSums(m)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMgN1xuIn0= -->
-<pre><code>[1] 3 7</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sU3VtcyhtKVxuYGBgIn0= -->
-<pre class="r"><code>colSums(m)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDQgNlxuIn0= -->
-<pre><code>[1] 4 6</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sTWVhbnMobSlcbmBgYCJ9 -->
-<pre class="r"><code>colMeans(m)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIgM1xuIn0= -->
-<pre><code>[1] 2 3</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4gIG1hdHJpeGQgPC0gbWF0cml4KDE6MywgbnJvdyA9IDMsIG5jb2wgPSA0KVxuYGBgIn0= -->
-<pre class="r"><code>
-  matrixd &lt;- matrix(1:3, nrow = 3, ncol = 4)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml4ZFsyLDNdIFxuYGBgIn0= -->
-<pre class="r"><code>matrixd[2,3] </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDJcbiJ9 -->
-<pre><code>[1] 2</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml4ZFxuYGBgIn0= -->
-<pre class="r"><code>matrixd</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdXG5bMSxdICAgIDEgICAgMSAgICAxICAgIDFcblsyLF0gICAgMiAgICAyICAgIDIgICAgMlxuWzMsXSAgICAzICAgIDMgICAgMyAgICAzXG4ifQ== -->
-<pre><code>     [,1] [,2] [,3] [,4]
-[1,]    1    1    1    1
-[2,]    2    2    2    2
-[3,]    3    3    3    3</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>#If Statements</p>
-<p>if (weather == “sunny”){ hang out washing }</p>
-<p>!= &gt; &lt; &lt;= &gt;=</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKDEwIDwgMTUpe1xuICBwcmludChcInllc1wiKVxufVxuYGBgIn0= -->
-<pre class="r"><code>if (10 &lt; 15){
-  print(&quot;yes&quot;)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieWVzXCJcbiJ9 -->
-<pre><code>[1] &quot;yes&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYoNSAlaW4lIGMoMSwyLDQsNSkpe1xuICBwcmludCAoXCJ5ZXNcIilcbn1cbmBgYCJ9 -->
-<pre class="r"><code>if(5 %in% c(1,2,4,5)){
-  print (&quot;yes&quot;)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieWVzXCJcbiJ9 -->
-<pre><code>[1] &quot;yes&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Write an if statement that prints ‘Yes that divides by2’ if a number
-x is divisible by 2. use %%2 == 0 as your expression), try it out for
-different values of x.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD02XG5pZih4ICUlIDIgPT0gMCl7XG4gIHByaW50IChcIlllcywgdGhhdCBkaXZpZGVzIGJ5IDJcIilcbn1cbmBgYCJ9 -->
-<pre class="r"><code>x=6
-if(x %% 2 == 0){
-  print (&quot;Yes, that divides by 2&quot;)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWWVzLCB0aGF0IGRpdmlkZXMgYnkgMlwiXG4ifQ== -->
-<pre><code>[1] &quot;Yes, that divides by 2&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKDEwICE9NSl7XG4gIGlmICgzID4gMSl7XG4gICAgcHJpbnQoXCJoZWxsb1wiKVxuICB9XG59XG5gYGAifQ== -->
-<pre class="r"><code>if (10 !=5){
-  if (3 &gt; 1){
-    print(&quot;hello&quot;)
-  }
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaGVsbG9cIlxuIn0= -->
-<pre><code>[1] &quot;hello&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Task - 10 minutes Here’s an example of a nested if statement. Predict
-what the code is going to print out for the following combinations:</p>
-<p>x is 10 and y is 3.</p>
-<p>*Predicted output: “start of outer if block” [1] “Start of outer if
-block” [1] “Inner if block 2” [1] “End of outer if block” [1] “After if
-statement”</p>
-<p>x is 10 and y is 2.</p>
-<p>*Predicted output: “start of outer if block” [1] “Start of outer if
-block” [1] “Inner if block 1” [1] “Inner if block 2” [1] “End of outer
-if block” [1] “After if statement”</p>
-<p>x is 2 and y is 10.</p>
-<p>[1] “After if statement”</p>
-<p>*Predicted output: “End of outer if block”</p>
-<p>if (x &gt; y) { print(“Start of outer if block”)</p>
-<p>if (x %% y == 0) { print(“Inner if block 1”) }</p>
-<p>if (y %in% c(1:5)) { print(“Inner if block 2”) }</p>
-<p>print(“End of outer if block”) }</p>
-<p>print(“After if statement”)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD0yXG55PTEwXG5pZiAoeCA+IHkpIHtcbiAgcHJpbnQoXCJTdGFydCBvZiBvdXRlciBpZiBibG9ja1wiKVxuXG4gIGlmICh4ICUlIHkgPT0gMCkge1xuICAgIHByaW50KFwiSW5uZXIgaWYgYmxvY2sgMVwiKVxuICB9XG5cbiAgaWYgKHkgJWluJSBjKDE6NSkpIHtcbiAgICBwcmludChcIklubmVyIGlmIGJsb2NrIDJcIilcbiAgfVxuXG4gIHByaW50KFwiRW5kIG9mIG91dGVyIGlmIGJsb2NrXCIpXG59XG5cbnByaW50KFwiQWZ0ZXIgaWYgc3RhdGVtZW50XCIpXG5gYGAifQ== -->
-<pre class="r"><code>x=2
-y=10
-if (x &gt; y) {
-  print(&quot;Start of outer if block&quot;)
-
-  if (x %% y == 0) {
-    print(&quot;Inner if block 1&quot;)
-  }
-
-  if (y %in% c(1:5)) {
-    print(&quot;Inner if block 2&quot;)
-  }
-
-  print(&quot;End of outer if block&quot;)
-}
-
-print(&quot;After if statement&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQWZ0ZXIgaWYgc3RhdGVtZW50XCJcbiJ9 -->
-<pre><code>[1] &quot;After if statement&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>#if-else</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKDQgPCA1KXtcbiAgcHJpbnQgKFwieWVzXCIpXG4gIGVsc2Uge1xuICAgIHByaW50KFwibm9cIilcbiAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>if (4 &lt; 5){
-  print (&quot;yes&quot;)
-  else {
-    print(&quot;no&quot;)
-  }
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Write an if statement that prints ‘Yes that divides by 2’ if a number
-x is divisible by 2 (hint: use %% 2 == 0 as your expression), try it out
-for different values of x.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA9IDFcbmlmICh4ICUlIDIgPT0gMCl7XG4gIHByaW50KFwiWWVzLCB0aGF0IGRpdmlkZXMgYnkgMlwiKVxuICB9ZWxzZSB7cHJpbnQoXCJObyB0aGF0IGRvZXMgbm90IGRpdmlkZVwiKVxuICB9XG5gYGAifQ== -->
-<pre class="r"><code>x = 1
-if (x %% 2 == 0){
-  print(&quot;Yes, that divides by 2&quot;)
-  }else {print(&quot;No that does not divide&quot;)
-  }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiTm8gdGhhdCBkb2VzIG5vdCBkaXZpZGVcIlxuIn0= -->
-<pre><code>[1] &quot;No that does not divide&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>x &lt;- 5 y &lt;- 10</p>
-<p>Here’s an example of a nested if-else statement. Predict what it’s
-going to print out for the following conditions:. When x is 5 and y is
-10 When x is 6 and y is 12 When x is 6 and y is 13</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSA1XG55IDwtIDEwXG5cbmlmICh4ICVpbiUgYygzLCA0LCA1KSl7XG4gIHByaW50KFwieCBpcyBpbiBvdXIgbGlzdFwiKVxuICBcbmlmICh4ID09IDUpe1xuICAgIHByaW50KFwieCBpcyBleGFjdGx5IDVcIilcbiAgfVxufSBlbHNlIHtcbiAgcHJpbnQoXCJTdGFydCBvZiBlbHNlIHN0YXRlbWVudFwiKVxuICBpZiAoeSAlJSB4ID09IDApe1xuICAgIHByaW50KFwieCBkaXZpZGVzIHlcIilcbiAgXG4gIH0gZWxzZXtcbiAgICBwcmludChcInggZG9lcyBub3QgZGl2aWRlIFlcIilcbiAgfVxuICBwcmludCAoXCJFbmQgb2YgZWxzZSBzdGF0ZW1lbnRcIilcbn1cbmBgYCJ9 -->
-<pre class="r"><code>x &lt;- 5
-y &lt;- 10
-
-if (x %in% c(3, 4, 5)){
-  print(&quot;x is in our list&quot;)
-  
-if (x == 5){
-    print(&quot;x is exactly 5&quot;)
-  }
-} else {
-  print(&quot;Start of else statement&quot;)
-  if (y %% x == 0){
-    print(&quot;x divides y&quot;)
-  
-  } else{
-    print(&quot;x does not divide Y&quot;)
-  }
-  print (&quot;End of else statement&quot;)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieCBpcyBpbiBvdXIgbGlzdFwiXG5bMV0gXCJ4IGlzIGV4YWN0bHkgNVwiXG4ifQ== -->
-<pre><code>[1] &quot;x is in our list&quot;
-[1] &quot;x is exactly 5&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChzb2NrIGluIGJhc2tldCl7XG4gIHBlZyBpdCB0byB0aGUgbGluZVxufVxuYGBgIn0= -->
-<pre class="r"><code>for (sock in basket){
-  peg it to the line
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2Vla2RheXMgPC0gYyhcIk1vbmRheVwiLCBcIlR1ZXNkYXlcIiwgXCJXZWRuZXNkYXlcIiwgXCJUaHVyc2RheVwiLCBcIkZyaWRheVwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>weekdays &lt;- c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChkYXkgaW4gd2Vla2RheXMpIHtcbiAgcGhyYXNlIDwtIHBhc3RlKFwiVGhlIGRheSBpc1wiLCBkYXkpXG4gIHByaW50KHBocmFzZSlcbiAgfVxuYGBgIn0= -->
-<pre class="r"><code>for (day in weekdays) {
-  phrase &lt;- paste(&quot;The day is&quot;, day)
-  print(phrase)
-  }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVGhlIGRheSBpcyBNb25kYXlcIlxuWzFdIFwiVGhlIGRheSBpcyBUdWVzZGF5XCJcblsxXSBcIlRoZSBkYXkgaXMgV2VkbmVzZGF5XCJcblsxXSBcIlRoZSBkYXkgaXMgVGh1cnNkYXlcIlxuWzFdIFwiVGhlIGRheSBpcyBGcmlkYXlcIlxuIn0= -->
-<pre><code>[1] &quot;The day is Monday&quot;
-[1] &quot;The day is Tuesday&quot;
-[1] &quot;The day is Wednesday&quot;
-[1] &quot;The day is Thursday&quot;
-[1] &quot;The day is Friday&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5udW0gPSBjKDE6NSlcblxuZm9yKG51bWJlciBpbiBudW0pIHtcbiAgcHJpbnQobnVtYmVyKVxufVxuYGBgIn0= -->
-<pre class="r"><code>
-num = c(1:5)
-
-for(number in num) {
-  print(number)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcblsxXSAyXG5bMV0gM1xuWzFdIDRcblsxXSA1XG4ifQ== -->
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoMSlcbmBgYCJ9 -->
-<pre class="r"><code>print(1)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
-<pre><code>[1] 1</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoMilcbmBgYCJ9 -->
-<pre class="r"><code>print(2)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDJcbiJ9 -->
-<pre><code>[1] 2</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoMylcbmBgYCJ9 -->
-<pre class="r"><code>print(3)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDNcbiJ9 -->
-<pre><code>[1] 3</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoNClcbmBgYCJ9 -->
-<pre class="r"><code>print(4)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDRcbiJ9 -->
-<pre><code>[1] 4</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoNSlcbmBgYCJ9 -->
-<pre class="r"><code>print(5)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
 <pre><code>[1] 5</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5jdXJyZW50X3ZhbHVlIDwtIDFcbmVuZF9wb2ludCA8LSAxMFxuXG53aGlsZShjdXJyZW50X3ZhbHVlIDwgZW5kX3BvaW50KXtcbiAgY3VycmVudF92YWx1ZSA8LSBjdXJyZW50X3ZhbHVlICsgMVxuICBwcmludChjdXJyZW50X3ZhbHVlKVxufVxuYGBgIn0= -->
-<pre class="r"><code>
-current_value &lt;- 1
-end_point &lt;- 10
-
-while(current_value &lt; end_point){
-  current_value &lt;- current_value + 1
-  print(current_value)
-}</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoa2VlcE5BID0gTkEsIFwiY2hhcnNcIiwgeCA9IFwiaGVsbG9cIiwgYWxsb3dOQSA9IFRSVUUpXG5gYGAifQ== -->
+<pre class="r"><code>nchar(keepNA = NA, &quot;chars&quot;, x = &quot;hello&quot;, allowNA = TRUE)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDJcblsxXSAzXG5bMV0gNFxuWzFdIDVcblsxXSA2XG5bMV0gN1xuWzFdIDhcblsxXSA5XG5bMV0gMTBcbiJ9 -->
-<pre><code>[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-[1] 8
-[1] 9
-[1] 10</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
+<pre><code>[1] 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoXCJoZWxsb1wiKVxuYGBgIn0= -->
+<pre class="r"><code>nchar(&quot;hello&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
+<pre><code>[1] 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFzdGUoXCJoZWxsb1wiLCBcImJ5ZVwiKVxuYGBgIn0= -->
+<pre class="r"><code>paste(&quot;hello&quot;, &quot;bye&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaGVsbG8gYnllXCJcbiJ9 -->
+<pre><code>[1] &quot;hello bye&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoYyhcImhlbGxvXCIsIFwiYnllXCIsIFwieW9cIikpXG5gYGAifQ== -->
+<pre class="r"><code>nchar(c(&quot;hello&quot;, &quot;bye&quot;, &quot;yo&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUgMyAyXG4ifQ== -->
+<pre><code>[1] 5 3 2</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jYW5vdGhlciBtZXRob2RcbndlZWtkYXlzIDwtIGMoXCJNb25kYXlcIiwgXCJUdWVzZGF5XCIsIFwiV2VkbmVzZGF5XCIsIFwiVGh1cnNkYXlcIiwgXCJGcmlkYXlcIilcbmxlbmd0aF93ZWVrZGF5IDwtIGxlbmd0aCh3ZWVrZGF5cylcblxuZm9yIChpIGluIDE6bGVuZ3RoX3dlZWtkYXkpIHtcbiAgcGhyYXNlIDwtIHBhc3RlKFwiVGhlIGRheSBpc1wiLCB3ZWVrZGF5c1tpXSlcbiAgcHJpbnQocGhyYXNlKVxufVxuYGBgIn0= -->
-<pre class="r"><code>
-#another method
-weekdays &lt;- c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;)
-length_weekday &lt;- length(weekdays)
-
-for (i in 1:length_weekday) {
-  phrase &lt;- paste(&quot;The day is&quot;, weekdays[i])
-  print(phrase)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnVuY3Rpb25fbmFtZSA8LSBmdW5jdGlvbihhcmdfMSwgYXJnXzIsIGFyZ18zID0gNSlcbiAgXG5gYGAifQ== -->
+<pre class="r"><code>function_name &lt;- function(arg_1, arg_2, arg_3 = 5)
+  </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IEluY29tcGxldGUgZXhwcmVzc2lvbjogZnVuY3Rpb25fbmFtZSA8LSBmdW5jdGlvbihhcmdfMSwgYXJnXzIsIGFyZ18zID0gNSlcbiAgXG4ifQ== -->
+<pre><code>Error: Incomplete expression: function_name &lt;- function(arg_1, arg_2, arg_3 = 5)
+  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdDV4IDwtIGZ1bmN0aW9uKHgpIHtcbiAgcmV0dXJuKHgqNSlcbiAgfVxuYGBgIn0= -->
+<pre class="r"><code>mult5x &lt;- function(x) {
+  return(x*5)
+  }</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdDV4KDUpXG5gYGAifQ== -->
+<pre class="r"><code>mult5x(5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI1XG4ifQ== -->
+<pre><code>[1] 25</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD01XG5tdWx0X2J5IDwtIGZ1bmN0aW9uKHgsIHk9MTAwKSB7XG4gIHJldHVybih4KnkpXG59XG5gYGAifQ== -->
+<pre class="r"><code>x=5
+mult_by &lt;- function(x, y=100) {
+  return(x*y)
 }</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>The [i] is essential. It basically temporarily take the value of each
-element of the vector, one at a time, performs the contents of the loop,
-then take the value of the next element i &lt;- 1</p>
+<p>Task - 5 minutes Write a function make_price() that takes as input
+any whole number, and returns it written as a price (i.e. with a ‘£’ in
+front of the number). For example 5 would become £5, and 123 would
+become £123. Try out your function a few times to test that it
+works.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml4IDwtIG1hdHJpeCgxOjMsIDMsIDQpXG5udW1iZXJfb2Zfcm93cyA8LSBucm93KG1hdHJpeClcbm51bWJlcl9vZl9jb2xzIDwtIG5jb2wobWF0cml4KVxuXG5mb3IgKHJvd19pbmRleCBpbiAxOm51bWJlcl9vZl9yb3dzKSB7XG4gIGZvcihjb2xfaW5kZXggaW4gMTpudW1iZXJfb2ZfY29scyl7XG4gICAgcHJpbnQobWF0cml4W3Jvd19pbmRleCwgY29sX2luZGV4XSlcbiAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>matrix &lt;- matrix(1:3, 3, 4)
-number_of_rows &lt;- nrow(matrix)
-number_of_cols &lt;- ncol(matrix)
-
-for (row_index in 1:number_of_rows) {
-  for(col_index in 1:number_of_cols){
-    print(matrix[row_index, col_index])
-  }
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcblsxXSAxXG5bMV0gMVxuWzFdIDFcblsxXSAyXG5bMV0gMlxuWzFdIDJcblsxXSAyXG5bMV0gM1xuWzFdIDNcblsxXSAzXG5bMV0gM1xuIn0= -->
-<pre><code>[1] 1
-[1] 1
-[1] 1
-[1] 1
-[1] 2
-[1] 2
-[1] 2
-[1] 2
-[1] 3
-[1] 3
-[1] 3
-[1] 3</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Task - 10 mins Run the code below to create an empty 5×5 5×5 matrix:
-product_matrix &lt;- matrix(nrow = 5, ncol = 5) product_matrix ## [,1]
-[,2] [,3] [,4] [,5] ## [1,] NA NA NA NA NA ## [2,] NA NA NA NA NA ##
-[3,] NA NA NA NA NA ## [4,] NA NA NA NA NA ## [5,] NA NA NA NA NA Check
-that the matrix is empty. Now we’re going to fill product_matrix in the
-following way: each entry should be the product of the row index and
-position index at which the entry occurs. For example, the entry on the
-third row, fourth column, should be 3×4=12 3×4=12. Get the matrix
-dimensions programatically (so that we could in the future apply this
-code to any size of matrix with minimal changes). Hint: you can use the
-code above as a guide, although we won’t be printing out the matrix
-entries as we go. Instead, check your code by printing out the whole
-matrix at the end: just run the single statement product_matrix to do
-this.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZW1wdHlfbWF0cml4IDwtIG1hdHJpeCgsIG5yb3cgPSA1LCBuY29sID0gNSlcblxuI2RlZmluZSByb3dzIHByb2dyYW1hdGljYWxseVxucm93X2xlbmd0aCA8LSBucm93KGVtcHR5X21hdHJpeClcbmNvbF9sZW5ndGggPC0gbmNvbChlbXB0eV9tYXRyaXgpXG4jc3RhcnQgZm9yIGxvb3BcbmZvciAocm93X2luZGV4IGluIDE6cm93X2xlbmd0aCkgeyAjZm9yIGV2ZXJ5IHJvdyBpbiB0aGUgbGVuZ3RoIG9mIHRoZSBtYXRyaXhcbiAgZm9yIChjb2xfaW5kZXggaW4gMTpjb2xfbGVuZ3RoKSB7ICNmb3IgZWFjaCBjb2x1bW4gaW4gdGhhdCByb3dcbiAgICBwcm9kdWN0X21hdHJpeFtyb3dfaW5kZXgsIGNvbF9pbmRleF0gPC0gcm93X2luZGV4ICogY29sX2luZGV4ICNpbmRleCB0aGUgY2VsbCB2YWx1ZSwgYW5kIHJlcGxhY2UgaXQgd2l0aCBhIG5ldyB2YWx1ZVxuICB9XG59XG5wcm9kdWN0X21hdHJpeFxuYGBgIn0= -->
-<pre class="r"><code>empty_matrix &lt;- matrix(, nrow = 5, ncol = 5)
-
-#define rows programatically
-row_length &lt;- nrow(empty_matrix)
-col_length &lt;- ncol(empty_matrix)
-#start for loop
-for (row_index in 1:row_length) { #for every row in the length of the matrix
-  for (col_index in 1:col_length) { #for each column in that row
-    product_matrix[row_index, col_index] &lt;- row_index * col_index #index the cell value, and replace it with a new value
-  }
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFrZV9wcmljZSA8LSBmdW5jdGlvbih4KXtcbiB4IDwtIHBhc3RlKFwiwqNcIix4LCBzZXAgPSBcIlwiKVxuICByZXR1cm4oeClcbn1cblxubWFrZV9wcmljZSg1KVxuYGBgIn0= -->
+<pre class="r"><code>make_price &lt;- function(x){
+ x &lt;- paste(&quot;£&quot;,x, sep = &quot;&quot;)
+  return(x)
 }
-product_matrix</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdIFssNV1cblsxLF0gICAgMSAgICAyICAgIDMgICAgNCAgICA1XG5bMixdICAgIDIgICAgNCAgICA2ICAgIDggICAxMFxuWzMsXSAgICAzICAgIDYgICAgOSAgIDEyICAgMTVcbls0LF0gICAgNCAgICA4ICAgMTIgICAxNiAgIDIwXG5bNSxdICAgIDUgICAxMCAgIDE1ICAgMjAgICAyNVxuIn0= -->
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    1    2    3    4    5
-[2,]    2    4    6    8   10
-[3,]    3    6    9   12   15
-[4,]    4    8   12   16   20
-[5,]    5   10   15   20   25</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Another example:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhhbXBsZV9tYXRyaXggPSBtYXRyaXgoMToyNSwgbnJvdyA9IDUsIG5jb2wgPSA1KVxuZXhhbXBsZV9tYXRyaXhcbmBgYCJ9 -->
-<pre class="r"><code>example_matrix = matrix(1:25, nrow = 5, ncol = 5)
-example_matrix</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdIFssNV1cblsxLF0gICAgMSAgICA2ICAgMTEgICAxNiAgIDIxXG5bMixdICAgIDIgICAgNyAgIDEyICAgMTcgICAyMlxuWzMsXSAgICAzICAgIDggICAxMyAgIDE4ICAgMjNcbls0LF0gICAgNCAgICA5ICAgMTQgICAxOSAgIDI0XG5bNSxdICAgIDUgICAxMCAgIDE1ICAgMjAgICAyNVxuIn0= -->
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    1    6   11   16   21
-[2,]    2    7   12   17   22
-[3,]    3    8   13   18   23
-[4,]    4    9   14   19   24
-[5,]    5   10   15   20   25</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>for (row_index in 1:5){ for (col_index in 1:5){ if (row_index ==
-col_index){ print(example_matrix[row_index, col_index]) } } } output:
-1,7,13,19,25</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChyb3dfaW5kZXggaW4gMTo1KXtcbiAgZm9yIChjb2xfaW5kZXggaW4gMTo1KXtcbiAgICBpZiAocm93X2luZGV4ID09IGNvbF9pbmRleCl7XG4gICAgICBwcmludChleGFtcGxlX21hdHJpeFtyb3dfaW5kZXgsIGNvbF9pbmRleF0pXG4gICAgfVxuICAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>for (row_index in 1:5){
-  for (col_index in 1:5){
-    if (row_index == col_index){
-      print(example_matrix[row_index, col_index])
-    }
-   }
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcblsxXSA3XG5bMV0gMTNcblsxXSAxOVxuWzFdIDI1XG4ifQ== -->
-<pre><code>[1] 1
-[1] 7
-[1] 13
-[1] 19
-[1] 25</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmVhdGUgeW91ciB3ZWVrZGF5cyB2ZWN0b3JcbndlZWtkYXlzIDwtIGMoXCJNb25kYXlcIiwgXCJUdWVzZGF5XCIsIFwiV2VkbmVzZGF5XCIsIFwiVGh1cnNkYXlcIiwgXCJGcmlkYXlcIilcbmxlbmd0aF93ZWVrZGF5IDwtIGxlbmd0aCh3ZWVrZGF5cylcblxuZm9yIChpIDwgMTpsZW5ndGhfd2Vla2RheSkge1xuYGBgIn0= -->
-<pre class="r"><code># create your weekdays vector
-weekdays &lt;- c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;)
-length_weekday &lt;- length(weekdays)
 
-for (i &lt; 1:length_weekday) {</code></pre>
+make_price(5)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IHVuZXhwZWN0ZWQgJzwnIGluIFwiZm9yIChpIDxcIlxuIn0= -->
-<pre><code>Error: unexpected &#39;&lt;&#39; in &quot;for (i &lt;&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiwqM1XCJcbiJ9 -->
+<pre><code>[1] &quot;£5&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>for(day in weekdays){ if (day == “Friday”){ print(paste(day, “LAST
-WEEKDAY”)) } else{ print(day) } }</p>
+<p>Write a function that takes as input a whoe number n, and returns the
+n-th triangle number.</p>
+<p>nth_tri = function(n){ (n*(n+1))%%2 -&gt; x return(x) }</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yKGkgaW4gd2Vla2RheXMpe1xuICBpZiAoaSAhPSBcIkZyaWRheVwiKXtcbiAgICBwcmludChpKVxuICB9IGVsc2V7XG4gICAgcHJpbnQoXCJMYXN0IHdlZWtkYXkhXCIpXG4gIH1cbn1cbmBgYCJ9 -->
-<pre class="r"><code>for(i in weekdays){
-  if (i != &quot;Friday&quot;){
-    print(i)
-  } else{
-    print(&quot;Last weekday!&quot;)
-  }
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnRoX3RyaSA9IGZ1bmN0aW9uKG4pe1xuICAobiAqIChuICsgMSkpIC8yIC0+IHhcbiAgcmV0dXJuKHgpXG59XG5gYGAifQ== -->
+<pre class="r"><code>nth_tri = function(n){
+  (n * (n + 1)) /2 -&gt; x
+  return(x)
 }</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiTW9uZGF5XCJcblsxXSBcIlR1ZXNkYXlcIlxuWzFdIFwiV2VkbmVzZGF5XCJcblsxXSBcIlRodXJzZGF5XCJcblsxXSBcIkxhc3Qgd2Vla2RheSFcIlxuIn0= -->
-<pre><code>[1] &quot;Monday&quot;
-[1] &quot;Tuesday&quot;
-[1] &quot;Wednesday&quot;
-[1] &quot;Thursday&quot;
-[1] &quot;Last weekday!&quot;</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnRoX3RyaSgzKVxuYGBgIn0= -->
+<pre class="r"><code>nth_tri(3)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDZcbiJ9 -->
+<pre><code>[1] 6</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Using (below code contains broken references and will not work as
-coded)</p>
+<p>Scope in programming Suddenly we are using this term ‘scope’. What
+does it mean? Well, the ‘scope’ of a variable is basically all the
+places in our code that we can use that variable name without causing an
+error (the error being that R will complain that it can’t find the
+variable we are trying to use).</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5teV9kYXRhIDwtIE5VTExcblxuZm9yIChmaWxlIGluIGxpc3QuZmlsZXMoXCJkYXRhXCIpKXtcbiAgcGFydF9kYXRhIDwtIHJlYWRfY3N2KGZpbGUpXG4gIG15X2RhdGEgPC0gYmluZF9yb3dzKG15X2RhdGEsIHBhcnRfZGF0YSlcbn1cbmBgYCJ9 -->
-<pre class="r"><code>
-my_data &lt;- NULL
-
-for (file in list.files(&quot;data&quot;)){
-  part_data &lt;- read_csv(file)
-  my_data &lt;- bind_rows(my_data, part_data)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChpdGVtIGluIGNvbmZsaWN0ZWRfbGlzdCl7XG4gIFxuICBpZihpdGVtJGhhc19hZGRyZXNzID09IFRSVUUpIHtcbiAgICBhZGRyZXNzIDwtIGl0ZW1zJGRldGFpbHMkYWRkcmVzc1xuICAgIGFkZHJlc3NlcyA8LSBjKGFkZHJlc3NlcywgYWRkcmVzcylcbiAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>for (item in conflicted_list){
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbHlfYnlfM19hZGRfMiA8LSBmdW5jdGlvbih4KXtcbiAgXG4gIHRpbWVzXzMgPC0geCozXG4gIGFkZF8yIDwtIHRpbWVzXzMgKyAyXG4gIFxuICByZXR1cm4oYWRkXzIpXG59XG5gYGAifQ== -->
+<pre class="r"><code>multiply_by_3_add_2 &lt;- function(x){
   
-  if(item$has_address == TRUE) {
-    address &lt;- items$details$address
-    addresses &lt;- c(addresses, address)
-  }
+  times_3 &lt;- x*3
+  add_2 &lt;- times_3 + 2
+  
+  return(add_2)
 }</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkXzMoKVxuZm9ybWF0X251bWJlcigpXG5gYGAifQ== -->
+<pre class="r"><code>add_3()
+format_number()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkXzMgPC0gZnVuY3Rpb24oeCl7XG4gIHggKyAzXG59XG5gYGAifQ== -->
+<pre class="r"><code>add_3 &lt;- function(x){
+  x + 3
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5pbWFscyA8LSBjKFwiQ2F0XCIsIFwiRG9nXCIsIFwiTW9ua2V5XCIsIFwiRWxlcGhhbnRcIiwgXCJGcm9nXCIpXG5oYXRzIDwtIGMoXCJCb3dsZXJcIiwgXCJTdW4gSGF0XCIsIFwiQmFzZWJhbGwgQ2FwXCIsIFwiRmV6XCIpXG50cmVlcyA8LSBjKFwiQXNoXCIsIFwiRWxtXCIsIFwiT2FrXCIsIFwiV2lsbG93XCIsIFwiRmlyXCIpXG5cbm1ha2Vfb3JkZXJlZCA8LSBmdW5jdGlvbihteV92ZWMpe1xuICBhbmltYWxzX3NvcnRlZCA8LSBzb3J0KG15X3ZlYylcbiAgYW5pbWFsc19qb2luZWQgPC0gc3RyX2MoYW5pbWFsc19zb3J0ZWQsIGNvbGxhcHNlID0gJywgJylcbiAgc3RyX2MoXCJPcmRlcmVkIExpc3Q6XCIsIGFuaW1hbHNfam9pbmVkKVxuXG59XG5cbm1ha2Vfb3JkZXJlZChhbmltYWxzKVxuYGBgIn0= -->
+<pre class="r"><code>animals &lt;- c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Monkey&quot;, &quot;Elephant&quot;, &quot;Frog&quot;)
+hats &lt;- c(&quot;Bowler&quot;, &quot;Sun Hat&quot;, &quot;Baseball Cap&quot;, &quot;Fez&quot;)
+trees &lt;- c(&quot;Ash&quot;, &quot;Elm&quot;, &quot;Oak&quot;, &quot;Willow&quot;, &quot;Fir&quot;)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKClJldmlldyBvZiBEYXkgMiBMYWIgd29yawoKCk90aGVyIHBlb3BsZXMgY29kZQoKd2hvbGVfdGV4dCAlPiUgCiAgc3RyX3JlcGxhY2VfYWxsKGMoIkdJTiIgPSAiVk9ES0EiLCAiZ2luIiA9ICJ2b2RrYSIsICJHaW4iID0gIlZvZGthIikpCgpDaHJpcyBQICAxMDowOSBBTQpgYGB7cn0Kd2hvbGVfdGV4dCAlPiUgCiAgc3RyX2V4dHJhY3RfYWxsKCIoP2kpKERlcGFydG1lbnR8TWluaXN0cnl8TWluaXN0cmllfE1pbmlbYS16XSspIikKYGBgCgpgYGB7cn0Kd2hvbGVfdGV4dCAlPiUKICBzdHJfcmVwbGFjZV9hbGwoIkRlcGFydG1lbnQiLCAiU2VjdGlvbiIpICU+JQogIHN0cl9yZXBsYWNlX2FsbCgiTWluaXN0cnl8TWluaXN0cmllIiwgIkRlcGFydG1lbnQiKSAlPiUKICBzdHJfcmVwbGFjZV9hbGwoIk1pbmkiLCAiRGVwIikgCmBgYAoKYGBge3J9CnBhdHRlcm4gPC0gIlsgLFxcLi1dW2dHXVtpSV1bbk5dWyAsXFwuLV0iCgp3aG9sZV90ZXh0ICU+JQogIHN0cl9leHRyYWN0X2FsbChwYXR0ZXJuKSAlPiUKICBmbGF0dGVuX2NocigpCmBgYAoKCmxpc3RzCgpgYGB7cn0KeCA8LSAxOjUKCmFzLmxpc3QoeCkKYGBgCgpgYGB7cn0KCmBgYAoKbGlzdFtbMV1dXQoKYGBge3J9Cm5hbWVkX2xpc3QgPC0gbGlzdChhID0gIkkgbG92ZSBSIiwgYiA9IDE6MTApCgpgYGAKYGBge3J9Cm5hbWVkX2xpc3QkYQoKYGBgCgpgYGB7cn0Kc3R1ZGVudF9pbmZvIDwtIGxpc3QoCiAgICAgICAgICAgICAgICAiQWduZXMiID0gbGlzdChoZWlnaHQgPSAxLjgsIHNob2Vfc2l6ZSA9IDhMKSwKICAgICAgICAgICAgICAgICJCb2JieSIgPSBsaXN0KGhlaWdodCA9IDIuMSwgZ2VuZGVyID0gIk1hbGUiKSwKICAgICAgICAgICAgICAgICJDaGFybGllIiA9IGxpc3QoZ2VuZGVyID0gIkZlbWFsZSIsIGxpa2VzX2JlZXRzID0gVFJVRSkKKQpgYGAKCmBgYHtyfQpzdHVkZW50X2luZm8kQm9iYnkkaGVpZ2h0CgpzdHVkZW50X2luZm9bMV0KYGBgClRhc2sgLSA1IG1pbnV0ZXMKTWFrZSBhIG5hbWVkIGxpc3QgdGhhdCBjb250YWlucyBhIG51bWVyaWMgdmVjdG9yIGFuZCBhIGNoYXJhY3RlciB2ZWN0b3IuCkFjY2VzcyB0aGUgc2Vjb25kIGVsZW1lbnQgb2YgeW91ciBsaXN0IHVzaW5nIGRvdWJsZSBzcXVhcmUgYnJhY2tldHMgW1tdXS4gV2hhdCBpcyBpdOKAmXMgY2xhc3M/CkFjY2VzcyB0aGUgc2Vjb25kIGVsZW1lbnQgb2YgeW91ciBsaXN0IHVzaW5nIHNpbmdsZSBzcXVhcmUgYnJhY2tldHMgW10uIFdoYXQgaXMgaXTigJlzIGNsYXNzPwpBY2Nlc3MgdGhlIHNlY29uZCBlbGVtZW50IG9mIHlvdXIgbGlzdCBieSBuYW1lLiBXaGF0IGlzIGl04oCZcyBjbGFzcz8KCm51bWNoYXJsaXN0IDwtIGxpc3QobnVtZXJpYyA9IGMoMjEsNDUsNzApLCBjaGFyYWN0ZXIgPSAoIkZvcmV2ZXIiLCJOZXZlciIsIlNvbWV0aW1lcyIpCmBgYHtyfQpudW1jaGFybGlzdCA9IGxpc3QobnVtID0gYygyMSwgNDUsIDcwKSwgY2hhciA9IGMoIkZvcmV2ZXIiLCAiTmV2ZXIiLCAiU29tZXRpbWVzIikpCmBgYApgYGB7cn0KCmBgYApgYGB7cn0KbSA8LSBtYXRyaXgoMTo2LCBucm93ID0gMiwgbmNvbCA9IDIsIGJ5cm93ID0gVCkKYGBgCgptIDwtIG1hdHJpeCgxOjYsIG5yb3cgPSAyLCBuY29sID0gMiwgYnlyb3cgPSBUKQpgYGB7cn0KbVssMV0KYGBgCmBgYHtyfQptWzIsIGMoMiwzKV0KYGBgCgpgYGB7cn0KbSAtMgpgYGAKYGBge3J9CnJvd1N1bXMobSkKYGBgCgpgYGB7cn0KY29sU3VtcyhtKQoKYGBgCmBgYHtyfQpjb2xNZWFucyhtKQpgYGAKYGBge3J9CgogIG1hdHJpeGQgPC0gbWF0cml4KDE6MywgbnJvdyA9IDMsIG5jb2wgPSA0KQpgYGAKCmBgYHtyfQptYXRyaXhkWzIsM10gCmBgYAoKYGBge3J9Cm1hdHJpeGQKYGBgCgojSWYgU3RhdGVtZW50cwoKaWYgKHdlYXRoZXIgPT0gInN1bm55Iil7CiAgICBoYW5nIG91dCB3YXNoaW5nCn0KCiE9Cj4KPAo8PQo+PQoKYGBge3J9CmlmICgxMCA8IDE1KXsKICBwcmludCgieWVzIikKfQpgYGAKCmBgYHtyfQppZig1ICVpbiUgYygxLDIsNCw1KSl7CiAgcHJpbnQgKCJ5ZXMiKQp9CmBgYAoKV3JpdGUgYW4gaWYgc3RhdGVtZW50IHRoYXQgcHJpbnRzICdZZXMgdGhhdCBkaXZpZGVzIGJ5MicgaWYgYSBudW1iZXIgeCBpcyBkaXZpc2libGUgYnkgMi4gCnVzZSAlJTIgPT0gMCBhcyB5b3VyIGV4cHJlc3Npb24pLCB0cnkgaXQgb3V0IGZvciBkaWZmZXJlbnQgdmFsdWVzIG9mIHguCgpgYGB7cn0gCng9NgppZih4ICUlIDIgPT0gMCl7CiAgcHJpbnQgKCJZZXMsIHRoYXQgZGl2aWRlcyBieSAyIikKfQoKYGBgCgpgYGB7cn0KI21vcmUgbm9uc2Vuc2UgY29kZQppZiAoMTAgIT01KXsKICBpZiAoMyA+IDEpewogICAgcHJpbnQoImhlbGxvIikKICB9Cn0KYGBgClRhc2sgLSAxMCBtaW51dGVzCkhlcmXigJlzIGFuIGV4YW1wbGUgb2YgYSBuZXN0ZWQgaWYgc3RhdGVtZW50LiBQcmVkaWN0IHdoYXQgdGhlIGNvZGUgaXMgZ29pbmcgdG8gcHJpbnQgb3V0IGZvciB0aGUgZm9sbG93aW5nIGNvbWJpbmF0aW9uczoKCnggaXMgMTAgYW5kIHkgaXMgMy4KCipQcmVkaWN0ZWQgb3V0cHV0OiAic3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siIApbMV0gIlN0YXJ0IG9mIG91dGVyIGlmIGJsb2NrIgpbMV0gIklubmVyIGlmIGJsb2NrIDIiClsxXSAiRW5kIG9mIG91dGVyIGlmIGJsb2NrIgpbMV0gIkFmdGVyIGlmIHN0YXRlbWVudCIKCnggaXMgMTAgYW5kIHkgaXMgMi4KCipQcmVkaWN0ZWQgb3V0cHV0OiAic3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siClsxXSAiU3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siClsxXSAiSW5uZXIgaWYgYmxvY2sgMSIKWzFdICJJbm5lciBpZiBibG9jayAyIgpbMV0gIkVuZCBvZiBvdXRlciBpZiBibG9jayIKWzFdICJBZnRlciBpZiBzdGF0ZW1lbnQiCgp4IGlzIDIgYW5kIHkgaXMgMTAuCgpbMV0gIkFmdGVyIGlmIHN0YXRlbWVudCIKCipQcmVkaWN0ZWQgb3V0cHV0OiAiRW5kIG9mIG91dGVyIGlmIGJsb2NrIgoKaWYgKHggPiB5KSB7CiAgcHJpbnQoIlN0YXJ0IG9mIG91dGVyIGlmIGJsb2NrIikKCiAgaWYgKHggJSUgeSA9PSAwKSB7CiAgICBwcmludCgiSW5uZXIgaWYgYmxvY2sgMSIpCiAgfQoKICBpZiAoeSAlaW4lIGMoMTo1KSkgewogICAgcHJpbnQoIklubmVyIGlmIGJsb2NrIDIiKQogIH0KCiAgcHJpbnQoIkVuZCBvZiBvdXRlciBpZiBibG9jayIpCn0KCnByaW50KCJBZnRlciBpZiBzdGF0ZW1lbnQiKQoKCmBgYHtyfQp4PTIKeT0xMAppZiAoeCA+IHkpIHsKICBwcmludCgiU3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siKQoKICBpZiAoeCAlJSB5ID09IDApIHsKICAgIHByaW50KCJJbm5lciBpZiBibG9jayAxIikKICB9CgogIGlmICh5ICVpbiUgYygxOjUpKSB7CiAgICBwcmludCgiSW5uZXIgaWYgYmxvY2sgMiIpCiAgfQoKICBwcmludCgiRW5kIG9mIG91dGVyIGlmIGJsb2NrIikKfQoKcHJpbnQoIkFmdGVyIGlmIHN0YXRlbWVudCIpCmBgYAoKCiNpZi1lbHNlCgpgYGB7cn0KaWYgKDQgPCA1KXsKICBwcmludCAoInllcyIpCiAgZWxzZSB7CiAgICBwcmludCgibm8iKQogIH0KfQpgYGAKCldyaXRlIGFuIGlmIHN0YXRlbWVudCB0aGF0IHByaW50cyDigJhZZXMgdGhhdCBkaXZpZGVzIGJ5IDLigJkgaWYgYSBudW1iZXIgeCBpcyBkaXZpc2libGUgYnkgMiAoaGludDogdXNlICUlIDIgPT0gMCBhcyB5b3VyIGV4cHJlc3Npb24pLCB0cnkgaXQgb3V0IGZvciBkaWZmZXJlbnQgdmFsdWVzIG9mIHguCgpgYGB7cn0KeCA9IDEKaWYgKHggJSUgMiA9PSAwKXsKICBwcmludCgiWWVzLCB0aGF0IGRpdmlkZXMgYnkgMiIpCiAgfWVsc2UgewogICAgcHJpbnQoIk5vIHRoYXQgZG9lcyBub3QgZGl2aWRlIikKICB9CgpgYGAKCnggPC0gNQp5IDwtIDEwCgpIZXJl4oCZcyBhbiBleGFtcGxlIG9mIGEgbmVzdGVkIGlmLWVsc2Ugc3RhdGVtZW50LiBQcmVkaWN0IHdoYXQgaXTigJlzIGdvaW5nIHRvIHByaW50IG91dCBmb3IgdGhlIGZvbGxvd2luZyBjb25kaXRpb25zOi4KV2hlbiB4IGlzIDUgYW5kIHkgaXMgMTAKV2hlbiB4IGlzIDYgYW5kIHkgaXMgMTIKV2hlbiB4IGlzIDYgYW5kIHkgaXMgMTMKYGBge3J9CnggPC0gNQp5IDwtIDEwCgppZiAoeCAlaW4lIGMoMywgNCwgNSkpewogIHByaW50KCJ4IGlzIGluIG91ciBsaXN0IikKICAKaWYgKHggPT0gNSl7CiAgICBwcmludCgieCBpcyBleGFjdGx5IDUiKQogIH0KfSBlbHNlIHsKICBwcmludCgiU3RhcnQgb2YgZWxzZSBzdGF0ZW1lbnQiKQogIGlmICh5ICUlIHggPT0gMCl7CiAgICBwcmludCgieCBkaXZpZGVzIHkiKQogIAogIH0gZWxzZXsKICAgIHByaW50KCJ4IGRvZXMgbm90IGRpdmlkZSBZIikKICB9CiAgcHJpbnQgKCJFbmQgb2YgZWxzZSBzdGF0ZW1lbnQiKQp9CmBgYApgYGB7cn0KZm9yIChzb2NrIGluIGJhc2tldCl7CiAgcGVnIGl0IHRvIHRoZSBsaW5lCn0KYGBgCgoKYGBge3J9CndlZWtkYXlzIDwtIGMoIk1vbmRheSIsICJUdWVzZGF5IiwgIldlZG5lc2RheSIsICJUaHVyc2RheSIsICJGcmlkYXkiKQoKYGBgCmBgYHtyfQpmb3IgKGRheSBpbiB3ZWVrZGF5cykgewogIHBocmFzZSA8LSBwYXN0ZSgiVGhlIGRheSBpcyIsIGRheSkKICBwcmludChwaHJhc2UpCiAgfQpgYGAKYGBge3J9CgpudW0gPSBjKDE6NSkKCmZvcihudW1iZXIgaW4gbnVtKSB7CiAgcHJpbnQobnVtYmVyKQp9CnByaW50KDEpCnByaW50KDIpCnByaW50KDMpCnByaW50KDQpCnByaW50KDUpCmBgYApgYGB7cn0KCmN1cnJlbnRfdmFsdWUgPC0gMQplbmRfcG9pbnQgPC0gMTAKCndoaWxlKGN1cnJlbnRfdmFsdWUgPCBlbmRfcG9pbnQpewogIGN1cnJlbnRfdmFsdWUgPC0gY3VycmVudF92YWx1ZSArIDEKICBwcmludChjdXJyZW50X3ZhbHVlKQp9CmBgYApgYGB7cn0KCiNhbm90aGVyIG1ldGhvZAp3ZWVrZGF5cyA8LSBjKCJNb25kYXkiLCAiVHVlc2RheSIsICJXZWRuZXNkYXkiLCAiVGh1cnNkYXkiLCAiRnJpZGF5IikKbGVuZ3RoX3dlZWtkYXkgPC0gbGVuZ3RoKHdlZWtkYXlzKQoKZm9yIChpIGluIDE6bGVuZ3RoX3dlZWtkYXkpIHsKICBwaHJhc2UgPC0gcGFzdGUoIlRoZSBkYXkgaXMiLCB3ZWVrZGF5c1tpXSkKICBwcmludChwaHJhc2UpCn0KYGBgClRoZSBbaV0gaXMgZXNzZW50aWFsLgpJdCBiYXNpY2FsbHkgdGVtcG9yYXJpbHkgdGFrZSB0aGUgdmFsdWUgb2YgZWFjaCBlbGVtZW50IG9mIHRoZSB2ZWN0b3IsIG9uZSBhdCBhIHRpbWUsIHBlcmZvcm1zIHRoZSBjb250ZW50cyBvZiB0aGUgbG9vcCwgdGhlbiB0YWtlIHRoZSB2YWx1ZSBvZiB0aGUgbmV4dCBlbGVtZW50CmkgPC0gMQpgYGB7cn0KbWF0cml4IDwtIG1hdHJpeCgxOjMsIDMsIDQpCm51bWJlcl9vZl9yb3dzIDwtIG5yb3cobWF0cml4KQpudW1iZXJfb2ZfY29scyA8LSBuY29sKG1hdHJpeCkKCmZvciAocm93X2luZGV4IGluIDE6bnVtYmVyX29mX3Jvd3MpIHsKICBmb3IoY29sX2luZGV4IGluIDE6bnVtYmVyX29mX2NvbHMpewogICAgcHJpbnQobWF0cml4W3Jvd19pbmRleCwgY29sX2luZGV4XSkKICB9Cn0KCgpgYGAKVGFzayAtIDEwIG1pbnMKUnVuIHRoZSBjb2RlIGJlbG93IHRvIGNyZWF0ZSBhbiBlbXB0eSA1w5c1CjXDlzUgbWF0cml4Ogpwcm9kdWN0X21hdHJpeCA8LSBtYXRyaXgobnJvdyA9IDUsIG5jb2wgPSA1KQpwcm9kdWN0X21hdHJpeAojIyAgICAgIFssMV0gWywyXSBbLDNdIFssNF0gWyw1XQojIyBbMSxdICAgTkEgICBOQSAgIE5BICAgTkEgICBOQQojIyBbMixdICAgTkEgICBOQSAgIE5BICAgTkEgICBOQQojIyBbMyxdICAgTkEgICBOQSAgIE5BICAgTkEgICBOQQojIyBbNCxdICAgTkEgICBOQSAgIE5BICAgTkEgICBOQQojIyBbNSxdICAgTkEgICBOQSAgIE5BICAgTkEgICBOQQpDaGVjayB0aGF0IHRoZSBtYXRyaXggaXMgZW1wdHkuCk5vdyB3ZeKAmXJlIGdvaW5nIHRvIGZpbGwgcHJvZHVjdF9tYXRyaXggaW4gdGhlIGZvbGxvd2luZyB3YXk6IGVhY2ggZW50cnkgc2hvdWxkIGJlIHRoZSBwcm9kdWN0IG9mIHRoZSByb3cgaW5kZXggYW5kIHBvc2l0aW9uIGluZGV4IGF0IHdoaWNoIHRoZSBlbnRyeSBvY2N1cnMuIEZvciBleGFtcGxlLCB0aGUgZW50cnkgb24gdGhlIHRoaXJkIHJvdywgZm91cnRoIGNvbHVtbiwgc2hvdWxkIGJlIDPDlzQ9MTIKM8OXND0xMi4KR2V0IHRoZSBtYXRyaXggZGltZW5zaW9ucyBwcm9ncmFtYXRpY2FsbHkgKHNvIHRoYXQgd2UgY291bGQgaW4gdGhlIGZ1dHVyZSBhcHBseSB0aGlzIGNvZGUgdG8gYW55IHNpemUgb2YgbWF0cml4IHdpdGggbWluaW1hbCBjaGFuZ2VzKS4KSGludDogeW91IGNhbiB1c2UgdGhlIGNvZGUgYWJvdmUgYXMgYSBndWlkZSwgYWx0aG91Z2ggd2Ugd29u4oCZdCBiZSBwcmludGluZyBvdXQgdGhlIG1hdHJpeCBlbnRyaWVzIGFzIHdlIGdvLiBJbnN0ZWFkLCBjaGVjayB5b3VyIGNvZGUgYnkgcHJpbnRpbmcgb3V0IHRoZSB3aG9sZSBtYXRyaXggYXQgdGhlIGVuZDoganVzdCBydW4gdGhlIHNpbmdsZSBzdGF0ZW1lbnQgcHJvZHVjdF9tYXRyaXggdG8gZG8gdGhpcy4KCmBgYHtyfQplbXB0eV9tYXRyaXggPC0gbWF0cml4KCwgbnJvdyA9IDUsIG5jb2wgPSA1KQoKI2RlZmluZSByb3dzIHByb2dyYW1hdGljYWxseQpyb3dfbGVuZ3RoIDwtIG5yb3coZW1wdHlfbWF0cml4KQpjb2xfbGVuZ3RoIDwtIG5jb2woZW1wdHlfbWF0cml4KQojc3RhcnQgZm9yIGxvb3AKZm9yIChyb3dfaW5kZXggaW4gMTpyb3dfbGVuZ3RoKSB7ICNmb3IgZXZlcnkgcm93IGluIHRoZSBsZW5ndGggb2YgdGhlIG1hdHJpeAogIGZvciAoY29sX2luZGV4IGluIDE6Y29sX2xlbmd0aCkgeyAjZm9yIGVhY2ggY29sdW1uIGluIHRoYXQgcm93CiAgICBwcm9kdWN0X21hdHJpeFtyb3dfaW5kZXgsIGNvbF9pbmRleF0gPC0gcm93X2luZGV4ICogY29sX2luZGV4ICNpbmRleCB0aGUgY2VsbCB2YWx1ZSwgYW5kIHJlcGxhY2UgaXQgd2l0aCBhIG5ldyB2YWx1ZQogIH0KfQpwcm9kdWN0X21hdHJpeApgYGAKCkFub3RoZXIgZXhhbXBsZToKCmBgYHtyfQpleGFtcGxlX21hdHJpeCA9IG1hdHJpeCgxOjI1LCBucm93ID0gNSwgbmNvbCA9IDUpCmV4YW1wbGVfbWF0cml4CmBgYApmb3IgKHJvd19pbmRleCBpbiAxOjUpewogIGZvciAoY29sX2luZGV4IGluIDE6NSl7CiAgICBpZiAocm93X2luZGV4ID09IGNvbF9pbmRleCl7CiAgICAgIHByaW50KGV4YW1wbGVfbWF0cml4W3Jvd19pbmRleCwgY29sX2luZGV4XSkKICAgIH0KICAgfQp9Cm91dHB1dDogMSw3LDEzLDE5LDI1CgpgYGB7cn0KZm9yIChyb3dfaW5kZXggaW4gMTo1KXsKICBmb3IgKGNvbF9pbmRleCBpbiAxOjUpewogICAgaWYgKHJvd19pbmRleCA9PSBjb2xfaW5kZXgpewogICAgICBwcmludChleGFtcGxlX21hdHJpeFtyb3dfaW5kZXgsIGNvbF9pbmRleF0pCiAgICB9CiAgIH0KfQpgYGAKCmBgYHtyfQojIGNyZWF0ZSB5b3VyIHdlZWtkYXlzIHZlY3Rvcgp3ZWVrZGF5cyA8LSBjKCJNb25kYXkiLCAiVHVlc2RheSIsICJXZWRuZXNkYXkiLCAiVGh1cnNkYXkiLCAiRnJpZGF5IikKbGVuZ3RoX3dlZWtkYXkgPC0gbGVuZ3RoKHdlZWtkYXlzKQoKZm9yIChpIGluIDE6bGVuZ3RoX3dlZWtkYXkpIHsKICBwaHJhc2UgPC0gcGFzdGUoIkl0J3MiLCB3ZWVrZGF5c1tpXSkKICBwcmludChwaHJhc2UpfQogIHsKICAgIGVsc2UgcHJpbnQgKCJsYXN0IHdlZWtkYXkhIikKICB9CmBgYApmb3IoZGF5IGluIHdlZWtkYXlzKXsKICBpZiAoZGF5ID09ICJGcmlkYXkiKXsKICAgIHByaW50KHBhc3RlKGRheSwgIkxBU1QgV0VFS0RBWSIpKQogIH0gZWxzZXsKICAgIHByaW50KGRheSkKICB9Cn0KYGBge3J9CmZvcihpIGluIHdlZWtkYXlzKXsKICBpZiAoaSAhPSAiRnJpZGF5Iil7CiAgICBwcmludChpKQogIH0gZWxzZXsKICAgIHByaW50KCJMYXN0IHdlZWtkYXkhIikKICB9Cn0KYGBgCgoKVXNpbmcgKGJlbG93IGNvZGUgY29udGFpbnMgYnJva2VuIHJlZmVyZW5jZXMgYW5kIHdpbGwgbm90IHdvcmsgYXMgY29kZWQpCmBgYHtyfQoKbXlfZGF0YSA8LSBOVUxMCgpmb3IgKGZpbGUgaW4gbGlzdC5maWxlcygiZGF0YSIpKXsKICBwYXJ0X2RhdGEgPC0gcmVhZF9jc3YoZmlsZSkKICBteV9kYXRhIDwtIGJpbmRfcm93cyhteV9kYXRhLCBwYXJ0X2RhdGEpCn0KYGBgCgpgYGB7cn0KZm9yIChpdGVtIGluIGNvbmZsaWN0ZWRfbGlzdCl7CiAgCiAgaWYoaXRlbSRoYXNfYWRkcmVzcyA9PSBUUlVFKSB7CiAgICBhZGRyZXNzIDwtIGl0ZW1zJGRldGFpbHMkYWRkcmVzcwogICAgYWRkcmVzc2VzIDwtIGMoYWRkcmVzc2VzLCBhZGRyZXNzKQogIH0KfQpgYGAKCg==</div>
+make_ordered &lt;- function(my_vec){
+  animals_sorted &lt;- sort(my_vec)
+  animals_joined &lt;- str_c(animals_sorted, collapse = &#39;, &#39;)
+  str_c(&quot;Ordered List:&quot;, animals_joined)
+
+}
+
+make_ordered(animals)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiT3JkZXJlZCBMaXN0OkNhdCwgRG9nLCBFbGVwaGFudCwgRnJvZywgTW9ua2V5XCJcbiJ9 -->
+<pre><code>[1] &quot;Ordered List:Cat, Dog, Elephant, Frog, Monkey&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>make function, index matrices</p>
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKCmBgYHtyfQpuY2hhcigiaGVsbG8iLCAiY2hhcnMiLCBUUlVFLCBOQSkKYGBgCmBgYHtyfQpuY2hhcihrZWVwTkEgPSBOQSwgImNoYXJzIiwgeCA9ICJoZWxsbyIsIGFsbG93TkEgPSBUUlVFKQpgYGAKCmBgYHtyfQpuY2hhcigiaGVsbG8iKQpgYGAKCmBgYHtyfQpwYXN0ZSgiaGVsbG8iLCAiYnllIikKYGBgCgpgYGB7cn0KbmNoYXIoYygiaGVsbG8iLCAiYnllIiwgInlvIikpCmBgYApgYGB7cn0KZnVuY3Rpb25fbmFtZSA8LSBmdW5jdGlvbihhcmdfMSwgYXJnXzIsIGFyZ18zID0gNSkgewogIAogIGRvIHNvbWV0aGluZwogIAogIHJldHVybihvdXRwdXQpCn0KICAKYGBgCmBgYHtyfQptdWx0NXggPC0gZnVuY3Rpb24oeCkgewogIHJldHVybih4KjUpICN5b3UgZG9uJ3QgbmVlZCB0byB1c2UgcmV0dXJuLCBidXQgaXQgaXMgYmVzdCBwcmFjdGljZXMKICB9CmBgYApgYGB7cn0KbXVsdDV4KDUpCmBgYAoKYGBge3J9Cng9NQptdWx0X2J5IDwtIGZ1bmN0aW9uKHgsIHk9MTAwKSB7CiAgcmV0dXJuKHgqeSkKfQpgYGAKCgoKVGFzayAtIDUgbWludXRlcwpXcml0ZSBhIGZ1bmN0aW9uIG1ha2VfcHJpY2UoKSB0aGF0IHRha2VzIGFzIGlucHV0IGFueSB3aG9sZSBudW1iZXIsIGFuZCByZXR1cm5zIGl0IHdyaXR0ZW4gYXMgYSBwcmljZSAoaS5lLiB3aXRoIGEg4oCYwqPigJkgaW4gZnJvbnQgb2YgdGhlIG51bWJlcikuIEZvciBleGFtcGxlIDUgd291bGQgYmVjb21lIMKjNSwgYW5kIDEyMyB3b3VsZCBiZWNvbWUgwqMxMjMuIFRyeSBvdXQgeW91ciBmdW5jdGlvbiBhIGZldyB0aW1lcyB0byB0ZXN0IHRoYXQgaXQgd29ya3MuCgpgYGB7cn0KbWFrZV9wcmljZSA8LSBmdW5jdGlvbih4KXsKIHggPC0gcGFzdGUoIsKjIix4LCBzZXAgPSAiIikKICByZXR1cm4oeCkKfQoKbWFrZV9wcmljZSg1KQpgYGAKCldyaXRlIGEgZnVuY3Rpb24gdGhhdCB0YWtlcyBhcyBpbnB1dCBhIHdob2UgbnVtYmVyIG4sIGFuZCByZXR1cm5zIHRoZSBuLXRoIHRyaWFuZ2xlIG51bWJlci4KCm50aF90cmkgPSBmdW5jdGlvbihuKXsKICAobioobisxKSklJTIgLT4geAogIHJldHVybih4KQp9CmBgYHtyfQpudGhfdHJpID0gZnVuY3Rpb24obil7CiAgKG4gKiAobiArIDEpKSAvMiAtPiB4CiAgcmV0dXJuKHgpCn0KYGBgCmBgYHtyfQpudGhfdHJpKDMpCmBgYAoKU2NvcGUgaW4gcHJvZ3JhbW1pbmcKU3VkZGVubHkgd2UgYXJlIHVzaW5nIHRoaXMgdGVybSDigJhzY29wZeKAmS4gV2hhdCBkb2VzIGl0IG1lYW4/IFdlbGwsIHRoZSDigJhzY29wZeKAmSBvZiBhIHZhcmlhYmxlIGlzIGJhc2ljYWxseSBhbGwgdGhlIHBsYWNlcyBpbiBvdXIgY29kZSB0aGF0IHdlIGNhbiB1c2UgdGhhdCB2YXJpYWJsZSBuYW1lIHdpdGhvdXQgY2F1c2luZyBhbiBlcnJvciAodGhlIGVycm9yIGJlaW5nIHRoYXQgUiB3aWxsIGNvbXBsYWluIHRoYXQgaXQgY2Fu4oCZdCBmaW5kIHRoZSB2YXJpYWJsZSB3ZSBhcmUgdHJ5aW5nIHRvIHVzZSkuCmBgYHtyfQptdWx0aXBseV9ieV8zX2FkZF8yIDwtIGZ1bmN0aW9uKHgpewogIAogIHRpbWVzXzMgPC0geCozCiAgYWRkXzIgPC0gdGltZXNfMyArIDIKICAKICByZXR1cm4oYWRkXzIpCn0KYGBgCgpgYGB7cn0KYWRkXzMoKQpmb3JtYXRfbnVtYmVyKCkKYGBgCgpgYGB7cn0KYWRkXzMgPC0gZnVuY3Rpb24oeCl7CiAgeCArIDMKfQpgYGAKYGBge3J9CmFuaW1hbHMgPC0gYygiQ2F0IiwgIkRvZyIsICJNb25rZXkiLCAiRWxlcGhhbnQiLCAiRnJvZyIpCmhhdHMgPC0gYygiQm93bGVyIiwgIlN1biBIYXQiLCAiQmFzZWJhbGwgQ2FwIiwgIkZleiIpCnRyZWVzIDwtIGMoIkFzaCIsICJFbG0iLCAiT2FrIiwgIldpbGxvdyIsICJGaXIiKQoKbWFrZV9vcmRlcmVkIDwtIGZ1bmN0aW9uKG15X3ZlYyl7CiAgYW5pbWFsc19zb3J0ZWQgPC0gc29ydChteV92ZWMpCiAgYW5pbWFsc19qb2luZWQgPC0gc3RyX2MoYW5pbWFsc19zb3J0ZWQsIGNvbGxhcHNlID0gJywgJykKICBzdHJfYygiT3JkZXJlZCBMaXN0OiIsIGFuaW1hbHNfam9pbmVkKQoKfQoKbWFrZV9vcmRlcmVkKGFuaW1hbHMpCmBgYAoKbWFrZSBmdW5jdGlvbiwgaW5kZXggbWF0cmljZXM=</div>
 
 
 
@@ -2509,7 +2002,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("lists_and_matrices.Rmd");
+  window.initializeSourceEmbed("nchar.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

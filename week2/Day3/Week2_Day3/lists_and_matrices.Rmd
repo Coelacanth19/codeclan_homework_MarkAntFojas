@@ -249,8 +249,212 @@ Write an if statement that prints ‘Yes that divides by 2’ if a number x is d
 x = 1
 if (x %% 2 == 0){
   print("Yes, that divides by 2")
-  }else {print("No that does not divide")
+  }else {
+    print("No that does not divide")
   }
 
+```
+
+x <- 5
+y <- 10
+
+Here’s an example of a nested if-else statement. Predict what it’s going to print out for the following conditions:.
+When x is 5 and y is 10
+When x is 6 and y is 12
+When x is 6 and y is 13
+```{r}
+x <- 5
+y <- 10
+
+if (x %in% c(3, 4, 5)){
+  print("x is in our list")
+  
+if (x == 5){
+    print("x is exactly 5")
+  }
+} else {
+  print("Start of else statement")
+  if (y %% x == 0){
+    print("x divides y")
+  
+  } else{
+    print("x does not divide Y")
+  }
+  print ("End of else statement")
+}
+```
+```{r}
+for (sock in basket){
+  peg it to the line
+}
+```
+
+
+```{r}
+weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+```
+```{r}
+for (day in weekdays) {
+  phrase <- paste("The day is", day)
+  print(phrase)
+  }
+```
+```{r}
+
+num = c(1:5)
+
+for(number in num) {
+  print(number)
+}
+print(1)
+print(2)
+print(3)
+print(4)
+print(5)
+```
+```{r}
+
+current_value <- 1
+end_point <- 10
+
+while(current_value < end_point){
+  current_value <- current_value + 1
+  print(current_value)
+}
+```
+```{r}
+
+#another method
+weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+length_weekday <- length(weekdays)
+
+for (i in 1:length_weekday) {
+  phrase <- paste("The day is", weekdays[i])
+  print(phrase)
+}
+```
+The [i] is essential.
+It basically temporarily take the value of each element of the vector, one at a time, performs the contents of the loop, then take the value of the next element
+i <- 1
+```{r}
+matrix <- matrix(1:3, 3, 4)
+number_of_rows <- nrow(matrix)
+number_of_cols <- ncol(matrix)
+
+for (row_index in 1:number_of_rows) {
+  for(col_index in 1:number_of_cols){
+    print(matrix[row_index, col_index])
+  }
+}
+
+
+```
+Task - 10 mins
+Run the code below to create an empty 5×5
+5×5 matrix:
+product_matrix <- matrix(nrow = 5, ncol = 5)
+product_matrix
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   NA   NA   NA   NA   NA
+## [2,]   NA   NA   NA   NA   NA
+## [3,]   NA   NA   NA   NA   NA
+## [4,]   NA   NA   NA   NA   NA
+## [5,]   NA   NA   NA   NA   NA
+Check that the matrix is empty.
+Now we’re going to fill product_matrix in the following way: each entry should be the product of the row index and position index at which the entry occurs. For example, the entry on the third row, fourth column, should be 3×4=12
+3×4=12.
+Get the matrix dimensions programatically (so that we could in the future apply this code to any size of matrix with minimal changes).
+Hint: you can use the code above as a guide, although we won’t be printing out the matrix entries as we go. Instead, check your code by printing out the whole matrix at the end: just run the single statement product_matrix to do this.
+
+```{r}
+empty_matrix <- matrix(, nrow = 5, ncol = 5)
+
+#define rows programatically
+row_length <- nrow(empty_matrix)
+col_length <- ncol(empty_matrix)
+#start for loop
+for (row_index in 1:row_length) { #for every row in the length of the matrix
+  for (col_index in 1:col_length) { #for each column in that row
+    product_matrix[row_index, col_index] <- row_index * col_index #index the cell value, and replace it with a new value
+  }
+}
+product_matrix
+```
+
+Another example:
+
+```{r}
+example_matrix = matrix(1:25, nrow = 5, ncol = 5)
+example_matrix
+```
+for (row_index in 1:5){
+  for (col_index in 1:5){
+    if (row_index == col_index){
+      print(example_matrix[row_index, col_index])
+    }
+   }
+}
+output: 1,7,13,19,25
+
+```{r}
+for (row_index in 1:5){
+  for (col_index in 1:5){
+    if (row_index == col_index){
+      print(example_matrix[row_index, col_index])
+    }
+   }
+}
+```
+
+```{r}
+# create your weekdays vector
+weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+length_weekday <- length(weekdays)
+
+for (i in 1:length_weekday) {
+  phrase <- paste("It's", weekdays[i])
+  print(phrase)}
+  {
+    else print ("last weekday!")
+  }
+```
+for(day in weekdays){
+  if (day == "Friday"){
+    print(paste(day, "LAST WEEKDAY"))
+  } else{
+    print(day)
+  }
+}
+```{r}
+for(i in weekdays){
+  if (i != "Friday"){
+    print(i)
+  } else{
+    print("Last weekday!")
+  }
+}
+```
+
+
+Using (below code contains broken references and will not work as coded)
+```{r}
+
+my_data <- NULL
+
+for (file in list.files("data")){
+  part_data <- read_csv(file)
+  my_data <- bind_rows(my_data, part_data)
+}
+```
+
+```{r}
+for (item in conflicted_list){
+  
+  if(item$has_address == TRUE) {
+    address <- items$details$address
+    addresses <- c(addresses, address)
+  }
+}
 ```
 
