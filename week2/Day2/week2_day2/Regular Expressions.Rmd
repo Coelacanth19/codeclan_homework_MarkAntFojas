@@ -1,0 +1,231 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# Regular Expressions
+
+
+```{r}
+og_string <- "We're going to replace some words"
+
+str_sub(og_string, 1, 5) <- "I am"
+
+og_string
+```
+
+This previous technique is not dynamic
+
+Regex lets us deine a search pattern
+
+`stringr function(string, pattern, some_other_arguments)`
+
+## Pattern Matching
+
+- validating inputs (check postcodes are formatted correctly)
+- finding substrings
+- generally working with text data
+
+```{r}
+single_string <- "heinz beans"
+a_vector_of_strings <- c(
+  "first",
+  "second",
+  "third",
+  "fourth",
+  "fifth",
+  "sixth",
+  "seeeeeventh"
+)
+```
+
+Let's start by looking for the letter "i"
+
+```{r}
+pattern <- "i"
+str_detect(single_string, pattern)
+str_detect(a_vector_of_strings, pattern)
+str_detect(a_vector_of_strings, pattern, negate = TRUE)
+```
+
+
+### Matching multiple characters
+
+```{r}
+pattern <- "fir"
+str_detect(single_string, pattern)
+str_detect(a_vector_of_strings, pattern)
+```
+```{r}
+pattern <- "[fir]"
+str_detect(a_vector_of_strings, pattern)
+```
+
+Special Characters
+
+"[a,b,c]" square brackets define a set
+```{r}
+pattern <- "e{3}"
+str_detect(a_vector_of_strings, pattern)
+```
+We can define a range of characters wihin a set
+
+```{r}
+pattern <- "[a-e]"
+str_detect(a_vector_of_strings, pattern)
+```
+```{r}
+pattern <- "[a-z]"
+str_detect(a_vector_of_strings, pattern)
+```
+
+By default regular expressions are case sensitive
+
+{} - specify a minimum number of preceding characters to match
+
+
+# can make them case insensitive
+```{r}
+pattern <- "(?i)[A-Z]"
+str_detect(a_vector_of_strings, pattern)
+```
+
+Make a vector containing the following strings:
+
+"We're having great fun learning about data analysis at CodeClan!"
+"CodeClan is at 37 Castle Terrace in Edinburgh, ClockWise in Glasgow, and Wasps Academy in Inverness"
+"Our cohort code starts with DE, DG or D"
+"You get a great view of the castle or the national conservatoire from just outside CodeClan's door"
+Write and test regular expressions which will match:
+
+Any string mentioning CodeClan
+Any string containing two consecutive capital letters
+Any string not including the word "castle" or "Castle"
+
+```{r}
+
+fun_vector <- c("We're having great fun lerning about data analysis at CodeClan!", 
+         "CodeClan is at 37 Castle Terrace in Edinburgh, ClockWise in Glasgow, and Wasps Academy in Inverness",
+         "Our cohort code starts with DE, DG or D",
+         "You get a great view of the castle or the national conservatoire from just outside CodeClan's door"
+         )
+
+pattern_codeclan <- "CodeClan"
+
+str_detect(fun_vector, pattern_codeclan)
+
+
+str_detect(fun_vector, "[A-B]{2}")
+
+pattern <- "(?i)castle")
+str_detect(fun_vector, pattern, negate = TRUE)
+
+```
+str_detect(vector, "(?i)castle", negate = TRUE)
+
+```{r}
+vector_with_emails <- c(
+  "This string has an_address@email.com in it", 
+  "This one has user.name@company.co.uk", 
+  "Now we've got other_person_123@server.net and my.name@runningoutofideas.com"
+)
+
+vector_with_emails
+```
+
+```{r}
+pattern <- "[a-z]"
+str_extract(vector_with_emails, pattern)
+```
+
+```{r}
+pattern <- "[a-z]@"
+str_extract(vector_with_emails, pattern)
+```
+
+"*" match __none__ or more of preceding expression
+
+```{r}
+pattern <- "[a-z]*@"
+str_extract(vector_with_emails, pattern)
+```
+
+Another special character
+
+"+" one or more
+
+```{r}
+pattern <- "[a-z]+@"
+str_extract(vector_with_emails, pattern)
+```
+
+```{r}
+pattern <- "[a-z0-9]+@[a-z]+"
+str_extract(vector_with_emails, pattern)
+```
+
+pattern <- "[:alnum:]+@[:alnum:]+"
+```{r}
+pattern <- "[:alnum:]+@[:alnum:]+"
+str_extract(vector_with_emails, pattern)
+```
+## Replacing parts of a string
+
+```{r}
+pattern <- "[:alnum:]+@[:alnum:]+"
+str_replace_all(vector_with_emails, pattern, replacement = "REDACTED")
+```
+
+extract all the names
+
+
+
+
+
+Task - 8 mins
+"David's mobile number definitely isn't 07777777777."
+"A landline might be 01010 123456."
+"Jamie, John, Chris and David have been some of your instructors so far."
+"I'm called your_name_here and I live in your_town_here."
+```{r}
+challenge <- c("David's mobile number definitely isn't 07777777777.", 
+               "A landline might be 01010 123456.",
+               "Jamie, John, Chris and David have been some of your instructors so far.",
+               "I'm called your_name_here and I live in your_town_here.")
+
+pattern <- "[A-Z][a-z]+"
+str_extract_all(challenge, pattern)
+```
+
+
+extract the landline number
+pattern <- [0-9]+
+```{r}
+pattern <- "[0-9]+"
+str_extract_all(challenge, pattern)
+```
+
+```{r}
+
+
+str_replace(challenge, )
+```
+
+
+Insert your name an where you live into the fourth string
+
+## Other helpful
+
+^ anything but
+$ end of string
+
+```{r}
+str_extract(challenge, "^[A-Za-z]")
+#grab the first letter
+
+str_extract(challenge, "[:punct:]$")
+#grab the last character
+```
+```{r}
+str_extract(challenge, ".+[1]")
+```
+

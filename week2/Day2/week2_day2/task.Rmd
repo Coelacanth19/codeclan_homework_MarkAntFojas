@@ -1,0 +1,22 @@
+---
+title: "playing with string functions"
+output: html_document
+date: '2022-03-15'
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+spotify_songs <- read_csv("/Users/markfojas/CodeClan/de13_classnotes/week_02/day_2/1_string_basics/data/spotify_sample.csv")
+```
+
+```{r}
+head(spotify_songs)
+```
+```{r}
+spotify_songs %>% 
+  str_to_upper(playlist_name)
+```
+

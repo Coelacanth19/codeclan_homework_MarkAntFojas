@@ -138,5 +138,45 @@ full_string %>%
 
 ```{r}
 full_string %>% 
-  str_sub(start = -5, end = -5)
+  str_sub(start = -1, end = -5)
 ```
+
+```{r}
+employees %>% 
+  mutate(postcode_outer = str_sub(postcode, end = 4))
+```
+```{r}
+employees %>% 
+  mutate(postcode_outer = str_sub(postcode, end = -4), postcode_inner = str_sub(postcode, start = -3))
+```
+
+```{r}
+og_string <- "We're going to replace some words."
+
+og_string
+```
+```{r}
+og_string %>% 
+str_sub(og_string, start = 1, end = 22) <- "I've changed"
+```
+
+```{r}
+number <- 123456.789
+```
+
+```{r}
+number %>% 
+  format(nsmall = 2) 
+  
+```
+```{r}
+number %>% 
+  format(big.mark = ",")
+```
+
+```{r}
+number %>% 
+  format(decimal.mark = ",")
+```
+
+
