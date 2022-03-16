@@ -1995,8 +1995,152 @@ the second element of your list by name. What is it’s class?</p>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml4ZFxuYGBgIn0= -->
+<pre class="r"><code>matrixd</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdXG5bMSxdICAgIDEgICAgMSAgICAxICAgIDFcblsyLF0gICAgMiAgICAyICAgIDIgICAgMlxuWzMsXSAgICAzICAgIDMgICAgMyAgICAzXG4ifQ== -->
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    1    1    1
+[2,]    2    2    2    2
+[3,]    3    3    3    3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#If Statements</p>
+<p>if (weather == “sunny”){ hang out washing }</p>
+<p>!= &gt; &lt; &lt;= &gt;=</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKDEwIDwgMTUpe1xuICBwcmludChcInllc1wiKVxufVxuYGBgIn0= -->
+<pre class="r"><code>if (10 &lt; 15){
+  print(&quot;yes&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieWVzXCJcbiJ9 -->
+<pre><code>[1] &quot;yes&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYoNSAlaW4lIGMoMSwyLDQsNSkpe1xuICBwcmludCAoXCJ5ZXNcIilcbn1cbmBgYCJ9 -->
+<pre class="r"><code>if(5 %in% c(1,2,4,5)){
+  print (&quot;yes&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieWVzXCJcbiJ9 -->
+<pre><code>[1] &quot;yes&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Write an if statement that prints ‘Yes that divides by2’ if a number
+x is divisible by 2. use %%2 == 0 as your expression), try it out for
+different values of x.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD02XG5pZih4ICUlIDIgPT0gMCl7XG4gIHByaW50IChcIlllcywgdGhhdCBkaXZpZGVzIGJ5IDJcIilcbn1cbmBgYCJ9 -->
+<pre class="r"><code>x=6
+if(x %% 2 == 0){
+  print (&quot;Yes, that divides by 2&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWWVzLCB0aGF0IGRpdmlkZXMgYnkgMlwiXG4ifQ== -->
+<pre><code>[1] &quot;Yes, that divides by 2&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKDEwICE9NSl7XG4gIGlmICgzID4gMSl7XG4gICAgcHJpbnQoXCJoZWxsb1wiKVxuICB9XG59XG5gYGAifQ== -->
+<pre class="r"><code>if (10 !=5){
+  if (3 &gt; 1){
+    print(&quot;hello&quot;)
+  }
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaGVsbG9cIlxuIn0= -->
+<pre><code>[1] &quot;hello&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Task - 10 minutes Here’s an example of a nested if statement. Predict
+what the code is going to print out for the following combinations:</p>
+<p>x is 10 and y is 3.</p>
+<p>*Predicted output: “start of outer if block” [1] “Start of outer if
+block” [1] “Inner if block 2” [1] “End of outer if block” [1] “After if
+statement”</p>
+<p>x is 10 and y is 2.</p>
+<p>*Predicted output: “start of outer if block” [1] “Start of outer if
+block” [1] “Inner if block 1” [1] “Inner if block 2” [1] “End of outer
+if block” [1] “After if statement”</p>
+<p>x is 2 and y is 10.</p>
+<p>[1] “After if statement”</p>
+<p>*Predicted output: “End of outer if block”</p>
+<p>if (x &gt; y) { print(“Start of outer if block”)</p>
+<p>if (x %% y == 0) { print(“Inner if block 1”) }</p>
+<p>if (y %in% c(1:5)) { print(“Inner if block 2”) }</p>
+<p>print(“End of outer if block”) }</p>
+<p>print(“After if statement”)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD0yXG55PTEwXG5pZiAoeCA+IHkpIHtcbiAgcHJpbnQoXCJTdGFydCBvZiBvdXRlciBpZiBibG9ja1wiKVxuXG4gIGlmICh4ICUlIHkgPT0gMCkge1xuICAgIHByaW50KFwiSW5uZXIgaWYgYmxvY2sgMVwiKVxuICB9XG5cbiAgaWYgKHkgJWluJSBjKDE6NSkpIHtcbiAgICBwcmludChcIklubmVyIGlmIGJsb2NrIDJcIilcbiAgfVxuXG4gIHByaW50KFwiRW5kIG9mIG91dGVyIGlmIGJsb2NrXCIpXG59XG5cbnByaW50KFwiQWZ0ZXIgaWYgc3RhdGVtZW50XCIpXG5gYGAifQ== -->
+<pre class="r"><code>x=2
+y=10
+if (x &gt; y) {
+  print(&quot;Start of outer if block&quot;)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKClJldmlldyBvZiBEYXkgMiBMYWIgd29yawoKCk90aGVyIHBlb3BsZXMgY29kZQoKd2hvbGVfdGV4dCAlPiUgCiAgc3RyX3JlcGxhY2VfYWxsKGMoIkdJTiIgPSAiVk9ES0EiLCAiZ2luIiA9ICJ2b2RrYSIsICJHaW4iID0gIlZvZGthIikpCgpDaHJpcyBQICAxMDowOSBBTQpgYGB7cn0Kd2hvbGVfdGV4dCAlPiUgCiAgc3RyX2V4dHJhY3RfYWxsKCIoP2kpKERlcGFydG1lbnR8TWluaXN0cnl8TWluaXN0cmllfE1pbmlbYS16XSspIikKYGBgCgpgYGB7cn0Kd2hvbGVfdGV4dCAlPiUKICBzdHJfcmVwbGFjZV9hbGwoIkRlcGFydG1lbnQiLCAiU2VjdGlvbiIpICU+JQogIHN0cl9yZXBsYWNlX2FsbCgiTWluaXN0cnl8TWluaXN0cmllIiwgIkRlcGFydG1lbnQiKSAlPiUKICBzdHJfcmVwbGFjZV9hbGwoIk1pbmkiLCAiRGVwIikgCmBgYAoKYGBge3J9CnBhdHRlcm4gPC0gIlsgLFxcLi1dW2dHXVtpSV1bbk5dWyAsXFwuLV0iCgp3aG9sZV90ZXh0ICU+JQogIHN0cl9leHRyYWN0X2FsbChwYXR0ZXJuKSAlPiUKICBmbGF0dGVuX2NocigpCmBgYAoKCmxpc3RzCgpgYGB7cn0KeCA8LSAxOjUKCmFzLmxpc3QoeCkKYGBgCgpgYGB7cn0KCmBgYAoKbGlzdFtbMV1dXQoKYGBge3J9Cm5hbWVkX2xpc3QgPC0gbGlzdChhID0gIkkgbG92ZSBSIiwgYiA9IDE6MTApCgpgYGAKYGBge3J9Cm5hbWVkX2xpc3QkYQoKYGBgCgpgYGB7cn0Kc3R1ZGVudF9pbmZvIDwtIGxpc3QoCiAgICAgICAgICAgICAgICAiQWduZXMiID0gbGlzdChoZWlnaHQgPSAxLjgsIHNob2Vfc2l6ZSA9IDhMKSwKICAgICAgICAgICAgICAgICJCb2JieSIgPSBsaXN0KGhlaWdodCA9IDIuMSwgZ2VuZGVyID0gIk1hbGUiKSwKICAgICAgICAgICAgICAgICJDaGFybGllIiA9IGxpc3QoZ2VuZGVyID0gIkZlbWFsZSIsIGxpa2VzX2JlZXRzID0gVFJVRSkKKQpgYGAKCmBgYHtyfQpzdHVkZW50X2luZm8kQm9iYnkkaGVpZ2h0CgpzdHVkZW50X2luZm9bMV0KYGBgClRhc2sgLSA1IG1pbnV0ZXMKTWFrZSBhIG5hbWVkIGxpc3QgdGhhdCBjb250YWlucyBhIG51bWVyaWMgdmVjdG9yIGFuZCBhIGNoYXJhY3RlciB2ZWN0b3IuCkFjY2VzcyB0aGUgc2Vjb25kIGVsZW1lbnQgb2YgeW91ciBsaXN0IHVzaW5nIGRvdWJsZSBzcXVhcmUgYnJhY2tldHMgW1tdXS4gV2hhdCBpcyBpdOKAmXMgY2xhc3M/CkFjY2VzcyB0aGUgc2Vjb25kIGVsZW1lbnQgb2YgeW91ciBsaXN0IHVzaW5nIHNpbmdsZSBzcXVhcmUgYnJhY2tldHMgW10uIFdoYXQgaXMgaXTigJlzIGNsYXNzPwpBY2Nlc3MgdGhlIHNlY29uZCBlbGVtZW50IG9mIHlvdXIgbGlzdCBieSBuYW1lLiBXaGF0IGlzIGl04oCZcyBjbGFzcz8KCm51bWNoYXJsaXN0IDwtIGxpc3QobnVtZXJpYyA9IGMoMjEsNDUsNzApLCBjaGFyYWN0ZXIgPSAoIkZvcmV2ZXIiLCJOZXZlciIsIlNvbWV0aW1lcyIpCmBgYHtyfQpudW1jaGFybGlzdCA9IGxpc3QobnVtID0gYygyMSwgNDUsIDcwKSwgY2hhciA9IGMoIkZvcmV2ZXIiLCAiTmV2ZXIiLCAiU29tZXRpbWVzIikpCmBgYApgYGB7cn0KCmBgYApgYGB7cn0KbSA8LSBtYXRyaXgoMTo2LCBucm93ID0gMiwgbmNvbCA9IDIsIGJ5cm93ID0gVCkKYGBgCgptIDwtIG1hdHJpeCgxOjYsIG5yb3cgPSAyLCBuY29sID0gMiwgYnlyb3cgPSBUKQpgYGB7cn0KbVssMV0KYGBgCmBgYHtyfQptWzIsIGMoMiwzKV0KYGBgCgpgYGB7cn0KbSAtMgpgYGAKYGBge3J9CnJvd1N1bXMobSkKYGBgCgpgYGB7cn0KY29sU3VtcyhtKQoKYGBgCmBgYHtyfQpjb2xNZWFucyhtKQpgYGAKYGBge3J9CgogIG1hdHJpeGQgPC0gbWF0cml4KDE6MywgbnJvdyA9IDMsIG5jb2wgPSA0KQpgYGAKCmBgYHtyfQptYXRyaXhkWzIsM10gCmBgYAoK</div>
+  if (x %% y == 0) {
+    print(&quot;Inner if block 1&quot;)
+  }
+
+  if (y %in% c(1:5)) {
+    print(&quot;Inner if block 2&quot;)
+  }
+
+  print(&quot;End of outer if block&quot;)
+}
+
+print(&quot;After if statement&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQWZ0ZXIgaWYgc3RhdGVtZW50XCJcbiJ9 -->
+<pre><code>[1] &quot;After if statement&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#if-else</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKDQgPCA1KXtcbiAgcHJpbnQgKFwieWVzXCIpXG4gIGVsc2Uge1xuICAgIHByaW50KFwibm9cIilcbiAgfVxufVxuYGBgIn0= -->
+<pre class="r"><code>if (4 &lt; 5){
+  print (&quot;yes&quot;)
+  else {
+    print(&quot;no&quot;)
+  }
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Write an if statement that prints ‘Yes that divides by 2’ if a number
+x is divisible by 2 (hint: use %% 2 == 0 as your expression), try it out
+for different values of x.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA9IDFcbmlmICh4ICUlIDIgPT0gMCl7XG4gIHByaW50KFwiWWVzLCB0aGF0IGRpdmlkZXMgYnkgMlwiKVxuICB9ZWxzZSB7cHJpbnQoXCJObyB0aGF0IGRvZXMgbm90IGRpdmlkZVwiKVxuICB9XG5gYGAifQ== -->
+<pre class="r"><code>x = 1
+if (x %% 2 == 0){
+  print(&quot;Yes, that divides by 2&quot;)
+  }else {print(&quot;No that does not divide&quot;)
+  }</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiTm8gdGhhdCBkb2VzIG5vdCBkaXZpZGVcIlxuIn0= -->
+<pre><code>[1] &quot;No that does not divide&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKClJldmlldyBvZiBEYXkgMiBMYWIgd29yawoKCk90aGVyIHBlb3BsZXMgY29kZQoKd2hvbGVfdGV4dCAlPiUgCiAgc3RyX3JlcGxhY2VfYWxsKGMoIkdJTiIgPSAiVk9ES0EiLCAiZ2luIiA9ICJ2b2RrYSIsICJHaW4iID0gIlZvZGthIikpCgpDaHJpcyBQICAxMDowOSBBTQpgYGB7cn0Kd2hvbGVfdGV4dCAlPiUgCiAgc3RyX2V4dHJhY3RfYWxsKCIoP2kpKERlcGFydG1lbnR8TWluaXN0cnl8TWluaXN0cmllfE1pbmlbYS16XSspIikKYGBgCgpgYGB7cn0Kd2hvbGVfdGV4dCAlPiUKICBzdHJfcmVwbGFjZV9hbGwoIkRlcGFydG1lbnQiLCAiU2VjdGlvbiIpICU+JQogIHN0cl9yZXBsYWNlX2FsbCgiTWluaXN0cnl8TWluaXN0cmllIiwgIkRlcGFydG1lbnQiKSAlPiUKICBzdHJfcmVwbGFjZV9hbGwoIk1pbmkiLCAiRGVwIikgCmBgYAoKYGBge3J9CnBhdHRlcm4gPC0gIlsgLFxcLi1dW2dHXVtpSV1bbk5dWyAsXFwuLV0iCgp3aG9sZV90ZXh0ICU+JQogIHN0cl9leHRyYWN0X2FsbChwYXR0ZXJuKSAlPiUKICBmbGF0dGVuX2NocigpCmBgYAoKCmxpc3RzCgpgYGB7cn0KeCA8LSAxOjUKCmFzLmxpc3QoeCkKYGBgCgpgYGB7cn0KCmBgYAoKbGlzdFtbMV1dXQoKYGBge3J9Cm5hbWVkX2xpc3QgPC0gbGlzdChhID0gIkkgbG92ZSBSIiwgYiA9IDE6MTApCgpgYGAKYGBge3J9Cm5hbWVkX2xpc3QkYQoKYGBgCgpgYGB7cn0Kc3R1ZGVudF9pbmZvIDwtIGxpc3QoCiAgICAgICAgICAgICAgICAiQWduZXMiID0gbGlzdChoZWlnaHQgPSAxLjgsIHNob2Vfc2l6ZSA9IDhMKSwKICAgICAgICAgICAgICAgICJCb2JieSIgPSBsaXN0KGhlaWdodCA9IDIuMSwgZ2VuZGVyID0gIk1hbGUiKSwKICAgICAgICAgICAgICAgICJDaGFybGllIiA9IGxpc3QoZ2VuZGVyID0gIkZlbWFsZSIsIGxpa2VzX2JlZXRzID0gVFJVRSkKKQpgYGAKCmBgYHtyfQpzdHVkZW50X2luZm8kQm9iYnkkaGVpZ2h0CgpzdHVkZW50X2luZm9bMV0KYGBgClRhc2sgLSA1IG1pbnV0ZXMKTWFrZSBhIG5hbWVkIGxpc3QgdGhhdCBjb250YWlucyBhIG51bWVyaWMgdmVjdG9yIGFuZCBhIGNoYXJhY3RlciB2ZWN0b3IuCkFjY2VzcyB0aGUgc2Vjb25kIGVsZW1lbnQgb2YgeW91ciBsaXN0IHVzaW5nIGRvdWJsZSBzcXVhcmUgYnJhY2tldHMgW1tdXS4gV2hhdCBpcyBpdOKAmXMgY2xhc3M/CkFjY2VzcyB0aGUgc2Vjb25kIGVsZW1lbnQgb2YgeW91ciBsaXN0IHVzaW5nIHNpbmdsZSBzcXVhcmUgYnJhY2tldHMgW10uIFdoYXQgaXMgaXTigJlzIGNsYXNzPwpBY2Nlc3MgdGhlIHNlY29uZCBlbGVtZW50IG9mIHlvdXIgbGlzdCBieSBuYW1lLiBXaGF0IGlzIGl04oCZcyBjbGFzcz8KCm51bWNoYXJsaXN0IDwtIGxpc3QobnVtZXJpYyA9IGMoMjEsNDUsNzApLCBjaGFyYWN0ZXIgPSAoIkZvcmV2ZXIiLCJOZXZlciIsIlNvbWV0aW1lcyIpCmBgYHtyfQpudW1jaGFybGlzdCA9IGxpc3QobnVtID0gYygyMSwgNDUsIDcwKSwgY2hhciA9IGMoIkZvcmV2ZXIiLCAiTmV2ZXIiLCAiU29tZXRpbWVzIikpCmBgYApgYGB7cn0KCmBgYApgYGB7cn0KbSA8LSBtYXRyaXgoMTo2LCBucm93ID0gMiwgbmNvbCA9IDIsIGJ5cm93ID0gVCkKYGBgCgptIDwtIG1hdHJpeCgxOjYsIG5yb3cgPSAyLCBuY29sID0gMiwgYnlyb3cgPSBUKQpgYGB7cn0KbVssMV0KYGBgCmBgYHtyfQptWzIsIGMoMiwzKV0KYGBgCgpgYGB7cn0KbSAtMgpgYGAKYGBge3J9CnJvd1N1bXMobSkKYGBgCgpgYGB7cn0KY29sU3VtcyhtKQoKYGBgCmBgYHtyfQpjb2xNZWFucyhtKQpgYGAKYGBge3J9CgogIG1hdHJpeGQgPC0gbWF0cml4KDE6MywgbnJvdyA9IDMsIG5jb2wgPSA0KQpgYGAKCmBgYHtyfQptYXRyaXhkWzIsM10gCmBgYAoKYGBge3J9Cm1hdHJpeGQKYGBgCgojSWYgU3RhdGVtZW50cwoKaWYgKHdlYXRoZXIgPT0gInN1bm55Iil7CiAgICBoYW5nIG91dCB3YXNoaW5nCn0KCiE9Cj4KPAo8PQo+PQoKYGBge3J9CmlmICgxMCA8IDE1KXsKICBwcmludCgieWVzIikKfQpgYGAKCmBgYHtyfQppZig1ICVpbiUgYygxLDIsNCw1KSl7CiAgcHJpbnQgKCJ5ZXMiKQp9CmBgYAoKV3JpdGUgYW4gaWYgc3RhdGVtZW50IHRoYXQgcHJpbnRzICdZZXMgdGhhdCBkaXZpZGVzIGJ5MicgaWYgYSBudW1iZXIgeCBpcyBkaXZpc2libGUgYnkgMi4gCnVzZSAlJTIgPT0gMCBhcyB5b3VyIGV4cHJlc3Npb24pLCB0cnkgaXQgb3V0IGZvciBkaWZmZXJlbnQgdmFsdWVzIG9mIHguCgpgYGB7cn0gCng9NgppZih4ICUlIDIgPT0gMCl7CiAgcHJpbnQgKCJZZXMsIHRoYXQgZGl2aWRlcyBieSAyIikKfQoKYGBgCgpgYGB7cn0KI21vcmUgbm9uc2Vuc2UgY29kZQppZiAoMTAgIT01KXsKICBpZiAoMyA+IDEpewogICAgcHJpbnQoImhlbGxvIikKICB9Cn0KYGBgClRhc2sgLSAxMCBtaW51dGVzCkhlcmXigJlzIGFuIGV4YW1wbGUgb2YgYSBuZXN0ZWQgaWYgc3RhdGVtZW50LiBQcmVkaWN0IHdoYXQgdGhlIGNvZGUgaXMgZ29pbmcgdG8gcHJpbnQgb3V0IGZvciB0aGUgZm9sbG93aW5nIGNvbWJpbmF0aW9uczoKCnggaXMgMTAgYW5kIHkgaXMgMy4KCipQcmVkaWN0ZWQgb3V0cHV0OiAic3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siIApbMV0gIlN0YXJ0IG9mIG91dGVyIGlmIGJsb2NrIgpbMV0gIklubmVyIGlmIGJsb2NrIDIiClsxXSAiRW5kIG9mIG91dGVyIGlmIGJsb2NrIgpbMV0gIkFmdGVyIGlmIHN0YXRlbWVudCIKCnggaXMgMTAgYW5kIHkgaXMgMi4KCipQcmVkaWN0ZWQgb3V0cHV0OiAic3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siClsxXSAiU3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siClsxXSAiSW5uZXIgaWYgYmxvY2sgMSIKWzFdICJJbm5lciBpZiBibG9jayAyIgpbMV0gIkVuZCBvZiBvdXRlciBpZiBibG9jayIKWzFdICJBZnRlciBpZiBzdGF0ZW1lbnQiCgp4IGlzIDIgYW5kIHkgaXMgMTAuCgpbMV0gIkFmdGVyIGlmIHN0YXRlbWVudCIKCipQcmVkaWN0ZWQgb3V0cHV0OiAiRW5kIG9mIG91dGVyIGlmIGJsb2NrIgoKaWYgKHggPiB5KSB7CiAgcHJpbnQoIlN0YXJ0IG9mIG91dGVyIGlmIGJsb2NrIikKCiAgaWYgKHggJSUgeSA9PSAwKSB7CiAgICBwcmludCgiSW5uZXIgaWYgYmxvY2sgMSIpCiAgfQoKICBpZiAoeSAlaW4lIGMoMTo1KSkgewogICAgcHJpbnQoIklubmVyIGlmIGJsb2NrIDIiKQogIH0KCiAgcHJpbnQoIkVuZCBvZiBvdXRlciBpZiBibG9jayIpCn0KCnByaW50KCJBZnRlciBpZiBzdGF0ZW1lbnQiKQoKCmBgYHtyfQp4PTIKeT0xMAppZiAoeCA+IHkpIHsKICBwcmludCgiU3RhcnQgb2Ygb3V0ZXIgaWYgYmxvY2siKQoKICBpZiAoeCAlJSB5ID09IDApIHsKICAgIHByaW50KCJJbm5lciBpZiBibG9jayAxIikKICB9CgogIGlmICh5ICVpbiUgYygxOjUpKSB7CiAgICBwcmludCgiSW5uZXIgaWYgYmxvY2sgMiIpCiAgfQoKICBwcmludCgiRW5kIG9mIG91dGVyIGlmIGJsb2NrIikKfQoKcHJpbnQoIkFmdGVyIGlmIHN0YXRlbWVudCIpCmBgYAoKCiNpZi1lbHNlCgpgYGB7cn0KaWYgKDQgPCA1KXsKICBwcmludCAoInllcyIpCiAgZWxzZSB7CiAgICBwcmludCgibm8iKQogIH0KfQpgYGAKCldyaXRlIGFuIGlmIHN0YXRlbWVudCB0aGF0IHByaW50cyDigJhZZXMgdGhhdCBkaXZpZGVzIGJ5IDLigJkgaWYgYSBudW1iZXIgeCBpcyBkaXZpc2libGUgYnkgMiAoaGludDogdXNlICUlIDIgPT0gMCBhcyB5b3VyIGV4cHJlc3Npb24pLCB0cnkgaXQgb3V0IGZvciBkaWZmZXJlbnQgdmFsdWVzIG9mIHguCgpgYGB7cn0KeCA9IDEKaWYgKHggJSUgMiA9PSAwKXsKICBwcmludCgiWWVzLCB0aGF0IGRpdmlkZXMgYnkgMiIpCiAgfWVsc2Uge3ByaW50KCJObyB0aGF0IGRvZXMgbm90IGRpdmlkZSIpCiAgfQoKYGBgCgo=</div>
 
 
 
