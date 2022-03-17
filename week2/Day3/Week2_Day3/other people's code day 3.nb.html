@@ -1766,199 +1766,23 @@ pre code {
 
 
 <!-- rnb-text-begin -->
+<p>Q6: one &lt;- c(1,2,3) two &lt;- c(3,2,1)</p>
+<p>check_vector &lt;- function(one, two){ if (one == two){ return(
+print(“Exactly the same”)) } if (one %in% two){ return( print(“The
+same”)) } if (one != two){ return( print(“Different”)) } }</p>
+<p>check_vector(one, two)</p>
+<p>from David:</p>
+<div id="it-only-cares-about-the-first-check" class="section level1">
+<h1>it only cares about the first check</h1>
+<p>if (c(1, 2, 3, 5) %in% c(1, 3, 5)) { print(“TRUE”) }</p>
+<p>if (c(2, 1, 3, 5) %in% c(1, 3, 5)) { print(“TRUE”) }</p>
+<p>Jack 10:06 AM Question_6 = function(vec1, vec2){ if (identical(vec1,
+vec2)){ return(“EXACTLY THE SAME”) } if (identical(sort(vec1),
+sort(vec2))){ return(“THE SAME”) }else{ return(“DIFFERENT”) } }</p>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<pre class="r"><code>library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoXCJoZWxsb1wiLCBcImNoYXJzXCIsIFRSVUUsIE5BKVxuXG5gYGAifQ== -->
-<pre class="r"><code>nchar(&quot;hello&quot;, &quot;chars&quot;, TRUE, NA)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
-<pre><code>[1] 5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoa2VlcE5BID0gTkEsIFwiY2hhcnNcIiwgeCA9IFwiaGVsbG9cIiwgYWxsb3dOQSA9IFRSVUUpXG5gYGAifQ== -->
-<pre class="r"><code>nchar(keepNA = NA, &quot;chars&quot;, x = &quot;hello&quot;, allowNA = TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
-<pre><code>[1] 5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoXCJoZWxsb1wiKVxuYGBgIn0= -->
-<pre class="r"><code>nchar(&quot;hello&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
-<pre><code>[1] 5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFzdGUoXCJoZWxsb1wiLCBcImJ5ZVwiKVxuYGBgIn0= -->
-<pre class="r"><code>paste(&quot;hello&quot;, &quot;bye&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaGVsbG8gYnllXCJcbiJ9 -->
-<pre><code>[1] &quot;hello bye&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmNoYXIoYyhcImhlbGxvXCIsIFwiYnllXCIsIFwieW9cIikpXG5gYGAifQ== -->
-<pre class="r"><code>nchar(c(&quot;hello&quot;, &quot;bye&quot;, &quot;yo&quot;))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUgMyAyXG4ifQ== -->
-<pre><code>[1] 5 3 2</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnVuY3Rpb25fbmFtZSA8LSBmdW5jdGlvbihhcmdfMSwgYXJnXzIsIGFyZ18zID0gNSlcbiAgXG5gYGAifQ== -->
-<pre class="r"><code>function_name &lt;- function(arg_1, arg_2, arg_3 = 5)
-  </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IEluY29tcGxldGUgZXhwcmVzc2lvbjogZnVuY3Rpb25fbmFtZSA8LSBmdW5jdGlvbihhcmdfMSwgYXJnXzIsIGFyZ18zID0gNSlcbiAgXG4ifQ== -->
-<pre><code>Error: Incomplete expression: function_name &lt;- function(arg_1, arg_2, arg_3 = 5)
-  </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdDV4IDwtIGZ1bmN0aW9uKHgpIHtcbiAgcmV0dXJuKHgqNSlcbiAgfVxuYGBgIn0= -->
-<pre class="r"><code>mult5x &lt;- function(x) {
-  return(x*5)
-  }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdDV4KDUpXG5gYGAifQ== -->
-<pre class="r"><code>mult5x(5)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI1XG4ifQ== -->
-<pre><code>[1] 25</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD01XG5tdWx0X2J5IDwtIGZ1bmN0aW9uKHgsIHk9MTAwKSB7XG4gIHJldHVybih4KnkpXG59XG5gYGAifQ== -->
-<pre class="r"><code>x=5
-mult_by &lt;- function(x, y=100) {
-  return(x*y)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Task - 5 minutes Write a function make_price() that takes as input
-any whole number, and returns it written as a price (i.e. with a ‘£’ in
-front of the number). For example 5 would become £5, and 123 would
-become £123. Try out your function a few times to test that it
-works.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFrZV9wcmljZSA8LSBmdW5jdGlvbih4KXtcbiB4IDwtIHBhc3RlKFwiwqNcIix4LCBzZXAgPSBcIlwiKVxuICByZXR1cm4oeClcbn1cblxubWFrZV9wcmljZSg1KVxuYGBgIn0= -->
-<pre class="r"><code>make_price &lt;- function(x){
- x &lt;- paste(&quot;£&quot;,x, sep = &quot;&quot;)
-  return(x)
-}
+</div>
 
-make_price(5)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiwqM1XCJcbiJ9 -->
-<pre><code>[1] &quot;£5&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Write a function that takes as input a whoe number n, and returns the
-n-th triangle number.</p>
-<p>nth_tri = function(n){ (n*(n+1))%%2 -&gt; x return(x) }</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnRoX3RyaSA9IGZ1bmN0aW9uKG4pe1xuICAobiAqIChuICsgMSkpIC8yIC0+IHhcbiAgcmV0dXJuKHgpXG59XG5gYGAifQ== -->
-<pre class="r"><code>nth_tri = function(n){
-  (n * (n + 1)) /2 -&gt; x
-  return(x)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnRoX3RyaSgzKVxuYGBgIn0= -->
-<pre class="r"><code>nth_tri(3)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDZcbiJ9 -->
-<pre><code>[1] 6</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Scope in programming Suddenly we are using this term ‘scope’. What
-does it mean? Well, the ‘scope’ of a variable is basically all the
-places in our code that we can use that variable name without causing an
-error (the error being that R will complain that it can’t find the
-variable we are trying to use).</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbHlfYnlfM19hZGRfMiA8LSBmdW5jdGlvbih4KXtcbiAgXG4gIHRpbWVzXzMgPC0geCozXG4gIGFkZF8yIDwtIHRpbWVzXzMgKyAyXG4gIFxuICByZXR1cm4oYWRkXzIpXG59XG5gYGAifQ== -->
-<pre class="r"><code>multiply_by_3_add_2 &lt;- function(x){
-  
-  times_3 &lt;- x*3
-  add_2 &lt;- times_3 + 2
-  
-  return(add_2)
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkXzMoKVxuZm9ybWF0X251bWJlcigpXG5gYGAifQ== -->
-<pre class="r"><code>add_3()
-format_number()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkXzMgPC0gZnVuY3Rpb24oeCl7XG4gIHggKyAzXG59XG5gYGAifQ== -->
-<pre class="r"><code>add_3 &lt;- function(x){
-  x + 3
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5pbWFscyA8LSBjKFwiQ2F0XCIsIFwiRG9nXCIsIFwiTW9ua2V5XCIsIFwiRWxlcGhhbnRcIiwgXCJGcm9nXCIpXG5oYXRzIDwtIGMoXCJCb3dsZXJcIiwgXCJTdW4gSGF0XCIsIFwiQmFzZWJhbGwgQ2FwXCIsIFwiRmV6XCIpXG50cmVlcyA8LSBjKFwiQXNoXCIsIFwiRWxtXCIsIFwiT2FrXCIsIFwiV2lsbG93XCIsIFwiRmlyXCIpXG5cbm1ha2Vfb3JkZXJlZCA8LSBmdW5jdGlvbihteV92ZWMpe1xuICBhbmltYWxzX3NvcnRlZCA8LSBzb3J0KG15X3ZlYylcbiAgYW5pbWFsc19qb2luZWQgPC0gc3RyX2MoYW5pbWFsc19zb3J0ZWQsIGNvbGxhcHNlID0gJywgJylcbiAgc3RyX2MoXCJPcmRlcmVkIExpc3Q6XCIsIGFuaW1hbHNfam9pbmVkKVxuXG59XG5cbm1ha2Vfb3JkZXJlZChhbmltYWxzKVxuYGBgIn0= -->
-<pre class="r"><code>animals &lt;- c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Monkey&quot;, &quot;Elephant&quot;, &quot;Frog&quot;)
-hats &lt;- c(&quot;Bowler&quot;, &quot;Sun Hat&quot;, &quot;Baseball Cap&quot;, &quot;Fez&quot;)
-trees &lt;- c(&quot;Ash&quot;, &quot;Elm&quot;, &quot;Oak&quot;, &quot;Willow&quot;, &quot;Fir&quot;)
-
-make_ordered &lt;- function(my_vec){
-  animals_sorted &lt;- sort(my_vec)
-  animals_joined &lt;- str_c(animals_sorted, collapse = &#39;, &#39;)
-  str_c(&quot;Ordered List:&quot;, animals_joined)
-
-}
-
-make_ordered(animals)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiT3JkZXJlZCBMaXN0OkNhdCwgRG9nLCBFbGVwaGFudCwgRnJvZywgTW9ua2V5XCJcbiJ9 -->
-<pre><code>[1] &quot;Ordered List:Cat, Dog, Elephant, Frog, Monkey&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>make function, index matrices</p>
-<p>single vs. double square brackets</p>
-<p>“[]” will always return the same class as the data structure you are
-indexing “[[]]” used in reference to lists</p>
-<!-- rnb-text-end -->
-
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKCmBgYHtyfQpuY2hhcigiaGVsbG8iLCAiY2hhcnMiLCBUUlVFLCBOQSkKYGBgCmBgYHtyfQpuY2hhcihrZWVwTkEgPSBOQSwgImNoYXJzIiwgeCA9ICJoZWxsbyIsIGFsbG93TkEgPSBUUlVFKQpgYGAKCmBgYHtyfQpuY2hhcigiaGVsbG8iKQpgYGAKCmBgYHtyfQpwYXN0ZSgiaGVsbG8iLCAiYnllIikKYGBgCgpgYGB7cn0KbmNoYXIoYygiaGVsbG8iLCAiYnllIiwgInlvIikpCmBgYApgYGB7cn0KZnVuY3Rpb25fbmFtZSA8LSBmdW5jdGlvbihhcmdfMSwgYXJnXzIsIGFyZ18zID0gNSkgewogIAogIGRvIHNvbWV0aGluZwogIAogIHJldHVybihvdXRwdXQpCn0KICAKYGBgCmBgYHtyfQptdWx0NXggPC0gZnVuY3Rpb24oeCkgewogIHJldHVybih4KjUpICN5b3UgZG9uJ3QgbmVlZCB0byB1c2UgcmV0dXJuLCBidXQgaXQgaXMgYmVzdCBwcmFjdGljZXMKICB9CmBgYApgYGB7cn0KbXVsdDV4KDUpCmBgYAoKYGBge3J9Cng9NQptdWx0X2J5IDwtIGZ1bmN0aW9uKHgsIHk9MTAwKSB7CiAgcmV0dXJuKHgqeSkKfQpgYGAKCgoKVGFzayAtIDUgbWludXRlcwpXcml0ZSBhIGZ1bmN0aW9uIG1ha2VfcHJpY2UoKSB0aGF0IHRha2VzIGFzIGlucHV0IGFueSB3aG9sZSBudW1iZXIsIGFuZCByZXR1cm5zIGl0IHdyaXR0ZW4gYXMgYSBwcmljZSAoaS5lLiB3aXRoIGEg4oCYwqPigJkgaW4gZnJvbnQgb2YgdGhlIG51bWJlcikuIEZvciBleGFtcGxlIDUgd291bGQgYmVjb21lIMKjNSwgYW5kIDEyMyB3b3VsZCBiZWNvbWUgwqMxMjMuIFRyeSBvdXQgeW91ciBmdW5jdGlvbiBhIGZldyB0aW1lcyB0byB0ZXN0IHRoYXQgaXQgd29ya3MuCgpgYGB7cn0KbWFrZV9wcmljZSA8LSBmdW5jdGlvbih4KXsKIHggPC0gcGFzdGUoIsKjIix4LCBzZXAgPSAiIikKICByZXR1cm4oeCkKfQoKbWFrZV9wcmljZSg1KQpgYGAKCldyaXRlIGEgZnVuY3Rpb24gdGhhdCB0YWtlcyBhcyBpbnB1dCBhIHdob2UgbnVtYmVyIG4sIGFuZCByZXR1cm5zIHRoZSBuLXRoIHRyaWFuZ2xlIG51bWJlci4KCm50aF90cmkgPSBmdW5jdGlvbihuKXsKICAobioobisxKSklJTIgLT4geAogIHJldHVybih4KQp9CmBgYHtyfQpudGhfdHJpID0gZnVuY3Rpb24obil7CiAgKG4gKiAobiArIDEpKSAvMiAtPiB4CiAgcmV0dXJuKHgpCn0KYGBgCmBgYHtyfQpudGhfdHJpKDMpCmBgYAoKU2NvcGUgaW4gcHJvZ3JhbW1pbmcKU3VkZGVubHkgd2UgYXJlIHVzaW5nIHRoaXMgdGVybSDigJhzY29wZeKAmS4gV2hhdCBkb2VzIGl0IG1lYW4/IFdlbGwsIHRoZSDigJhzY29wZeKAmSBvZiBhIHZhcmlhYmxlIGlzIGJhc2ljYWxseSBhbGwgdGhlIHBsYWNlcyBpbiBvdXIgY29kZSB0aGF0IHdlIGNhbiB1c2UgdGhhdCB2YXJpYWJsZSBuYW1lIHdpdGhvdXQgY2F1c2luZyBhbiBlcnJvciAodGhlIGVycm9yIGJlaW5nIHRoYXQgUiB3aWxsIGNvbXBsYWluIHRoYXQgaXQgY2Fu4oCZdCBmaW5kIHRoZSB2YXJpYWJsZSB3ZSBhcmUgdHJ5aW5nIHRvIHVzZSkuCmBgYHtyfQptdWx0aXBseV9ieV8zX2FkZF8yIDwtIGZ1bmN0aW9uKHgpewogIAogIHRpbWVzXzMgPC0geCozCiAgYWRkXzIgPC0gdGltZXNfMyArIDIKICAKICByZXR1cm4oYWRkXzIpCn0KYGBgCgpgYGB7cn0KYWRkXzMoKQpmb3JtYXRfbnVtYmVyKCkKYGBgCgpgYGB7cn0KYWRkXzMgPC0gZnVuY3Rpb24oeCl7CiAgeCArIDMKfQpgYGAKYGBge3J9CmFuaW1hbHMgPC0gYygiQ2F0IiwgIkRvZyIsICJNb25rZXkiLCAiRWxlcGhhbnQiLCAiRnJvZyIpCmhhdHMgPC0gYygiQm93bGVyIiwgIlN1biBIYXQiLCAiQmFzZWJhbGwgQ2FwIiwgIkZleiIpCnRyZWVzIDwtIGMoIkFzaCIsICJFbG0iLCAiT2FrIiwgIldpbGxvdyIsICJGaXIiKQoKbWFrZV9vcmRlcmVkIDwtIGZ1bmN0aW9uKG15X3ZlYyl7CiAgYW5pbWFsc19zb3J0ZWQgPC0gc29ydChteV92ZWMpCiAgYW5pbWFsc19qb2luZWQgPC0gc3RyX2MoYW5pbWFsc19zb3J0ZWQsIGNvbGxhcHNlID0gJywgJykKICBzdHJfYygiT3JkZXJlZCBMaXN0OiIsIGFuaW1hbHNfam9pbmVkKQoKfQoKbWFrZV9vcmRlcmVkKGFuaW1hbHMpCmBgYAoKbWFrZSBmdW5jdGlvbiwgaW5kZXggbWF0cmljZXMKCgoKc2luZ2xlIHZzLiBkb3VibGUgc3F1YXJlIGJyYWNrZXRzCgoiW10iIHdpbGwgYWx3YXlzIHJldHVybiB0aGUgc2FtZSBjbGFzcyBhcyB0aGUgZGF0YSBzdHJ1Y3R1cmUgeW91IGFyZSBpbmRleGluZwoiW1tdXSIgdXNlZCBpbiByZWZlcmVuY2UgdG8gbGlzdHMK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKUTY6Cm9uZSA8LSBjKDEsMiwzKSAKdHdvIDwtIGMoMywyLDEpCgpjaGVja192ZWN0b3IgPC0gZnVuY3Rpb24ob25lLCB0d28pewogIGlmIChvbmUgPT0gdHdvKXsKICAgIHJldHVybigKICAgICAgcHJpbnQoIkV4YWN0bHkgdGhlIHNhbWUiKSkKICB9CiAgaWYgKG9uZSAlaW4lIHR3byl7CiAgICByZXR1cm4oCiAgICAgIHByaW50KCJUaGUgc2FtZSIpKQogIH0KICBpZiAob25lICE9IHR3byl7CiAgICByZXR1cm4oIAogICAgcHJpbnQoIkRpZmZlcmVudCIpKQogIH0KfSAgICAKCmNoZWNrX3ZlY3RvcihvbmUsIHR3bykKCgpmcm9tIERhdmlkOgoKIyBpdCBvbmx5IGNhcmVzIGFib3V0IHRoZSBmaXJzdCBjaGVjawppZiAoYygxLCAyLCAzLCA1KSAlaW4lIGMoMSwgMywgNSkpIHsKICBwcmludCgiVFJVRSIpCn0KCgppZiAoYygyLCAxLCAzLCA1KSAlaW4lIGMoMSwgMywgNSkpIHsKICBwcmludCgiVFJVRSIpCn0KCgoKSmFjayAgMTA6MDYgQU0KUXVlc3Rpb25fNiA9IGZ1bmN0aW9uKHZlYzEsIHZlYzIpewogIGlmIChpZGVudGljYWwodmVjMSwgdmVjMikpewogICAgcmV0dXJuKCJFWEFDVExZIFRIRSBTQU1FIikKICB9CiAgaWYgKGlkZW50aWNhbChzb3J0KHZlYzEpLCBzb3J0KHZlYzIpKSl7CiAgICByZXR1cm4oIlRIRSBTQU1FIikKICB9ZWxzZXsKICAgIHJldHVybigiRElGRkVSRU5UIikKICB9Cn0KCgoKCgoK</div>
 
 
 
@@ -2005,7 +1829,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("nchar.Rmd");
+  window.initializeSourceEmbed("other people's code day 3.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

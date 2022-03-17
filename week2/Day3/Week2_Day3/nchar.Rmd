@@ -118,3 +118,10 @@ make_ordered(animals)
 ```
 
 make function, index matrices
+
+
+
+single vs. double square brackets
+
+"[]" will always return the same class as the data structure you are indexing
+"[[]]" used in reference to lists

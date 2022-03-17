@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Q6:
+one <- c(1,2,3) 
+two <- c(3,2,1)
+
+check_vector <- function(one, two){
+  if (one == two){
+    return(
+      print("Exactly the same"))
+  }
+  if (one %in% two){
+    return(
+      print("The same"))
+  }
+  if (one != two){
+    return( 
+    print("Different"))
+  }
+}    
+
+check_vector(one, two)
+
+
+from David:
+
+# it only cares about the first check
+if (c(1, 2, 3, 5) %in% c(1, 3, 5)) {
+  print("TRUE")
+}
+
+
+if (c(2, 1, 3, 5) %in% c(1, 3, 5)) {
+  print("TRUE")
+}
+
+
+
+Jack  10:06 AM
+Question_6 = function(vec1, vec2){
+  if (identical(vec1, vec2)){
+    return("EXACTLY THE SAME")
+  }
+  if (identical(sort(vec1), sort(vec2))){
+    return("THE SAME")
+  }else{
+    return("DIFFERENT")
+  }
+}
+
+
+
+
+
+

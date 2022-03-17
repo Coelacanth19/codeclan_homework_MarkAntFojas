@@ -1,0 +1,118 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+#Assertive Programming
+
+know what assertive programming is and why it is useful
+Be able to use asserr and stopifnot to write assertions
+
+  Maintain Reproducibility/Replicability
+  
+```{r}
+library(tidyverse)
+library(CodeClanData)
+library(assertr)
+weather_one <- read_csv("/Users/markfojas/CodeClan/de13_classnotes/week_02/day_4/2_assertive_programming/data/delhi_weather_one.csv")
+weather_two <- read_csv("/Users/markfojas/CodeClan/de13_classnotes/week_02/day_4/2_assertive_programming/data/delhi_weather_two.csv")
+```
+
+
+```{r}
+
+
+weather_report <- function(weather){
+ weather %>% 
+    
+    verify(humidity >=0 & humidity <=100)
+    verify(wind_speed >= 0 & wind_speed <= 108)
+    verify(temp >= -35 & temp <=55) %>%
+   
+    
+  # Our average temperature, humidity and wind speed 
+  weather_means <- weather %>%
+  summarise(
+    mean_temp = mean(temp),
+    mean_humidity = mean(humidity),
+    mean_windspeed = mean(wind_speed)
+  )
+
+# Show hot and humid days
+hot_and_humid <- 
+weather %>% 
+  filter(temp > 20) %>% 
+  filter(humidity > 55)
+
+return(list(weather_means, hot_and_humid))
+}
+
+
+weather_report(weather_one)
+```
+  
+```{r}
+weather2 <- read_csv("/Users/markfojas/CodeClan/de13_classnotes/week_02/day_4/2_assertive_programming/data/delhi_weather_two.csv")
+```
+
+  Task - 5 minutes
+  Add an apropriate assertion for humidity, Hint: Humidity is a percentage.
+  
+```{r}
+weather_report(weather_two)
+```
+  Change the order of assertions so we check humidity before temperature and see how the error message differs and see how the error message differs.
+ 
+ output: 
+  Error in isTRUE(attr(data, "assertr_data_defective")) : 
+object 'humidity' not found
+3.
+isTRUE(attr(data, "assertr_data_defective"))
+2.
+verify(humidity >= 0 & humidity <= 100)
+1.
+weather_report(weather_two)
+
+
+```{r}
+
+#check for missing data
+
+
+  weather_report <- function(weather){
+  
+  stopifnot(
+      nrow(weather) > 15,
+      ncol(weather) == 4,
+      drop_na(weather) == weather
+    )
+    
+  weather %>% 
+    verify(humidity >= 0 & humidity <= 100) %>% 
+    verify(wind_speed >= 0 & wind_speed <=108) %>% 
+    verify(temp >= -35 & temp <= 55)
+    
+  
+  # Our average temperature, humidity and wind speed 
+  weather_means <- weather %>% 
+    summarise(
+      mean_temp = mean(temp),
+      mean_humidity = mean(humidity),
+      mean_windspeed = mean(wind_speed)
+    )
+
+  # Show hot and humid days
+  hot_and_humid <- weather %>% 
+    filter(temp > 20) %>% 
+    filter(humidity > 55)
+  
+  return(list(weather_means, hot_and_humid))
+}
+```
+```{r}
+ # select(date, temp) %>% 
+  weather_report(weather_one)
+```
+
+
+  

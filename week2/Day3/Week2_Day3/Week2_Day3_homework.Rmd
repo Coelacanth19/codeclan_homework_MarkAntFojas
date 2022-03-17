@@ -25,8 +25,7 @@ Humidity: 63%
 Wind: 8 mph
 
 ```{r}
-library(tidyverse
-        )
+library(tidyverse)
 Day <- c("Thursday", "Friday", "Saturday")
 Temp <- c(12, 13, 14)
 Precip <- c(20, 10, 10)
@@ -45,9 +44,22 @@ weather_matrix
 ```
 
 ```{r}
-weather_matrix[[3, 1]]
+weather_matrix[["Temperature", "Thursday"]] #wracked my brains on this for a while returning errors-- I had flipped rownames and colnames!
+
+weather_matrix[["Precipitation", "Friday"]]
 ```
 ```{r}
 str
 ```
 
+
+5.
+
+>10
+<10
+
+is.character
+is.numeric
+
+
+return(Invalid input)
