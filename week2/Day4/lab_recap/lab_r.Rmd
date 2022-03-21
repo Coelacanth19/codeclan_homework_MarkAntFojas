@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(here)
+library(tidyverse)
+library(dplyr)
+library(assertr)
+library(CodeClanData)
+```
+
+```{r}
+diets_by_country <- read_csv("data/dietary-composition-by-country.csv")
+country_codes <- read_csv("data/country_codes.csv")
+```
+```{r}
+head(diets_by_country)
+glimpse(diets_by_country)
+head(country_codes)
+```
+
+```{r}
+diets_comp_clean1 <- diets_comp_clean %>% 
+  mutate(kcal_source = str_remove(
+    kcal_source = str_remove(
+      kcal_source, pattern = "\\(.*")%>% 
+      clean_names() %>% 
+      rename(country = entity)
+head(diets_comp_clean)
+```
+
+countries_sans_code <- diets_comp_clean %>% 
+  filter(is.na(code))
+  
+countries_sans_code
+
+diet_comp_clean %>% 
+  filter(country %in% countries_sans_code) %%
+  filter(!is.na(code))
+  
+  
+  7.
+  <details>
+  cape verde = cabo verde
+  United States of America = United States
+  
+  diet_comp_clean <- diet_comp_clean %>% 
+    mutate(code =
+    case_when(
+      country == "United States of America" ~ "USA",
+      country == "Cabo Verde" ~ "CPV"
+      TRUE ` code
+      )
+    )
+sum(is.na(diet_comp_clean$code)) #no missing values
+))
