@@ -36,7 +36,7 @@ Count the number of employees based in Portugal.
 */
     
 SELECT
-    count(*)
+    count(*) AS employees_portugal
 FROM employees 
 WHERE country = 'Portugal'
 
@@ -49,7 +49,7 @@ Count the number of employees based in either Portugal or Spain.
 */
 
 SELECT
-    count(*)
+    count(*) AS employees_num_iberia
 FROM employees 
 WHERE (country= 'Portugal' OR country = 'Spain');
 
@@ -163,7 +163,7 @@ ORDER BY last_name ASC NULLS LAST;
 /*Question 13. Count the number of pension enrolled employees not based in either France or Germany.
 */
 SELECT *, 
-    Count(id)
+    Count(*) AS employees_france_germany
 FROM employees 
 WHERE (country != 'France' OR country != 'Germany') AND
     pension_enrol = TRUE
@@ -198,17 +198,26 @@ Return a table containing each employees first_name, last_name, full-time equiva
 */
 
 select *,
-    sum(fte_hours*salary) AS effective_yearly_salary 
+    sum(fte_hours * salary) AS effective_yearly_salary 
 FROM employees
 group by 
     employees.id
 
-2 Extension
+/*2 Extension
 
 
 Question 16.
-The corporation wants to make name badges for a forthcoming conference. Return a column badge_label showing employees’ first_name and last_name joined together with their department in the following style: ‘Bob Smith - Legal’. Restrict output to only those employees with stored first_name, last_name and department.
+The corporation wants to make name badges for a forthcoming conference. Return a column badge_label showing employees’ first_name and last_name 
+joined together with their department in the following style: ‘Bob Smith - Legal’. Restrict output to only those employees with stored first_name, last_name and department.
+*/
 
+SELECT
+    first_name, 
+    last_name, 
+    start_date, 
+    department,
+    concat(first_name ' ', last_name , " - ", department) AS badge_format
+    FROM employees 
 
 
 Question 17.
