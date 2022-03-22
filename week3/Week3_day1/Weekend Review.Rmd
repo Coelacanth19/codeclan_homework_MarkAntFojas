@@ -1,0 +1,62 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library (janitor)
+library (tidyverse)
+library (CodeClanData)
+```
+
+PDA
+
+Write a fucntion called 'get_meteorite_count()'
+
+If there are noe meteorites in the year, return the phrase
+
+"As far as we knwom there were no meteorites that year"
+
+<- funtion() {
+
+
+in general:
+
+f <- function(df, year_or_something_else) {
+
+
+
+*give a function a 'verb' name
+
+
+get_count_of_x <- function(df, thing_I_want_to_count) {
+ 
+ 
+```{r}
+
+mtcars
+get_cyl_count <- function(df, cyls){
+  return_value <- df %>%
+    filter(cyl == cyls) %>% 
+    summarise(count_of_cyls = n()) %>% 
+    pull()
+  
+if  (return_value >= 1) phrase <- 'there are things'
+else phrase <- 'there are no things matching'
+
+return(phrase)
+
+}
+
+mtcars %>% 
+  get_cyl_count(cyls = 32)
+
+get_cyl_count(mtcars, cyls = 4)
+```
+ 
+ 
+}
+}
+  
+}
+}

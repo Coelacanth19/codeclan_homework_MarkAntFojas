@@ -1,0 +1,88 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Learning objectives
+* Know how SQL is related to realtional database systems
+* Udmnerstand the structure of a relational database in terms of tabes, columns and rows
+*Be able to describe the CRUD operations
+*Unnderstand why table realtionships arise and  see an example realtionship
+
+Structured Query Language
+  -Originally OSS by IBM
+  -MySQL
+  -Oracle
+  -SQL Server
+  -PostgresQL
+Relational DataBase Mamnagement Systems
+RDBMSs
+
+CRUD
+
+Create: Add to a database                 INSERT
+Read:   View or extract infor from a db   SELECT
+Update: Change data                       UPDATE
+Delete: Remove data                       DELETE
+
+
+*in terms of being an analyst we concern ourselves mostly with the READ part of this operation
+
+*Data Engineer does all of these operations
+
+column types:
+  VARCHAR: fixed length text
+  INT: Interger numerical data
+  REAL: continuously valued numerical data
+  BOOLEAN
+  TIMESTAMP
+  
+  In SQL, each column is restricted to hodl data of one particular type, and the column types are set when the table is created (although they can be changed later)
+Relational DBs
+-relationships are happening in a table
+
+Composite keys
+A combinations of columns can also be used as a key
+
+Surrogate keys
+A colummn with no inherent information/value to us
+In PostgreSQL we might use a special type SERIAL for a surrogate key column:
+this just an INT that 'auto-incrments':
+  every time we INSERT a new row into the table the SERIAL increments by 1, giving us a useful prmary key.
+
+Let’s try another query to retrieve the record for Ernest the Snake using just the name column in the WHERE clause.
+You’ll need to put the name you want to search for in single-quotation marks, e.g. ‘Ernest’.
+What’s the problem?
+
+HINT: set connection view to SIMPLE to see a more human interpretation of tables/data
+
+SELECT *
+FROM animals 
+WHERE NAME = 'Ernest';
+
+It returns an otter and a snake. We need to be more specific.
+
+
+Learning Objecives
+*Be able to use additional comparison operators, and AND and OR combinations
+*Write queries using BETWEEN, NOT(!) and IN (%in%)
+
+
+
+See if you can work out the query syntax to answer this problem:
+
+"Find all employees who started work at OmniCorp in 2016 who work 0.5 full time equivalent hours or greater."
+
+
+__Wildcards__
+
+SQL only
+- % :Matches 0 or more characters
+- _ :Match 1 character
+
+Learning Objectives
+-Be able to create column aliases using AS
+-use DISTINCT to reutrn unique records by column
+-Understand and be able to use aggregate functions
+-Be able to sort records and limit the number returned
+
