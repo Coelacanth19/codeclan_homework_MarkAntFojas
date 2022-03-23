@@ -75,28 +75,60 @@ ON e.team_id = t.id
 (a). Make a table, which has each employee id along with the team that employee belongs to.
 */
 SELECT
+    e.id AS employee_id,
+    t.name AS team_name
+FROM (employees AS e
+LEFT JOIN pay_details as pd 
+ON e.pay_detail_id = pd.id)
+
+SELECT *
+FROM employees AS e
+INNER JOIN teams AS t 
+ON e.team_id = t.id 
+GROUP by 
+    t.name,
+    e.id,
+    t.id
+    
+
+
+(b). Breakdown the number of employees in each of the teams. 
+
+SELECT
     e.id,
     t.name,
-    count(e.id)
+    t.id,
+    count(t.id) AS teams_count
 FROM (employees AS e
 LEFT JOIN pay_details as pd 
 ON e.pay_detail_id = pd.id)
 INNER JOIN teams AS t 
 ON e.team_id = t.id 
 GROUP by 
-    t.name
-    e.id
-    
-
-
-(b). Breakdown the number of employees in each of the teams. 
-
- Hint
+    t.name,
+    e.id,
+    t.id;
 
 
 (c). Order the table above by so that the teams with the least employees come first.
 
+SELECT
+    e.id AS employee_id,
+    t.name AS team_name,
+    count(t.id) AS teams_count
+FROM (employees AS e
+LEFT JOIN pay_details as pd 
+ON e.pay_detail_id = pd.id)
+INNER JOIN teams AS t 
+ON e.team_id = t.id 
+GROUP by 
+    e.id,
+    t.name,
+    t.id
+   
+  
 
+ 
 
 Question 4.
 (a). Create a table with the team id, team name and the count of the number of employees in each team.
