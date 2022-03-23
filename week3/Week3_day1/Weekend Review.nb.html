@@ -1798,19 +1798,10 @@ The following object is masked from ‘package:tidyr’:
 <p>get_count_of_x &lt;- function(df, thing_I_want_to_count) {</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5tdGNhcnNcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5tdGNhcnNcbmdldF9jeWxfY291bnQgPC0gZnVuY3Rpb24oZGYsIGN5bHMpe1xuICByZXR1cm5fdmFsdWUgPC0gZGYgJT4lXG4gICAgZmlsdGVyKGN5bCA9PSBjeWxzKSAlPiUgXG4gICAgc3VtbWFyaXNlKGNvdW50X29mX2N5bHMgPSBuKCkpICU+JSBcbiAgICBwdWxsKClcbiAgXG5pZiAgKHJldHVybl92YWx1ZSA+PSAxKSBwaHJhc2UgPC0gJ3RoZXJlIGFyZSB0aGluZ3MnXG5lbHNlIHBocmFzZSA8LSAndGhlcmUgYXJlIG5vIHRoaW5ncyBtYXRjaGluZydcblxucmV0dXJuKHBocmFzZSlcblxufVxuXG5tdGNhcnMgJT4lIFxuICBnZXRfY3lsX2NvdW50KGN5bHMgPSAzMilcblxuZ2V0X2N5bF9jb3VudChtdGNhcnMsIGN5bHMgPSA0KVxuYGBcbmBcbiBcbiBcbn1cbn1cbiAgXG59XG59XG5gYGAifQ== -->
 <pre class="r"><code>
-mtcars</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MzIsIm5jb2wiOjExLCJzdW1tYXJ5Ijp7IkRlc2NyaXB0aW9uIjpbImRmIFszMiDDlyAxMV0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBNjFYVFd3YlJSVGVPSGJpdjdnT1NTUjZLWHZnVUJCMnZMYVR1a0R4Z0owUXFsU2tTVW1pTnFvMHRyZngwczNPWm5idE5HbVJjdW01NGxqRUFha2NVUTl3eWJHaUVpZVE0TlFib2hjdUZDa1NLZ0lrQXJzNzcyM2lEVzRNWVNUcnpmdmUzL2ZlekdZMzg5WGxRbnc1TGtsU3Z4VHVDMG45RVdjclJkNjdOSjBwU1ZJNDVDaDlVbGlLdWZLRzR6VGliQkxPTCtYOFpESWhlY3VYazErNzZ4c3ljYzFiSlA5RndWMGtmL0t1c3o0aXI5d1ZzZ1IyOUMrSVJSVFFjMkJYWm9XZUJmMUZzS1BNQUE0SnlCdW8veUwwaVczQmF4ejRZWjZYZ1FmV2ZRM3F2QXArbUdjYy9hQ1BMUFlyN1A0Y25nY2NaVHFneTEzMGRCZi9vRit2TXBndktQOXIvQkg4Slp4REEzQ1VWMENhSW9DMHQ0WFVBM3B0VWN5Yndyd2JjSDRvMTE4WDV4T1VIMEQ4clFkQzNnUjk0VE5objM4aTVNV3ZSUDZyQTBKYVB3Zy9DL2kxUU44RWZRSHlYUjBSOVpjZ3ZyVUxmSUUvL3hiOFNPY2NyZ0FQbEV1a1UxZWgzbVhBalUrRWZCZnFMMkg5Z0x5Mi9jOVNnL2ozSWE4Ty9uTmdQdzk1NTZEZU1zamFnMDZKUEpBZnhpK0NmUVhpekVBZjlpNzBKK3dTenVFRVBGOG9VL0RjUnU4OWlwOHpQeVV4d0FkR3R4Ni9mWCtVeE81N0d6SjArOVRPeFo5dWt4TXJwNTkrZVdmbGtJemU4VGFINUtEcEpsNG5VZWczNXBhNTk0aWtuV1NuZHViSnlJNjNJV20zMnRaak1nVDN6YThQZklZZ0RubGkvRERFcHp3YUwvbDVrcTU2K2xlU0JMKzA0T0hQSVF6MlFlQVZBcjR4eUplQWZoUFFmeEx0Z0NNdjN3OWsyaXMvNC9OTm5mTUtrekdvTS9aNUpyVVlQa25HcU9EWkovb3QveTc4eTMvQ1BQdUJSeEw2U25qanVFbFMySzlMLytuRDhoNzAwZWVWZjZIODIwVDUxczhmTmtrTThneEFQUElmRUh6OE9lUmFJbDZKQ1A3NWowVmNBYzROOFdKSjFCMkhlUlNobjhrZjRiMENmNi96b0N2NHZvRHp6SU8vOG9mb1EvbE9uSXR5M1IzY0UxSzRJZkxuWVk0RnlGUDBEdVloeVgzdjliZi8vc0g0WkdmZEhMd1hjcUJub0M2K2J6Sndibm5CQytjZ0JWWjV0MU1HOFc1KzNlSjZYY2ZOZHhUZlovaDdjL2kvK2pqdU9pNlBvK2I0alB6aXVVZ0w1WkNNSGlHN3hmVWEzMnUrZnhzLzJxTUVmNm5MSElMeklsSkFUM2ZpdnV5VmY5QXZVRGRZTDRnZnFoZmsxODB2K0IwbDRlcjQ0STRZZEUxMVAxSGNzQVNBL1d2bUttN3JtenBzd3czTk1tRWZhcG8reXFtTjZBYnV3dXVXV2tlMGJlR09ycUY5VmFVYzkzWEthd0ZhTWM0MnNnZXB5V2k0UUxjYVZKNWZMZ0l3NUFQeUVrWFc4U3ExclpZaG4xRnlnS1JtR0RkVVd5N0tWYTYxVlVDSEFWMHdHYmRwamJXUS8rQWkxVFZxMkg2K2xtV3JYQzVNNW53ZUtxL0wrV0t1Q2tCVUFJVmNwMTRLQkpSeUZjenBBY1dKM01MVUlXUVdrTVErZ21IUFZXaEQwM1ZhbDZkMVZiVTNHR3VBWldSV00rcE1OK1FLTTJ6TlVBMmI0dEVOVjVwODA5S2REdDVaTTFXdStZYm90RVp0V2NtWHNPQU1NNXhwVnJTMmhzZVh1c1EybWUxZ2pET25Mbzc5QUdvZ21LNnl4cW9xVjVwVTExVmpWY1VUVHJ4NW9TS2ZwMjFWMXd6c3RVTFhLR2Z5WmI5MGVzNmw3ZmFsY2JXbWNXd3I1bEZjVmpKbnNmUWM0MWE5cWNwbmxXSW1EMkJ5bHRrdFM1NXFjV1lpbmRRMDR3MTV6amxHbFZNWlo1cWNWam1uWEpPcm1zSDJMNUhsK05pYS9CYmpHQjVmWkhxYnlVb3hQeFY4YU9vNnRmQm1JaGh2VUp0bXIzSG4wanJhWGlCa2tKbTJ4Z3duS09UK2V4c0pCUGZ4QUpCdUdlNzFiMlRxelpaeFBhT2NjU3Q0ZHZFYkFpa2YyQ2RFemRCZmtDc0N1UWFjczNEdUE1TFhhVTNGODA4NXo1bjNtR1ZOcnUxZmR3ZTFzamJidjBCeDUySWg0alVuN2YwTlNaL1NTdFlQQUFBPSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108.0","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258.0","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360.0","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225.0","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"},{"1":"14.3","2":"8","3":"360.0","4":"245","5":"3.21","6":"3.570","7":"15.84","8":"0","9":"0","10":"3","11":"4","_rn_":"Duster 360"},{"1":"24.4","2":"4","3":"146.7","4":"62","5":"3.69","6":"3.190","7":"20.00","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 240D"},{"1":"22.8","2":"4","3":"140.8","4":"95","5":"3.92","6":"3.150","7":"22.90","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 230"},{"1":"19.2","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.30","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280"},{"1":"17.8","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.90","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280C"},{"1":"16.4","2":"8","3":"275.8","4":"180","5":"3.07","6":"4.070","7":"17.40","8":"0","9":"0","10":"3","11":"3","_rn_":"Merc 450SE"},{"1":"17.3","2":"8","3":"275.8","4":"180","5":"3.07","6":"3.730","7":"17.60","8":"0","9":"0","10":"3","11":"3","_rn_":"Merc 450SL"},{"1":"15.2","2":"8","3":"275.8","4":"180","5":"3.07","6":"3.780","7":"18.00","8":"0","9":"0","10":"3","11":"3","_rn_":"Merc 450SLC"},{"1":"10.4","2":"8","3":"472.0","4":"205","5":"2.93","6":"5.250","7":"17.98","8":"0","9":"0","10":"3","11":"4","_rn_":"Cadillac Fleetwood"},{"1":"10.4","2":"8","3":"460.0","4":"215","5":"3.00","6":"5.424","7":"17.82","8":"0","9":"0","10":"3","11":"4","_rn_":"Lincoln Continental"},{"1":"14.7","2":"8","3":"440.0","4":"230","5":"3.23","6":"5.345","7":"17.42","8":"0","9":"0","10":"3","11":"4","_rn_":"Chrysler Imperial"},{"1":"32.4","2":"4","3":"78.7","4":"66","5":"4.08","6":"2.200","7":"19.47","8":"1","9":"1","10":"4","11":"1","_rn_":"Fiat 128"},{"1":"30.4","2":"4","3":"75.7","4":"52","5":"4.93","6":"1.615","7":"18.52","8":"1","9":"1","10":"4","11":"2","_rn_":"Honda Civic"},{"1":"33.9","2":"4","3":"71.1","4":"65","5":"4.22","6":"1.835","7":"19.90","8":"1","9":"1","10":"4","11":"1","_rn_":"Toyota Corolla"},{"1":"21.5","2":"4","3":"120.1","4":"97","5":"3.70","6":"2.465","7":"20.01","8":"1","9":"0","10":"3","11":"1","_rn_":"Toyota Corona"},{"1":"15.5","2":"8","3":"318.0","4":"150","5":"2.76","6":"3.520","7":"16.87","8":"0","9":"0","10":"3","11":"2","_rn_":"Dodge Challenger"},{"1":"15.2","2":"8","3":"304.0","4":"150","5":"3.15","6":"3.435","7":"17.30","8":"0","9":"0","10":"3","11":"2","_rn_":"AMC Javelin"},{"1":"13.3","2":"8","3":"350.0","4":"245","5":"3.73","6":"3.840","7":"15.41","8":"0","9":"0","10":"3","11":"4","_rn_":"Camaro Z28"},{"1":"19.2","2":"8","3":"400.0","4":"175","5":"3.08","6":"3.845","7":"17.05","8":"0","9":"0","10":"3","11":"2","_rn_":"Pontiac Firebird"},{"1":"27.3","2":"4","3":"79.0","4":"66","5":"4.08","6":"1.935","7":"18.90","8":"1","9":"1","10":"4","11":"1","_rn_":"Fiat X1-9"},{"1":"26.0","2":"4","3":"120.3","4":"91","5":"4.43","6":"2.140","7":"16.70","8":"0","9":"1","10":"5","11":"2","_rn_":"Porsche 914-2"},{"1":"30.4","2":"4","3":"95.1","4":"113","5":"3.77","6":"1.513","7":"16.90","8":"1","9":"1","10":"5","11":"2","_rn_":"Lotus Europa"},{"1":"15.8","2":"8","3":"351.0","4":"264","5":"4.22","6":"3.170","7":"14.50","8":"0","9":"1","10":"5","11":"4","_rn_":"Ford Pantera L"},{"1":"19.7","2":"6","3":"145.0","4":"175","5":"3.62","6":"2.770","7":"15.50","8":"0","9":"1","10":"5","11":"6","_rn_":"Ferrari Dino"},{"1":"15.0","2":"8","3":"301.0","4":"335","5":"3.54","6":"3.570","7":"14.60","8":"0","9":"1","10":"5","11":"8","_rn_":"Maserati Bora"},{"1":"21.4","2":"4","3":"121.0","4":"109","5":"4.11","6":"2.780","7":"18.60","8":"1","9":"1","10":"4","11":"2","_rn_":"Volvo 142E"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[32]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X2N5bF9jb3VudCA8LSBmdW5jdGlvbihkZiwgY3lscyl7XG4gIHJldHVybl92YWx1ZSA8LSBkZiAlPiVcbiAgICBmaWx0ZXIoY3lsID09IGN5bHMpICU+JSBcbiAgICBzdW1tYXJpc2UoY291bnRfb2ZfY3lscyA9IG4oKSkgJT4lIFxuICAgIHB1bGwoKVxuICBcbmlmICAocmV0dXJuX3ZhbHVlID49IDEpIHBocmFzZSA8LSAndGhlcmUgYXJlIHRoaW5ncydcbmVsc2UgcGhyYXNlIDwtICd0aGVyZSBhcmUgbm8gdGhpbmdzIG1hdGNoaW5nJ1xuXG5yZXR1cm4ocGhyYXNlKVxuXG59XG5cbm10Y2FycyAlPiUgXG4gIGdldF9jeWxfY291bnQoY3lscyA9IDMyKVxuYGBgIn0= -->
-<pre class="r"><code>get_cyl_count &lt;- function(df, cyls){
+mtcars
+get_cyl_count &lt;- function(df, cyls){
   return_value &lt;- df %&gt;%
     filter(cyl == cyls) %&gt;% 
     summarise(count_of_cyls = n()) %&gt;% 
@@ -1824,24 +1815,31 @@ return(phrase)
 }
 
 mtcars %&gt;% 
-  get_cyl_count(cyls = 32)</code></pre>
+  get_cyl_count(cyls = 32)
+
+get_cyl_count(mtcars, cyls = 4)
+``
+`
+ 
+ 
+}
+}
+  
+}
+}</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwidGhlcmUgYXJlIG5vIHRoaW5ncyBtYXRjaGluZ1wiXG4ifQ== -->
-<pre><code>[1] &quot;there are no things matching&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X2N5bF9jb3VudChtdGNhcnMsIGN5bHMgPSA0KVxuYGBgIn0= -->
-<pre class="r"><code>get_cyl_count(mtcars, cyls = 4)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwidGhlcmUgYXJlIHRoaW5nc1wiXG4ifQ== -->
-<pre><code>[1] &quot;there are things&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>} }</p>
-<p>} }</p>
+<p>Repo Structure</p>
+<p>Repo: PDA Projects</p>
+<p>Create a new RPROJ for each PDA assignment</p>
+<ol style="list-style-type: decimal">
+<li><p>Meteorites .rproj</p></li>
+<li><p>.rproj</p></li>
+</ol>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkgKGphbml0b3IpCmxpYnJhcnkgKHRpZHl2ZXJzZSkKbGlicmFyeSAoQ29kZUNsYW5EYXRhKQpgYGAKClBEQQoKV3JpdGUgYSBmdWNudGlvbiBjYWxsZWQgJ2dldF9tZXRlb3JpdGVfY291bnQoKScKCklmIHRoZXJlIGFyZSBub2UgbWV0ZW9yaXRlcyBpbiB0aGUgeWVhciwgcmV0dXJuIHRoZSBwaHJhc2UKCiJBcyBmYXIgYXMgd2Uga253b20gdGhlcmUgd2VyZSBubyBtZXRlb3JpdGVzIHRoYXQgeWVhciIKCjwtIGZ1bnRpb24oKSB7CgoKaW4gZ2VuZXJhbDoKCmYgPC0gZnVuY3Rpb24oZGYsIHllYXJfb3Jfc29tZXRoaW5nX2Vsc2UpIHsKCgoKKmdpdmUgYSBmdW5jdGlvbiBhICd2ZXJiJyBuYW1lCgoKZ2V0X2NvdW50X29mX3ggPC0gZnVuY3Rpb24oZGYsIHRoaW5nX0lfd2FudF90b19jb3VudCkgewogCiAKYGBge3J9CgptdGNhcnMKZ2V0X2N5bF9jb3VudCA8LSBmdW5jdGlvbihkZiwgY3lscyl7CiAgcmV0dXJuX3ZhbHVlIDwtIGRmICU+JQogICAgZmlsdGVyKGN5bCA9PSBjeWxzKSAlPiUgCiAgICBzdW1tYXJpc2UoY291bnRfb2ZfY3lscyA9IG4oKSkgJT4lIAogICAgcHVsbCgpCiAgCmlmICAocmV0dXJuX3ZhbHVlID49IDEpIHBocmFzZSA8LSAndGhlcmUgYXJlIHRoaW5ncycKZWxzZSBwaHJhc2UgPC0gJ3RoZXJlIGFyZSBubyB0aGluZ3MgbWF0Y2hpbmcnCgpyZXR1cm4ocGhyYXNlKQoKfQoKbXRjYXJzICU+JSAKICBnZXRfY3lsX2NvdW50KGN5bHMgPSAzMikKCmdldF9jeWxfY291bnQobXRjYXJzLCBjeWxzID0gNCkKYGBgCiAKIAp9Cn0KICAKfQp9</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkgKGphbml0b3IpCmxpYnJhcnkgKHRpZHl2ZXJzZSkKbGlicmFyeSAoQ29kZUNsYW5EYXRhKQpgYGAKClBEQQoKV3JpdGUgYSBmdWNudGlvbiBjYWxsZWQgJ2dldF9tZXRlb3JpdGVfY291bnQoKScKCklmIHRoZXJlIGFyZSBub2UgbWV0ZW9yaXRlcyBpbiB0aGUgeWVhciwgcmV0dXJuIHRoZSBwaHJhc2UKCiJBcyBmYXIgYXMgd2Uga253b20gdGhlcmUgd2VyZSBubyBtZXRlb3JpdGVzIHRoYXQgeWVhciIKCjwtIGZ1bnRpb24oKSB7CgoKaW4gZ2VuZXJhbDoKCmYgPC0gZnVuY3Rpb24oZGYsIHllYXJfb3Jfc29tZXRoaW5nX2Vsc2UpIHsKCgoKKmdpdmUgYSBmdW5jdGlvbiBhICd2ZXJiJyBuYW1lCgoKZ2V0X2NvdW50X29mX3ggPC0gZnVuY3Rpb24oZGYsIHRoaW5nX0lfd2FudF90b19jb3VudCkgewogCiAKYGBge3J9CgptdGNhcnMKZ2V0X2N5bF9jb3VudCA8LSBmdW5jdGlvbihkZiwgY3lscyl7CiAgcmV0dXJuX3ZhbHVlIDwtIGRmICU+JQogICAgZmlsdGVyKGN5bCA9PSBjeWxzKSAlPiUgCiAgICBzdW1tYXJpc2UoY291bnRfb2ZfY3lscyA9IG4oKSkgJT4lIAogICAgcHVsbCgpCiAgCmlmICAocmV0dXJuX3ZhbHVlID49IDEpIHBocmFzZSA8LSAndGhlcmUgYXJlIHRoaW5ncycKZWxzZSBwaHJhc2UgPC0gJ3RoZXJlIGFyZSBubyB0aGluZ3MgbWF0Y2hpbmcnCgpyZXR1cm4ocGhyYXNlKQoKfQoKbXRjYXJzICU+JSAKICBnZXRfY3lsX2NvdW50KGN5bHMgPSAzMikKCmdldF9jeWxfY291bnQobXRjYXJzLCBjeWxzID0gNCkKYGAKYAogCiAKfQp9CiAgCn0KfQpgYGAKClJlcG8gU3RydWN0dXJlCgpSZXBvOiBQREEgUHJvamVjdHMKCkNyZWF0ZSBhIG5ldyBSUFJPSiBmb3IgZWFjaCBQREEgYXNzaWdubWVudAoKMS4gTWV0ZW9yaXRlcwoucnByb2oKCjIuCi5ycHJvag==</div>
 
 
 

@@ -36,9 +36,9 @@ WHERE pension_enrol = TRUE
   */
 
 SELECT
-    first_name,
-    last_name,
-    name
+    e.first_name,
+    e.last_name,
+    t.name AS team_name
 FROM employees as e
 INNER JOIN teams as t
 ON e.team_id = t.id
@@ -54,7 +54,10 @@ and local_sort_code, if they have them.
  Hints
  */
 
-SELECT *    
+SELECT
+    e.*,
+    pd.local_account_no,
+    pd.local_sort_code
 FROM employees AS e
 LEFT JOIN pay_details as pd 
 ON e.pay_detail_id = pd.id 
@@ -63,7 +66,10 @@ ON e.pay_detail_id = pd.id
 /*(b). Amend your query above to also return the name of the team that each employee belongs to. 
 */
 
-SELECT *    
+SELECT
+    e.*,
+    pd.local_account_no,
+    pd.local_sort_code
 FROM (employees AS e
 LEFT JOIN pay_details as pd 
 ON e.pay_detail_id = pd.id)
@@ -77,55 +83,43 @@ ON e.team_id = t.id
 SELECT
     e.id AS employee_id,
     t.name AS team_name
-FROM (employees AS e
-LEFT JOIN pay_details as pd 
-ON e.pay_detail_id = pd.id)
-
-SELECT *
 FROM employees AS e
-INNER JOIN teams AS t 
-ON e.team_id = t.id 
-GROUP by 
-    t.name,
-    e.id,
-    t.id
+LEFT JOIN teams AS t
+ON e.team_id = t.id
+
     
 
 
 (b). Breakdown the number of employees in each of the teams. 
 
 SELECT
-    e.id,
-    t.name,
-    t.id,
-    count(t.id) AS teams_count
-FROM (employees AS e
-LEFT JOIN pay_details as pd 
-ON e.pay_detail_id = pd.id)
-INNER JOIN teams AS t 
+    count(e.id),
+    e.id AS employee_id,
+    t.name AS team_name,
+    t.id AS team_id    
+FROM employees AS e
+LEFT JOIN teams as t
 ON e.team_id = t.id 
-GROUP by 
+GROUP BY 
     t.name,
     e.id,
-    t.id;
+    t.id
 
 
 (c). Order the table above by so that the teams with the least employees come first.
 
 SELECT
-    e.id AS employee_id,
-    t.name AS team_name,
     count(t.id) AS teams_count
-FROM (employees AS e
-LEFT JOIN pay_details as pd 
+    e.id AS employee_id,
+    t.name AS team_name
+FROM(employees AS e LEFT JOIN  pay_details AS pd 
 ON e.pay_detail_id = pd.id)
 INNER JOIN teams AS t 
 ON e.team_id = t.id 
 GROUP by 
-    e.id,
     t.name,
+    e.id,
     t.id
-   
   
 
  
