@@ -44,7 +44,7 @@ qb_revenue_breakdown <- qb_revenue_breakdown
 qb_monthly_sales <- qb_monthly_sales
 qb_competitors <- qb_competitors
 qb_device_data <- qb_device_data
-col_scheme <- c("#E89FE9", "#50434F", "#B6A7B5", "#F9A472", "#BD7040")
+col_scheme <- c("Accessories" = "#E89FE9", "Smart Watches" = "#50434F", "Subscription Services" = "#B6A7B5", "#F9A472", "Trackers" = "#BD7040")
 ```
 
 Take a little time before you start to familiarise yourself with the data.
@@ -60,8 +60,8 @@ Take the data in the dataset `qb_revenue_breakdown` and make a stacked bar chart
 ```{r}
 ggplot(qb_revenue_breakdown) +
   aes(Year, Revenue, fill = Product)+
-  geom_col() 
-
+  geom_col() +
+scale_fill_manual(values = col_scheme)
 ```
 
 
@@ -123,7 +123,8 @@ qb_competitors %>%
   aes(Year, Revenue, fill = Company, colour = Company) +
   scale_y_continuous(name = "Revenue", labels = scales::dollar_format()) +
   geom_line() +
-  geom_point() 
+  geom_point() +
+scale_fill_manual(values = col_scheme)
 ```
 
 
@@ -131,17 +132,8 @@ qb_competitors %>%
 Now the company wants to compare the number of steps that their device counts vs. their competitors. Make a line graph of the number of steps throughout time, and use faceting to compare between companies and people. The data for this is in `qb_device_data`.
 <br>
 ```{r}
-time <- (qb_device_data$hours) + (qb_device_data$mins/60)
-  
-qb_device_data %>%                             
-  group_by(device, id) %>% 
-  arrange(hours, mins) %>% 
-  ggplot()+
-    aes(time, counts, group = id, colour = device) + 
-    geom_line(aes(x = time, y = counts, group = device, colour = device), alpha = .25) +
-  geom_point(aes(x = time, y = counts, colour = device), alpha = 0.4) +
-  geom_smooth(aes(x = time, y = counts, colour = device)) +
-  facet_wrap(id~device)
+
+
 ```
 
 ## Part 2 
@@ -165,9 +157,28 @@ knitr::include_graphics("palette.JPG")
 col_scheme <- c("#E89FE9", "#50434F", "#B6A7B5", "#F9A472", "#BD7040")
 ```
 <br>
+```{r}
+#customizing a prepackaged theme
+function (base_size = 11, base_family = "", base_line_size = base_size/22, 
+    base_rect_size = base_size/22) 
+{
+    theme_grey(base_size = base_size, base_family = base_family, 
+        base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace% 
+        theme(panel.background = element_rect(fill = "white", 
+            colour = NA), panel.border = element_rect(fill = NA, 
+            colour = "grey20"), panel.grid = element_line(colour = "grey92"), 
+            panel.grid.minor = element_line(size = rel(0.5)), 
+            strip.background = element_rect(fill = "grey85", 
+                colour = "grey20"), legend.key = element_rect(fill = "white", 
+                colour = NA), complete = TRUE)
+}
+
+```
 
 # Extension
 
 **Question 1.**  
 Try out different ways of plotting these three datasets. Which graphs do you think are particularly effective at showing QikBit's success?
 <br>
+
+
