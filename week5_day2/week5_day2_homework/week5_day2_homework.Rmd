@@ -32,13 +32,9 @@ What is the distribution of backpack weights that students are carrying? Choose 
 
 
 ```{r}
-backpack %>% 
-  select(backpack_weight) %>% 
-  ggplot() + 
-  aes(backpack_weight, fill = backpack_weight)
-  geom_histogram()
-
-
+ggplot(backpack) + 
+aes(backpack_weight) +
+geom_histogram (binwidth = .5)
 ```
 
 
