@@ -24,9 +24,10 @@ library(CodeClanData)
 library(janitor)
 library(dplyr)
 library(tidyverse)
+library(here)
 ```
 ```{r}
-movie_data <- read_csv('/Users/markfojas/CodeClan/codeclan_homework_MarkAntFojas/codeclan_homework_MarkAntFojas/Homework_Day3/movies.csv')
+movie_data <- read_csv(here("Data/movies.csv"))
 (movie_data)
 
 ```
