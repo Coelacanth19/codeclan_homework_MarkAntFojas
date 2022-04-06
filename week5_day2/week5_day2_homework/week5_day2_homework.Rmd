@@ -30,7 +30,14 @@ Question 2.
 
 What is the distribution of backpack weights that students are carrying? Choose an appropriate graph to show the distribution.
 
+
 ```{r}
+backpack %>% 
+  select(backpack_weight) %>% 
+  ggplot() + 
+  aes(backpack_weight, fill = backpack_weight)
+  geom_histogram()
+
 
 ```
 
