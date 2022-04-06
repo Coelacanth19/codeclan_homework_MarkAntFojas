@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+___MVP Supply Chain Project___
+# loading libraries
+```{r}
+library(tidyverse)
+library(janitor)
+library(here)
+library(dplyr)
+library(readxl)
+```
+
+```{r}
+#reading supply chain dataset obtained from Kaggle, and cleaning
+supplychain_order <- read_excel(here::here("data/Supply chain logisitcs problem.xlsx"))
+
+supplychain_order_clean <- supplychain_order %>% 
+  clean_names()
+```
+```{r}
+#analyzing dimensions and names
+dim(supplychain_order_clean) 
+names(supplychain_order_clean)
+head(supplychain_order_clean)
+
+```
+```{r}
+#removing extraneous columns
+supply_chain <- supplychain_order_clean %>% 
+  group_by(origin_port, destination_port, customer, unit_quantity, weight, carrier, order_date)
+```
+
+
+```{r}
+ggplot(supply_chain) +
+  geom_point(
+  aes(x = order_date, y = unit_quantity)) 
+  
+  
+```
+
+/* The other 6 tables describe the restrictions imposed on the system.
+
+some customers can only be serviced by a specific plant
+plants and ports have to be physically connected.
+plants can only handle specific items
+Notes:
+
+The terms "Warehouse" and "Plant" are used interchangeably, essentially a warehouse is a plant.
+This is a (deterministic) optimization problem, there is only one order date since we are only looking at orders from one specific day and trying to assign them to routes/factories.
+We have to ship all the orders to PORT09
+The goal is to schedule routes while minimizing freight and warehousing costs.
+I am also just working on understanding the Dataset, maybe we can have a discussion in the comment section for clarifications.
+Acknowledgements:
+
+This dataset was taken from the Brunel University of London Website */
