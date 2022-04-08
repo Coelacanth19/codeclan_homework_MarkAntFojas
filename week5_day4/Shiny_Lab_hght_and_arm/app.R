@@ -35,8 +35,6 @@ filtered_data <- reactive({
     filter(ageyears == input$age_input)
 })
 
-  output$table_data <- renderDataTable(filtered_data())
-  
   output$arm_span_plot <- renderPlot({
     ggplot(filtered_data()) +
       aes(x = arm_span) +
