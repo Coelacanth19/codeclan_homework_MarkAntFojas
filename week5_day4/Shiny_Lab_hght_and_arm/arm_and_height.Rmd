@@ -1,0 +1,19 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+library(CodeClanData)
+```
+
+
+```{r}
+head(students_big)
+names(students_big)
+```
+```{r}
+students_big %>% 
+filter(gender == "M")
+```
+

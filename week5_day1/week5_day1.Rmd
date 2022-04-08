@@ -1,0 +1,45 @@
+---
+title: "Week5_day1_mfojas"
+output: html_document
+date: '2022-04-04'
+---
+```{r}
+library(tidyverse)
+library(here)
+
+```
+___Reading Data into R___
+
+```{r}
+read_csv(here(""))
+```
+
+___Advanced ggplot2 Homework___
+
+2 MVP
+2.1 Part 1
+Question 1.
+Take the data in the dataset qb_revenue_breakdown and make a stacked bar chart showing the sources of revenue across the two years in the dataset. 
+
+```{r}
+ggplot(qb_revenue_breakdown) +
+  aes()
+```
+
+
+Questino 2.
+Make a line chart showing monthly sales of the “flagship product” - the ‘KwikBit Unit 1’ - over the last year. This data is inside qb_monthly_sales, but you will need to use filter() or subset() (base R). 
+
+Question 3.
+Make a line chart showing monthly revenue and costs over the last year. This data is also in qb_monthly_sales.
+
+
+Question 4.
+Show annual sales of personal fitness trackers over the last 5 years broken down by company as a ribbon plot (use geom_area). This data is in qb_competitors. 
+
+Question 5.
+Now show the sales from the four competitors as a line graph. Include an extra layer that shows the data points used to make the lines. 
+
+Question 6.
+Now the company wants to compare the number of steps that their device counts vs. their competitors. Make a line graph of the number of steps throughout time, and use faceting to compare between companies and people. The data for this is in qb_device_data. 
+

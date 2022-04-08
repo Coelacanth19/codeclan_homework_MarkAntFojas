@@ -1,0 +1,15 @@
+---
+title: "Scatter_plot_scratch"
+output: html_document
+date: '2022-04-07'
+---
+
+```{r}
+library(tidyverse)
+library(CodeClanData)
+library(dplyr)
+```
+```{r}
+names(students_big)
+```
+

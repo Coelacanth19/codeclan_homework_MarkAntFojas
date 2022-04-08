@@ -10,11 +10,12 @@ library(janitor)
 library(here)
 library(dplyr)
 library(readxl)
+library(CodeClanData) #realizing my chosen dataset was far less interesting from an app perspective, I decided to move on
 ```
 
 ```{r}
 #reading supply chain dataset obtained from Kaggle, and cleaning
-supplychain_order <- read_excel(here::here("data/Supply chain logisitcs problem.xlsx"))
+supplychain_order <- read_excel(here::here("data/Supply chain logisitcs problem.xlsx"), sheet = "OrderList")
 
 supplychain_order_clean <- supplychain_order %>% 
   clean_names()
@@ -29,17 +30,19 @@ head(supplychain_order_clean)
 ```{r}
 #removing extraneous columns
 supply_chain <- supplychain_order_clean %>% 
-  group_by(origin_port, destination_port, customer, unit_quantity, weight, carrier, order_date)
+  group_by(origin_port, destination_port, customer, unit_quantity, weight, carrier, order_date )
 ```
 
 
 ```{r}
 ggplot(supply_chain) +
-  geom_point(
-  aes(x = order_date, y = unit_quantity)) 
+  aes(x = order_date, y = unit_quantity, group = origin_port) +
+  geom_bar() 
   
   
 ```
+-A few hours into this dataset, getting charts and graphs that looked like a straight line no matter how I rotated axes, I looked at my notes, looked at the chart, then realized to my horror: This dataset only spans ONE date. This underscores the importance of looking at ALL data. This would 
+
 
 /* The other 6 tables describe the restrictions imposed on the system.
 
@@ -51,8 +54,11 @@ Notes:
 The terms "Warehouse" and "Plant" are used interchangeably, essentially a warehouse is a plant.
 This is a (deterministic) optimization problem, there is only one order date since we are only looking at orders from one specific day and trying to assign them to routes/factories.
 We have to ship all the orders to PORT09
-The goal is to schedule routes while minimizing freight and warehousing costs.
-I am also just working on understanding the Dataset, maybe we can have a discussion in the comment section for clarifications.
-Acknowledgements:
+The goal is to schedule routes while minimizing freight and warehousing costs. 
+
 
 This dataset was taken from the Brunel University of London Website */
+
+
+
+
