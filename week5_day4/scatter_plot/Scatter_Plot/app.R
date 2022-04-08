@@ -5,7 +5,7 @@ library(CodeClanData)
 library(shinythemes)
 
 ui <- fluidPage(
-  theme = shinytheme("Superhero"),
+  theme = shinytheme("superhero"),
   # Application title
   titlePanel("A Customisable Scatter Plot"),
   fluidRow(
@@ -26,17 +26,26 @@ ui <- fluidPage(
                                   Triangle = 17)
                        )
            )
-    
+    #if you had programmed this portion, you would be home by now
+    #if-else statements go here
+    #ggtitle is a function of ggplot so should go in output this portion is 
+    #UI only
     
 )
 )
 
 
-server <- function(input,output {
+server <- function(input,output) {
 
 filtered_data <- reactive(input$color_input,
                           input$shape_input)
-})
+}
+
+#what do we want the variables created to do?
+#combine the input from color_input, shape_input, 
+output$color_input
+
+output$shape_input 
 
 
 # Run the application 

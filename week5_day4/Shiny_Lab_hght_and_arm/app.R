@@ -3,9 +3,10 @@
 library(shiny)
 library(CodeClanData)
 library(tidyverse)
-
+library(shinythemes)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+  themes = shinytheme("superhero"),
     # Application title
     titlePanel("Height and Arm Span vs Age"),
     fluidRow(
