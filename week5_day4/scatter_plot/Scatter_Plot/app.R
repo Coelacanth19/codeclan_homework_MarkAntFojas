@@ -38,15 +38,18 @@ ui <- fluidPage(
 server <- function(input,output, session) {
 
 filtered_data <- reactive(input$color_input,
-                          input$shape_input)
+                          input$shape_input,
+                          input$
+                          input$text_input)
 }
 
 #what do we want the variables created to do?
 #combine the input from all inputs: color_input, shape_input... to get 
 #plotOutput
-output$color_input
+#output$color_input <- render
 
-output$shape_input 
+#output$shape_input 
+
 
 
 # Run the application 
