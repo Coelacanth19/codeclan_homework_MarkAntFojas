@@ -12,4 +12,27 @@ library(dplyr)
 ```{r}
 names(students_big)
 ```
+#generating ggplot while I wake up
+filtered_data %>% 
+ggplot() +
+aes(x = reaction_time, y= score_in_memory_game)
+geom_point() +
+ggtitle
+
+outputs
+we need a transparency slider
+sliderInput(transparency_input, "Transparency of points", min = 0, max = 1, value = 0.5, step = 0.1, ticks = TRUE)
+
+
+tidy eval
+nonstandard evaluation (running of R code)
+  -sometimes we need R not to immediately run something
+```{r}
+iris %>% 
+  summarise(across(where(is.numeric), ~mean(.x, na.rm =TRUE)))
+```
+in statement
+aes(x =.data[["Sepal.Length"]], y=[["Sepal.Width"], colour = Species)
+
+the .data defines using the data that is in the pipe-- which after manipulations may be different from the base "Iris" dataframe.
 

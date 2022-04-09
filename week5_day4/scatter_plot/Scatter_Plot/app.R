@@ -5,7 +5,7 @@ library(CodeClanData)
 library(shinythemes)
 
 ui <- fluidPage(
-  theme = shinytheme("superhero"),
+ # theme = shinytheme("superhero"),
   # Application title
   titlePanel("A Customisable Scatter Plot"),
   fluidRow(
@@ -31,43 +31,37 @@ ui <- fluidPage(
           ),
     
     column(3,
-           textInput("title_input", "Title of Graph")
+           textInput("title_input", "Title of Graph"),
+           
+           
              
-           ))
+           ),
+    
+    plotOutput("scatter_plot")
+    )
     #if you had programmed this portion, you would be home by now
     #if-else statements go here
     #ggtitle is a function of ggplot so should go in output this portion is 
     #UI only
     
 )
-)
 
 
-server <- function(input,output, session) {
 
-inputs_data <- reactive(input$color_input,
-                          input$shape_input,
-                          input$alpha_input,
-                          input$title_input)
+server <- function(input,output) {
+
+output$scatter_plot <- renderPlot({
+  ggplot(students_big) +
+  aes(x = reaction_time, 
+      y = score_in_memory_game) +
+  geom_point(color = input$color_input,
+            shape = as.numeric(input$shape_input), 
+            alpha = as.numeric(input$alpha_input)+
+  ggtitle(label = input$text_input)
+  )
+})
 
 }
-
-#what do we want the variables created to do?
-#combine the input from all inputs: color_input, shape_input... to get 
-#plotOutput
-#output$color_input <- render
-students_big %>%
-ggplot()
-aes(x = reaction_time, 
-    y= score_in_memory_game, 
-    color = input$color_input,
-    shape = input$shape_input,
-    )
-geom_point(alpha = input$alpha_input) +
-  ggtitle(label = input$text_input)
-#output$shape_input 
-
-
 
 # Run the application 
 shinyApp(ui = ui, server = server)
