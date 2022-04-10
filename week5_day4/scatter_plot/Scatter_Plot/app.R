@@ -28,24 +28,17 @@ ui <- fluidPage(
           ),
     column(2,
            sliderInput("transparency_input", "Transparency of points", min = 0, max = 1, value = 0.5, step = 0.1, ticks = TRUE)
-          ),
-    
-
-    
+          )
+  ), 
   fluidRow(
     column(10,
            plotOutput("scatter_plot"),
     column(2,
                   textInput("title_input", "Title of Graph"),
            ),
-    plotOutput("scatter_plot") 
   )
        
     )
-  
-    #ggtitle is a function of ggplot so should go in output this portion is 
-    #UI only
-    
 )
 
 
