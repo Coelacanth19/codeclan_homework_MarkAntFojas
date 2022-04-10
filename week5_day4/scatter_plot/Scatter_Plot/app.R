@@ -27,33 +27,36 @@ ui <- fluidPage(
                        )
           ),
     column(2,
-           sliderInput("transparency_input", "Transparency of points", min = 0, max = 1, value = 0.5, step = 0.1, ticks = TRUE)
+           sliderInput("alpha_input", 
+                       "Transparency of points", 
+                       min = 0, max = 1, value = 0.5, step = 0.1, ticks = TRUE)
           )
   ), 
   fluidRow(
-    column(10,
+    column(12,
            plotOutput("scatter_plot"),
-    column(2,
-                  textInput("title_input", "Title of Graph"),
+   column(2,
+                  textInput("title_input", "Title of Graph", value = "Reaction Time vs. Memory Games"),
            ),
   )
        
-    )
+    ),
+
+
 )
 
-
-
-server <- function(input,output) {
+server <- function(input, output, session) {
 
 output$scatter_plot <- renderPlot({
   ggplot(students_big) +
   aes(x = reaction_time, 
       y = score_in_memory_game) +
-  geom_point(color = input$color_input,
-            shape = as.numeric(input$shape_input), 
-            alpha = as.numeric(input$alpha_input)+
-  ggtitle(input$text_input)
-  )
+  geom_point(color = input$color_input, 
+             alpha = input$alpha_input,
+             shape = as.numeric(input$shape_input) 
+            ) +
+  ggtitle(input$title_input)
+
 })
 
 }
