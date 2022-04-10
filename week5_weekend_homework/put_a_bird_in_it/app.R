@@ -11,10 +11,18 @@ library(leaflet)
 birds_df <- read_csv(here("clean_data/bird_join.csv"))
 
 ui <- fluidPage(
-    # Application title
-    titlePanel("Put A Bird On It!"),
+    shinytheme("superhero"),
+    (tabsetPanel(
+      tabPanel("Our Data", "contents"),
+      tabPanel("Bird Observation Maps", leafletOutput() ),
+      tabPanel("Observer Map", )
+    ))
+   
     
     
 )    
 # Run the application 
-shinyApp(ui = ui, server = server)
+shinyApp(ui, server)
+
+
+
