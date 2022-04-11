@@ -23,22 +23,30 @@ ui <- fluidPage(
                  sidebarPanel(width = 3, 
                               selectInput("simple_bird_input", 
                                           "Select Bird", 
-                                          choices = simple_bird_name)
+                                          choices = simple_bird_name
+               )
                ),
                   mainPanel(
                               leafletOutput("bird_map"), width = 10
                               ),
       tabPanel("Observer Map", leafletOutput("observer_map"), width = 10 )
-    ))
-  
-    
-    
-) 
+    )
+)
+)
+)
+),
 
 server <- function(input, output, session) {
   
 }
+
+output$bird_map <- renderLeaflet({
   
+  
+}),
+  
+
+output$observer_map <-
 # Run the application 
 shinyApp(ui, server)
 
