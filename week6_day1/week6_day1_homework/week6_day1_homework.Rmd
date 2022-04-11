@@ -1,0 +1,70 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(prob)
+library(gtools)
+library(tidyverse)
+library(here)
+```
+```{r}
+#loading data
+titanic_df <- read_csv(here("data/titanic.csv"))
+```
+A data set detailing the survival or death of passengers and crew members on the RMS Titanic is given in the data folder for this homework - use this data and not the built-in Titanic dataset in R.
+
+Some time after the disaster a journalist wrote that crew members were more likely to have survived the sinking than passengers. This was disputed by a descendant of one of the surviving crew members, who suggested that the opposite was true, i.e. passengers were more likely to have survived than crew.
+
+Question
+Calculate the conditional probabilities prob(survived∣crew)
+ and prob(survived∣passenger)
+ to settle this dispute.
+
+```{r}
+names(titanic_df)
+```
+```{r}
+glimpse(titanic_df)
+head(titanic_df)
+tail(titanic_df, 100)
+```
+```{r}
+titanic_df %>% 
+  select(class, survived) %>% 
+  mutate(crew = str_detect(pattern = "class", "crew" | "staff")) %>%
+  mutate(passenger = str_detect(negate = "class", "crew" | "staff"))
+```
+
+
+
+
+Have a look at the distinct values of the class variable, this will tell you whether each individual was a passenger (1st, 2nd or 3rd class) or a member of the crew (treat restaurant staff as crew)
+
+
+Question 1.
+If I roll a six-sided dice once, what is the probability of getting a number less than 5?
+
+
+Question 2.
+How many outcomes are there in the sample space of an experiment in which we toss three dice?
+
+
+
+Question 3.
+In an experiment where we roll four dice:
+
+how many outcomes are in the event where the total of the four dice equals 5
+, 6
+ or 7
+)?
+what is the probability of this event?
+what assumptions do we apply in answering part ii?
+ Hint
+
+
+Question 4.
+Five chairs are placed in a row in a room, along with five people of differing height. The people sit down randomly on the chairs. What is the probability that they sit in order of decreasing height, left to right?
+
+ Hint
+
