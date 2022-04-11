@@ -24,7 +24,7 @@ ui <- fluidPage(
                               selectInput("simple_bird_input", 
                                           "Select Bird", 
                                           choices = simple_bird_name
-               )
+                                        )
                ),
                   mainPanel(
                               leafletOutput("bird_map"), width = 10
@@ -41,6 +41,9 @@ server <- function(input, output, session) {
 }
 
 output$bird_map <- renderLeaflet({
+  birds_df %>% 
+    select()
+    leaflet()
   
   
 }),

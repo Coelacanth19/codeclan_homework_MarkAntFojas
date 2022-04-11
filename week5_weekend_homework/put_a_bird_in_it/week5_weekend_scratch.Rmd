@@ -61,5 +61,5 @@ write_csv(x = bird_join, file = (here("clean_data/bird_join.csv"))
 ```
 
 going to use this in server section to filter for specific birds
-filter(str_detect(species_common, input$common_bird_name)) %>% 
+filter(str_detect(species_common, input$common_bird_name_input)) %>% 
 drop_na()
