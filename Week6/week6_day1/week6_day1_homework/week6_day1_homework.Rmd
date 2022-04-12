@@ -33,15 +33,15 @@ tail(titanic_df, 100)
 #setting up data
 titanic_modif <- titanic_df %>% 
   select(class, survived ) %>% 
-  mutate(crew = str_detect(pattern = "class", "crew|staff")) %>%
-  mutate(passenger = str_detect(pattern = "class", "crew|staff", ))
+  mutate(crew = str_detect(pattern = class,"crew|staff")) %>%
+  mutate(passenger = str_detect(pattern = class, "[0-3][a-z]+"))
 ```
 
 ```{r}
 #applying equations
 #add columns of passenger and crew together to get subset
-crew_count <- titanic_modif %>% 
-  filter(crew == "TRUE")
+titanic_modif %>% 
+  sum(crew)
   
 
 ```
