@@ -30,18 +30,37 @@ head(titanic_df)
 tail(titanic_df, 100)
 ```
 ```{r}
-#setting up data
+# getting intial count and set(s)
+titanic_df %>% 
+count(class)
+summarise()
+```
+
+```{r}
+#cleaning data, adding columns
 titanic_modif <- titanic_df %>% 
   select(class, survived ) %>% 
-  mutate(crew = str_detect(pattern = class,"crew|staff")) %>%
-  mutate(passenger = str_detect(pattern = class, "[0-3][a-z]+"))
+  mutate(crew = str_detect(class,"crew|staff")) %>% 
+  mutate(passengers = str_detect(class, "1st|2nd|3rd"))
+  
 ```
+
+
+```{r}
+#checking data
+titanic_modif %>% 
+  count(crew)
+
+titanic_modif %>% 
+  count(passengers)
+```
+
 
 ```{r}
 #applying equations
 #add columns of passenger and crew together to get subset
-titanic_modif %>% 
-  sum(crew)
+
+  
   
 
 ```
