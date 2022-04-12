@@ -30,16 +30,32 @@ head(titanic_df)
 tail(titanic_df, 100)
 ```
 ```{r}
-titanic_df %>% 
-  select(class, survived) %>% 
+#setting up data
+titanic_modif <- titanic_df %>% 
+  select(class, survived ) %>% 
   mutate(crew = str_detect(pattern = "class", "crew|staff")) %>%
   mutate(passenger = str_detect(pattern = "class", "crew|staff", ))
+```
+
+```{r}
+#applying equations
+#add columns of passenger and crew together to get subset
+crew_count <- titanic_modif %>% 
+  filter(crew == "TRUE")
+  
+
 ```
 
 
 
 
+
 Have a look at the distinct values of the class variable, this will tell you whether each individual was a passenger (1st, 2nd or 3rd class) or a member of the crew (treat restaurant staff as crew)
+
+titanic_modif %>% 
+
+
+
 
 
 Question 1.
