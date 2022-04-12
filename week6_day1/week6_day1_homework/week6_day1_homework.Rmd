@@ -32,8 +32,8 @@ tail(titanic_df, 100)
 ```{r}
 titanic_df %>% 
   select(class, survived) %>% 
-  mutate(crew = str_detect(pattern = "class", "crew" | "staff")) %>%
-  mutate(passenger = str_detect(negate = "class", "crew" | "staff"))
+  mutate(crew = str_detect(pattern = "class", "crew|staff")) %>%
+  mutate(passenger = str_detect(pattern = "class", "crew|staff", ))
 ```
 
 
