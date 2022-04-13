@@ -35,7 +35,7 @@ top_brand <- items %>%
 
 top_brand %>% 
   ggplot(aes(x = rating)) + 
-  geom_histogram(aes(y = ..density..), col = "white", bins = 25) +
+  geom_histogram(aes(y = ..density..), col = "white", binwidth = .2) +
   stat_function(
     fun = dnorm, #is our data normally distributed?
     args = list(
@@ -54,18 +54,45 @@ ratings scaled
 
   
 ```{r}
-ratings_scaled <- top_item %>% 
-  filter(top_item$rating) %>% 
+#need to select further for single column
+samsung_rating <- top_brand %>% 
+select(rating)
+
+
+ratings_scaled <- samsung_rating %>% 
   mutate(z_rating = scale(rating))
 ```
   
 sd1
-count <-  %>% 
+
+```{r}
+count <-  ratings_scaled%>% 
   filter(between(z_rating, left = -1, right = 1)) %>% 
   nrow()
+
+count/nrow(ratings_scaled)
+```
 
 count / nrow(rating_scaled)
 
 sd2
 
+```{r}
+count <-  ratings_scaled%>% 
+  filter(between(z_rating, left = -2, right = 2)) %>% 
+  nrow()
+
+count/nrow(ratings_scaled)
+```
+
 sd3
+```{r}
+count <-  ratings_scaled%>% 
+  filter(between(z_rating, left = -3, right = 3)) %>% 
+  nrow()
+
+count/nrow(ratings_scaled)
+```
+SD1 definitely doesn't follow the three sigma rule, and therefore this is not a normal distribution.
+
+
