@@ -41,7 +41,7 @@ summarise()
 titanic_modif <- titanic_df %>% 
   select(class, survived ) %>% 
   mutate(crew = str_detect(class,"crew|staff")) %>% 
-  mutate(passengers = str_detect(class, "1st|2nd|3rd"))
+  mutate(passengers = str_detect(class, "1st|2nd|3rd")) #could also do a negate of previous mutation, but want to do a different method to verify numbers
   
 ```
 
@@ -51,7 +51,7 @@ titanic_modif <- titanic_df %>%
 titanic_modif %>% 
   count(crew)
 
-titanic_modif %>% 
+titanic_modif %>% #checking the other end of count to verify numbers-- seems to match
   count(passengers)
 ```
 

@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(here)
+```
+```{r}
+items_df <- read_csv(here("data/20190928-items.csv"))
+```
+```{r}
+names(items_df)
+glimpse(items_df)
+```
+```{r}
+#cleaning names which aren't too bad, some column values look messy
+items <- clean_names(items_df)
+
+glimpse(items)
+
+```
+

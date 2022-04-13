@@ -1768,226 +1768,85 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuYGBgIn0= -->
-<pre class="r"><code>library(prob)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShqYW5pdG9yKVxuXG5gYGAifQ== -->
+<pre class="r"><code>library(janitor)
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBjb21iaW5hdFxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYY29tYmluYXTigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTp1dGlsc+KAmTpcblxuICAgIGNvbWJuXG5cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZkFzaWFuT3B0aW9uc1xuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiB0aW1lRGF0ZVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiB0aW1lU2VyaWVzXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGZCYXNpY3NcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZk9wdGlvbnNcblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmHByb2LigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBpbnRlcnNlY3QsIHNldGRpZmYsIHVuaW9uXG4ifQ== -->
-<pre><code>Loading required package: combinat
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
+<pre><code>
+Attaching package: ‘janitor’
 
-Attaching package: ‘combinat’
+The following objects are masked from ‘package:stats’:
 
-The following object is masked from ‘package:utils’:
-
-    combn
-
-Loading required package: fAsianOptions
-Loading required package: timeDate
-Loading required package: timeSeries
-Loading required package: fBasics
-Loading required package: fOptions
-
-Attaching package: ‘prob’
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, union</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShndG9vbHMpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmBgYCJ9 -->
-<pre class="r"><code>library(gtools)
-library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4xIOKUgOKUgFxu4pyTIGdncGxvdDIgMy4zLjUgICAgIOKckyBwdXJyciAgIDAuMy40XG7inJMgdGliYmxlICAzLjEuNiAgICAg4pyTIGRwbHlyICAgMS4wLjhcbuKckyB0aWR5ciAgIDEuMi4wICAgICDinJMgc3RyaW5nciAxLjQuMFxu4pyTIHJlYWRyICAgMi4xLjIgICAgIOKckyBmb3JjYXRzIDAuNS4xXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG54IGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyB0aW1lU2VyaWVzOjpmaWx0ZXIoKSwgc3RhdHM6OmZpbHRlcigpXG54IGRwbHlyOjpsYWcoKSAgICBtYXNrcyB0aW1lU2VyaWVzOjpsYWcoKSwgc3RhdHM6OmxhZygpXG4ifQ== -->
-<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      
-── Attaching packages ─────────────────────── tidyverse 1.3.1 ──
-✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-✓ tibble  3.1.6     ✓ dplyr   1.0.8
-✓ tidyr   1.2.0     ✓ stringr 1.4.0
-✓ readr   2.1.2     ✓ forcats 0.5.1
-── Conflicts ────────────────────────── tidyverse_conflicts() ──
-x dplyr::filter() masks timeSeries::filter(), stats::filter()
-x dplyr::lag()    masks timeSeries::lag(), stats::lag()</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShoZXJlKVxuYGBgIn0= -->
-<pre class="r"><code>library(here)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiaGVyZSgpIHN0YXJ0cyBhdCAvVXNlcnMvbWFya2ZvamFzL0NvZGVDbGFuL2NvZGVjbGFuX2hvbWV3b3JrX01hcmtBbnRGb2phcy9XZWVrNi93ZWVrNl9kYXkxL3dlZWs2X2RheTFfaG9tZXdvcmtcbiJ9 -->
-<pre><code>here() starts at /Users/markfojas/CodeClan/codeclan_homework_MarkAntFojas/Week6/week6_day1/week6_day1_homework</code></pre>
+    chisq.test, fisher.test</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xvYWRpbmcgZGF0YVxudGl0YW5pY19kZiA8LSByZWFkX2NzdihoZXJlKFwiZGF0YS90aXRhbmljLmNzdlwiKSlcbmBgYCJ9 -->
-<pre class="r"><code>#loading data
-titanic_df &lt;- read_csv(here(&quot;data/titanic.csv&quot;))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXRlbXNfZGYgPC0gcmVhZF9jc3YoaGVyZShcImRhdGEvMjAxOTA5MjgtaXRlbXMuY3N2XCIpKVxuYGBgIn0= -->
+<pre class="r"><code>items_df &lt;- read_csv(here(&quot;data/20190928-items.csv&quot;))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjIwNyBDb2x1bW5zOiA5XG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgKDUpOiBnZW5kZXIsIGNsYXNzLCBlbWJhcmtlZCwgY291bnRyeSwgc3Vydml2ZWRcbmRibCAoNCk6IGFnZSwgZmFyZSwgc2lic3AsIHBhcmNoXG5cbuKEuSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbuKEuSBTcGVjaWZ5IHRoZSBjb2x1bW4gdHlwZXMgb3Igc2V0IGBzaG93X2NvbF90eXBlcyA9IEZBTFNFYCB0byBxdWlldCB0aGlzIG1lc3NhZ2UuXG4ifQ== -->
-<pre><code>Rows: 2207 Columns: 9
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzkyIENvbHVtbnM6IDlcbuKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoNyk6IGFzaW4sIGJyYW5kLCB0aXRsZSwgdXJsLCBpbWFnZSwgcmV2aWV3VXJsLCBwcmljZXNcbmRibCAoMik6IHJhdGluZywgdG90YWxSZXZpZXdzXG5cbuKEuSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbuKEuSBTcGVjaWZ5IHRoZSBjb2x1bW4gdHlwZXMgb3Igc2V0IGBzaG93X2NvbF90eXBlcyA9IEZBTFNFYCB0byBxdWlldCB0aGlzIG1lc3NhZ2UuXG4ifQ== -->
+<pre><code>Rows: 792 Columns: 9
 ── Column specification ────────────────────────────────────────
 Delimiter: &quot;,&quot;
-chr (5): gender, class, embarked, country, survived
-dbl (4): age, fare, sibsp, parch
+chr (7): asin, brand, title, url, image, reviewUrl, prices
+dbl (2): rating, totalReviews
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>A data set detailing the survival or death of passengers and crew
-members on the RMS Titanic is given in the data folder for this homework
-- use this data and not the built-in Titanic dataset in R.</p>
-<p>Some time after the disaster a journalist wrote that crew members
-were more likely to have survived the sinking than passengers. This was
-disputed by a descendant of one of the surviving crew members, who
-suggested that the opposite was true, i.e. passengers were more likely
-to have survived than crew.</p>
-<p>Question Calculate the conditional probabilities prob(survived∣crew)
-and prob(survived∣passenger) to settle this dispute.</p>
-<!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXModGl0YW5pY19kZilcbmBgYCJ9 -->
-<pre class="r"><code>names(titanic_df)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoaXRlbXNfZGYpXG5gYGAifQ== -->
+<pre class="r"><code>names(items_df)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZ2VuZGVyXCIgICBcImFnZVwiICAgICAgXCJjbGFzc1wiICAgIFwiZW1iYXJrZWRcIiBcImNvdW50cnlcIiBcbls2XSBcImZhcmVcIiAgICAgXCJzaWJzcFwiICAgIFwicGFyY2hcIiAgICBcInN1cnZpdmVkXCJcbiJ9 -->
-<pre><code>[1] &quot;gender&quot;   &quot;age&quot;      &quot;class&quot;    &quot;embarked&quot; &quot;country&quot; 
-[6] &quot;fare&quot;     &quot;sibsp&quot;    &quot;parch&quot;    &quot;survived&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYXNpblwiICAgICAgICAgXCJicmFuZFwiICAgICAgICBcInRpdGxlXCIgICAgICAgIFwidXJsXCIgICAgICAgICBcbls1XSBcImltYWdlXCIgICAgICAgIFwicmF0aW5nXCIgICAgICAgXCJyZXZpZXdVcmxcIiAgICBcInRvdGFsUmV2aWV3c1wiXG5bOV0gXCJwcmljZXNcIiAgICAgIFxuIn0= -->
+<pre><code>[1] &quot;asin&quot;         &quot;brand&quot;        &quot;title&quot;        &quot;url&quot;         
+[5] &quot;image&quot;        &quot;rating&quot;       &quot;reviewUrl&quot;    &quot;totalReviews&quot;
+[9] &quot;prices&quot;      </code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xpbXBzZSh0aXRhbmljX2RmKVxuYGBgIn0= -->
-<pre class="r"><code>glimpse(titanic_df)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xpbXBzZShpdGVtc19kZilcbmBgYCJ9 -->
+<pre class="r"><code>glimpse(items_df)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMiwyMDdcbkNvbHVtbnM6IDlcbiQgZ2VuZGVyICAgPGNocj4gXCJtYWxlXCIsIFwibWFsZVwiLCBcIm1hbGVcIiwgXCJmZW1hbGVcIiwgXCJmZW1hbGVcIiwgXCLigKZcbiQgYWdlICAgICAgPGRibD4gNDIuMDAwMDAwMCwgMTMuMDAwMDAwMCwgMTYuMDAwMDAwMCwgMzkuMDAwMDAw4oCmXG4kIGNsYXNzICAgIDxjaHI+IFwiM3JkXCIsIFwiM3JkXCIsIFwiM3JkXCIsIFwiM3JkXCIsIFwiM3JkXCIsIFwiM3JkXCIsIFwiMm7igKZcbiQgZW1iYXJrZWQgPGNocj4gXCJTb3V0aGFtcHRvblwiLCBcIlNvdXRoYW1wdG9uXCIsIFwiU291dGhhbXB0b25cIiwg4oCmXG4kIGNvdW50cnkgIDxjaHI+IFwiVW5pdGVkIFN0YXRlc1wiLCBcIlVuaXRlZCBTdGF0ZXNcIiwgXCJVbml0ZWQgU3Rh4oCmXG4kIGZhcmUgICAgIDxkYmw+IDcuMTEwMCwgMjAuMDUwMCwgMjAuMDUwMCwgMjAuMDUwMCwgNy4xMzAwLCA3LuKAplxuJCBzaWJzcCAgICA8ZGJsPiAwLCAwLCAxLCAxLCAwLCAwLCAxLCAxLCAwLCAwLCAwLCAwLCAxLCAwLCAwLCDigKZcbiQgcGFyY2ggICAgPGRibD4gMCwgMiwgMSwgMSwgMCwgMCwgMCwgMCwgMCwgMCwgMCwgMCwgMCwgMSwgMSwg4oCmXG4kIHN1cnZpdmVkIDxjaHI+IFwibm9cIiwgXCJub1wiLCBcIm5vXCIsIFwieWVzXCIsIFwieWVzXCIsIFwieWVzXCIsIFwibm9cIiwg4oCmXG4ifQ== -->
-<pre><code>Rows: 2,207
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzkyXG5Db2x1bW5zOiA5XG4kIGFzaW4gICAgICAgICA8Y2hyPiBcIkIwMDAwU1gyVUNcIiwgXCJCMDAwOU41TDdLXCIsIFwiQjAwMFNLVFowU1wiLOKAplxuJCBicmFuZCAgICAgICAgPGNocj4gXCJOb2tpYVwiLCBcIk1vdG9yb2xhXCIsIFwiTW90b3JvbGFcIiwgXCJOb2tpYVwiLOKAplxuJCB0aXRsZSAgICAgICAgPGNocj4gXCJEdWFsLUJhbmQgLyBUcmktTW9kZSBTcHJpbnQgUENTIFBob25lIHcv4oCmXG4kIHVybCAgICAgICAgICA8Y2hyPiBcImh0dHBzOi8vd3d3LmFtYXpvbi5jb20vRHVhbC1CYW5kLVRyaS1Nb2TigKZcbiQgaW1hZ2UgICAgICAgIDxjaHI+IFwiaHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvMjE0M+KAplxuJCByYXRpbmcgICAgICAgPGRibD4gMy4wLCAyLjksIDIuNiwgMi40LCAzLjMsIDMuMiwgMi4wLCAyLjcsIDPigKZcbiQgcmV2aWV3VXJsICAgIDxjaHI+IFwiaHR0cHM6Ly93d3cuYW1hem9uLmNvbS9wcm9kdWN0LXJldmlld3MvQuKAplxuJCB0b3RhbFJldmlld3MgPGRibD4gMTQsIDcsIDIyLCA1LCAyMSwgMTIsIDEsIDMsIDgsIDEzMywgMiwgMTjigKZcbiQgcHJpY2VzICAgICAgIDxjaHI+IE5BLCBcIiQ0OS45NVwiLCBOQSwgTkEsIE5BLCBOQSwgXCIkNzguOTlcIiwgTuKAplxuIn0= -->
+<pre><code>Rows: 792
 Columns: 9
-$ gender   &lt;chr&gt; &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;female&quot;, &quot;female&quot;, &quot;…
-$ age      &lt;dbl&gt; 42.0000000, 13.0000000, 16.0000000, 39.000000…
-$ class    &lt;chr&gt; &quot;3rd&quot;, &quot;3rd&quot;, &quot;3rd&quot;, &quot;3rd&quot;, &quot;3rd&quot;, &quot;3rd&quot;, &quot;2n…
-$ embarked &lt;chr&gt; &quot;Southampton&quot;, &quot;Southampton&quot;, &quot;Southampton&quot;, …
-$ country  &lt;chr&gt; &quot;United States&quot;, &quot;United States&quot;, &quot;United Sta…
-$ fare     &lt;dbl&gt; 7.1100, 20.0500, 20.0500, 20.0500, 7.1300, 7.…
-$ sibsp    &lt;dbl&gt; 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, …
-$ parch    &lt;dbl&gt; 0, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, …
-$ survived &lt;chr&gt; &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;yes&quot;, &quot;yes&quot;, &quot;no&quot;, …</code></pre>
+$ asin         &lt;chr&gt; &quot;B0000SX2UC&quot;, &quot;B0009N5L7K&quot;, &quot;B000SKTZ0S&quot;,…
+$ brand        &lt;chr&gt; &quot;Nokia&quot;, &quot;Motorola&quot;, &quot;Motorola&quot;, &quot;Nokia&quot;,…
+$ title        &lt;chr&gt; &quot;Dual-Band / Tri-Mode Sprint PCS Phone w/…
+$ url          &lt;chr&gt; &quot;https://www.amazon.com/Dual-Band-Tri-Mod…
+$ image        &lt;chr&gt; &quot;https://m.media-amazon.com/images/I/2143…
+$ rating       &lt;dbl&gt; 3.0, 2.9, 2.6, 2.4, 3.3, 3.2, 2.0, 2.7, 3…
+$ reviewUrl    &lt;chr&gt; &quot;https://www.amazon.com/product-reviews/B…
+$ totalReviews &lt;dbl&gt; 14, 7, 22, 5, 21, 12, 1, 3, 8, 133, 2, 18…
+$ prices       &lt;chr&gt; NA, &quot;$49.95&quot;, NA, NA, NA, NA, &quot;$78.99&quot;, N…</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZCh0aXRhbmljX2RmKVxuYGBgIn0= -->
-<pre class="r"><code>head(titanic_df)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6OSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IMOXIDkiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBN1ZUeTA3Q1FCUWRTZ3UyQ3BxNEpjYTFDY1FFWTNSaEpGRmNtaWlTc0IzYUFScktUSjFPUVhacytCSi93by9RdFIvaHhyVUxjUHE0aEZaOEp0Nmt2WStaYytlZWs1bnI4MWJWYUJrSW9TeFNNd3JLYWpKRVd2UG1vbnlFa0tySUpJTlVwQWYrVG03YWxrR1FiTWt2Rnkrb0EreVFiK0pjaDN5YVJmc1FLZ1lydFRvS3JiWVgrLzNZbjAyUytURUNXNTRsVytYV1g4TmtwL1VHODBVUEQxekI2SCtYa2ljWG10UVd4TnB0Q0N5STkrdGl2azY3RHFaQUxYZkorQWlQVnlOQTlKSjcvMnljM05ZT05oNmxQWDN3cGVuT3c5WExGRHpnVU1wT1g1TitoU1Z3dFovamxnVlNLUHNpeW80WFVxVEQ1SVhXS0I2RUdnUzlkWkNyUzZoRk9LQndGMjZwWmpyWWcyNXJaTkRHdkU5QTVMekpmQ280cUt4Mk1GL2dQTHZ0dVpDNG1KczlhT0w1ZkdnUFpaUGtYRHBub3dyTVZnaTRUZVJ2UHArL3BRbEVJMFVFb0doWVdPQktoMHU4ekdZcFNKNjV3bVpVZ3BUZ0tXc3BjSWFuQ3BzK0RTYXh5bWJQcC8zeVlYQkF1QnhaSVk1elM3RWVIYW5NNDFZYUtFdG8xNllMV1J6Y0prNmNGQ1hqa0hERjVUWVZ3RVJXdllwZ0FzTSt3MlFPVkVKdWFQWU9vcXNVVU1FRUFBQT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["gender"],"name":[1],"type":["chr"],"align":["left"]},{"label":["age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class"],"name":[3],"type":["chr"],"align":["left"]},{"label":["embarked"],"name":[4],"type":["chr"],"align":["left"]},{"label":["country"],"name":[5],"type":["chr"],"align":["left"]},{"label":["fare"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["sibsp"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["parch"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["survived"],"name":[9],"type":["chr"],"align":["left"]}],"data":[{"1":"male","2":"42","3":"3rd","4":"Southampton","5":"United States","6":"7.11","7":"0","8":"0","9":"no"},{"1":"male","2":"13","3":"3rd","4":"Southampton","5":"United States","6":"20.05","7":"0","8":"2","9":"no"},{"1":"male","2":"16","3":"3rd","4":"Southampton","5":"United States","6":"20.05","7":"1","8":"1","9":"no"},{"1":"female","2":"39","3":"3rd","4":"Southampton","5":"England","6":"20.05","7":"1","8":"1","9":"yes"},{"1":"female","2":"16","3":"3rd","4":"Southampton","5":"Norway","6":"7.13","7":"0","8":"0","9":"yes"},{"1":"male","2":"25","3":"3rd","4":"Southampton","5":"United States","6":"7.13","7":"0","8":"0","9":"yes"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFpbCh0aXRhbmljX2RmLCAxMDApXG5gYGAifQ== -->
-<pre class="r"><code>tail(titanic_df, 100)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTAwLCJuY29sIjo5LCJzdW1tYXJ5Ijp7IkEgdGliYmxlIjpbIjEwMCDDlyA5Il19fSwicmRmIjoiSDRzSUFBQUFBQUFBQSsxYTZWTGJNQkFXU1F3a0RNZE1YeUF2UUdZS3RLVXRSOEpWd2t6N281UVovZ3BiU1R3NGNrYVdRL21YQittemtzcXhOdFJxRGtKc2dvTjJCdmJRSHQrdVpEdlh6NVByN2NKMUFTR1VSYm1GRE1vYVFrVEcxYSt6elYyRWNobWhMS0FjeWdmOHQzQjZKNFJBMlJCL2xseklOYkZEdEp3YWViRkdKbDdSc3BiblEwWm9MYmgzbGQrakhwVy9TZjVKOGdQSmR5WC9MSG1sRS9MalR0Uitwdmg5bGZ4UThuM0o5NVQ4WlJUTmR5VDVxZUlQT0hkVUhGSS9RbEc5TE5jclV2K2cxTnVXZkd0SWY0QUQ4cDRyOFRBbnlBOTluZ0Nlem1EOUM0cnlrdVF3TDhBQithcVN3eHd1bEg0T0ZBNXozbEw4QURmZ2dIcDd5anIwcGU0SDZMQXZnQi9pWVc3ZkphOG82eGVRQjNBb2RRNFZIZXBDWHBnaitKMkRYZkl6SlE3MkY4NHZ4QU51aUFON1dmS2RxQitLUHVNMzJyYkpmZXc0TnEwWFRVYnU0cllUV3JjcElTd3AvMG56RExNejRuSHNNMHg1VVFpMVd0eDQ0c0laRjU1aC9VNXFqd3RuVFB1VnQ0aDVtMGlqdyt4djdRSjZiZmhuTkovL0Q5cXM3Z2l2YlVPbUhsalN0OXkwREQ3cFI4YXNIbTBKNTUvK29EMzVFUkI5TGJWeTZmcThnWnN0N3RLSlRFdEh4S2xoajAvajhmS21CREdsY3lBcE1rMDg0SVIyWkM3TzBPaFJ6Znlremh5QWJpWkZnMGxrd05IbjVOSXByVHVZenErNmZHbTYvT25CVlVhZVc4bW9jdXpjRDE1YitVRjRnN0RBNHNYZjQvcHhBMU5LbkdMVmUzcUZVWEFuVTZlWVdSclYxU3RxYzJJVkx6bm1KSUhkakZITlYzeVBNK3pZK01XQnZKSkQwUnRBRXUybjZCVDBWZm0xRE5La1NkTW8wdGVKSmszalNWOG5talNOcHczMCtKWTdRMTBwWmUvN3J4d0hpNCt1QTRQR0xFK1g2Qm1PeVVsdkQ4TEFjbU1Qekxpb3VLb25PS3E0VHUwTU4yUllvdWh2ZlEyS215SWt2RG5rcFhHeFRxaEZHT1RFZGZoaG5XRTYySU1DeTZSNWc5a3Q2Yi9ETTEyZmNnYWY1dVJxbVBYalBQdkdhNEhTd3N4c1FCTFBaMjI3TFpKRWNlV1plMWNDYktzQjlJNzQxKzEyLzZnTmhKRENCc0JZc0RESHBSb1Q4VUo3VUVLVzNCYTNYU3FDTXNHdm5BMGxlSUVwaG5XZkJraXNUYlBoMDl2TmowR0IzbkpJcTFLMi9wSHpZY2xNVjZZeVlMTGhONHlBM2NFM3hKSEttdWk0MTNDcHhXd0tIN2NXaE5VcmNaZGo4Q3VZcmdPV1htL280Uy9DcTBZNjNDMEFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["gender"],"name":[1],"type":["chr"],"align":["left"]},{"label":["age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["class"],"name":[3],"type":["chr"],"align":["left"]},{"label":["embarked"],"name":[4],"type":["chr"],"align":["left"]},{"label":["country"],"name":[5],"type":["chr"],"align":["left"]},{"label":["fare"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["sibsp"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["parch"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["survived"],"name":[9],"type":["chr"],"align":["left"]}],"data":[{"1":"male","2":"17","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"46","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"23","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"30","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"24","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"25","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"35","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"39","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"25","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"44","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"25","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"27","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"31","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"29","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"28","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"30","3":"victualling crew","4":"Southampton","5":"Scotland","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"32","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"39","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"37","3":"engineering crew","4":"Belfast","5":"Ireland","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"42","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"28","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"17","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"20","3":"restaurant staff","4":"Southampton","5":"Italy","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"35","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"38","3":"engineering crew","4":"Southampton","5":"Netherlands","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"36","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"38","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"33","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"34","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"21","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"32","3":"deck crew","4":"Southampton","5":"Channel Islands","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"19","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"18","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"25","3":"restaurant staff","4":"Southampton","5":"Italy","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"35","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"37","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"female","2":"36","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"48","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"female","2":"32","3":"victualling crew","4":"Southampton","5":"Ireland","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"23","3":"engineering crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"34","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"31","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"40","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"37","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"40","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"37","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"26","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"26","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"15","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"27","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"25","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"31","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"50","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"28","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"52","3":"victualling crew","4":"Southampton","5":"United States","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"21","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"30","3":"deck crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"30","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"29","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"18","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"21","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"32","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"37","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"27","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"28","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"32","3":"victualling crew","4":"Belfast","5":"Australia","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"23","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"39","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"37","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"39","3":"deck crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"42","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"26","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"28","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"35","3":"victualling crew","4":"Southampton","5":"Ireland","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"59","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"34","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"28","3":"engineering crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"53","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"38","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"36","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"39","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"31","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"39","3":"victualling crew","4":"Southampton","5":"Austria","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"37","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"35","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"40","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"31","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"49","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"41","3":"victualling crew","4":"Southampton","5":"United States","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"45","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"37","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"19","3":"victualling crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"24","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"40","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"26","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"41","3":"deck crew","4":"Belfast","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"40","3":"victualling crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"yes"},{"1":"male","2":"32","3":"engineering crew","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"20","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"},{"1":"male","2":"26","3":"restaurant staff","4":"Southampton","5":"England","6":"0","7":"0","8":"0","9":"no"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[100]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBnZXR0aW5nIGludGlhbCBjb3VudCBhbmQgc2V0KHMpXG50aXRhbmljX2RmICU+JSBcbmNvdW50KGNsYXNzKVxuYGBgIn0= -->
-<pre class="r"><code># getting intial count and set(s)
-titanic_df %&gt;% 
-count(class)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NsZWFuaW5nIG5hbWVzIHdoaWNoIGFyZW4ndCB0b28gYmFkLCBzb21lIGNvbHVtbiB2YWx1ZXMgbG9vayBtZXNzeVxuaXRlbXMgPC0gY2xlYW5fbmFtZXMoaXRlbXNfZGYpXG5cbmdsaW1wc2UoaXRlbXMpXG5gYGAifQ== -->
+<pre class="r"><code>#cleaning names which aren&#39;t too bad, some column values look messy
+items &lt;- clean_names(items_df)
+
+glimpse(items)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93Ijo3LCJuY29sIjoyLCJzdW1tYXJ5Ijp7IkEgdGliYmxlIjpbIjcgw5cgMiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJRVTdETUJEY09BbFZJaFVxY2VYUUR5UVM3WVV6S2p3QWdkU3JjWndTMVRpVjdWQ08vSWhYOENndURldllSdUJJam1mSE83dXo5c05tdXk2M0pRQ2trQ1VFMGh3aDVFK1A5OVVOUUVZd1NDQ0R3dTd2bUhTSndKSUxYRE4va0Y1ckUrQktOZ0d1VllCRnc5bCt5UlEvZW1MQjVhNlRuS3RPN3Y3eGltdERCMFdsV1NKbzI4Qy9kY3dNVklqZmZJRDU1QUNTRGE0ck5QV0Y4YTJMNFE3M3o4aCtMdWtyMTk0NkNTUVRWT3N3b0l3a2hlcVBkWkRaZnVRRGYrTTRmc2UxWFJsWE81QmxRdzJ0VzRWNmpFNlJaTllmVE5kTEZCRjdwM2trVGxSRVhBelNPbWtxOWpMSWZiV3lEYVpqOTgwOW52M0J4TFVrb3krVisxSm43dmFEZDBHZnVmREJPVTQ4RFZ3ZjhHM0NxNWJJNnRyMGhvYThrdlVpTU5Oc2NQb0J6ODZWUFVvQ0FBQT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["class"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1st","2":"324"},{"1":"2nd","2":"284"},{"1":"3rd","2":"709"},{"1":"deck crew","2":"66"},{"1":"engineering crew","2":"324"},{"1":"restaurant staff","2":"69"},{"1":"victualling crew","2":"431"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyaXNlKGNsYXNzKVxuYGBgIn0= -->
-<pre class="r"><code>summarise(class)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gVXNlTWV0aG9kKFwic3VtbWFyaXNlXCIpIDogXG4gIG5vIGFwcGxpY2FibGUgbWV0aG9kIGZvciAnc3VtbWFyaXNlJyBhcHBsaWVkIHRvIGFuIG9iamVjdCBvZiBjbGFzcyBcImZ1bmN0aW9uXCJcbiJ9 -->
-<pre><code>Error in UseMethod(&quot;summarise&quot;) : 
-  no applicable method for &#39;summarise&#39; applied to an object of class &quot;function&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzkyXG5Db2x1bW5zOiA5XG4kIGFzaW4gICAgICAgICAgPGNocj4gXCJCMDAwMFNYMlVDXCIsIFwiQjAwMDlONUw3S1wiLCBcIkIwMDBTS1RaMFNcIuKAplxuJCBicmFuZCAgICAgICAgIDxjaHI+IFwiTm9raWFcIiwgXCJNb3Rvcm9sYVwiLCBcIk1vdG9yb2xhXCIsIFwiTm9raWFcIuKAplxuJCB0aXRsZSAgICAgICAgIDxjaHI+IFwiRHVhbC1CYW5kIC8gVHJpLU1vZGUgU3ByaW50IFBDUyBQaG9uZSB34oCmXG4kIHVybCAgICAgICAgICAgPGNocj4gXCJodHRwczovL3d3dy5hbWF6b24uY29tL0R1YWwtQmFuZC1UcmktTW/igKZcbiQgaW1hZ2UgICAgICAgICA8Y2hyPiBcImh0dHBzOi8vbS5tZWRpYS1hbWF6b24uY29tL2ltYWdlcy9JLzIxNOKAplxuJCByYXRpbmcgICAgICAgIDxkYmw+IDMuMCwgMi45LCAyLjYsIDIuNCwgMy4zLCAzLjIsIDIuMCwgMi43LCDigKZcbiQgcmV2aWV3X3VybCAgICA8Y2hyPiBcImh0dHBzOi8vd3d3LmFtYXpvbi5jb20vcHJvZHVjdC1yZXZpZXdzL+KAplxuJCB0b3RhbF9yZXZpZXdzIDxkYmw+IDE0LCA3LCAyMiwgNSwgMjEsIDEyLCAxLCAzLCA4LCAxMzMsIDIsIDHigKZcbiQgcHJpY2VzICAgICAgICA8Y2hyPiBOQSwgXCIkNDkuOTVcIiwgTkEsIE5BLCBOQSwgTkEsIFwiJDc4Ljk5XCIsIOKAplxuIn0= -->
+<pre><code>Rows: 792
+Columns: 9
+$ asin          &lt;chr&gt; &quot;B0000SX2UC&quot;, &quot;B0009N5L7K&quot;, &quot;B000SKTZ0S&quot;…
+$ brand         &lt;chr&gt; &quot;Nokia&quot;, &quot;Motorola&quot;, &quot;Motorola&quot;, &quot;Nokia&quot;…
+$ title         &lt;chr&gt; &quot;Dual-Band / Tri-Mode Sprint PCS Phone w…
+$ url           &lt;chr&gt; &quot;https://www.amazon.com/Dual-Band-Tri-Mo…
+$ image         &lt;chr&gt; &quot;https://m.media-amazon.com/images/I/214…
+$ rating        &lt;dbl&gt; 3.0, 2.9, 2.6, 2.4, 3.3, 3.2, 2.0, 2.7, …
+$ review_url    &lt;chr&gt; &quot;https://www.amazon.com/product-reviews/…
+$ total_reviews &lt;dbl&gt; 14, 7, 22, 5, 21, 12, 1, 3, 8, 133, 2, 1…
+$ prices        &lt;chr&gt; NA, &quot;$49.95&quot;, NA, NA, NA, NA, &quot;$78.99&quot;, …</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NsZWFuaW5nIGRhdGEsIGFkZGluZyBjb2x1bW5zXG50aXRhbmljX21vZGlmIDwtIHRpdGFuaWNfZGYgJT4lIFxuICBzZWxlY3QoY2xhc3MsIHN1cnZpdmVkICkgJT4lIFxuICBtdXRhdGUoY3JldyA9IHN0cl9kZXRlY3QoY2xhc3MsXCJjcmV3fHN0YWZmXCIpKSAlPiUgXG4gIG11dGF0ZShwYXNzZW5nZXJzID0gc3RyX2RldGVjdChjbGFzcywgXCIxc3R8Mm5kfDNyZFwiKSlcbiAgXG5gYGAifQ== -->
-<pre class="r"><code>#cleaning data, adding columns
-titanic_modif &lt;- titanic_df %&gt;% 
-  select(class, survived ) %&gt;% 
-  mutate(crew = str_detect(class,&quot;crew|staff&quot;)) %&gt;% 
-  mutate(passengers = str_detect(class, &quot;1st|2nd|3rd&quot;))
-  </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NoZWNraW5nIGRhdGFcbnRpdGFuaWNfbW9kaWYgJT4lIFxuICBjb3VudChjcmV3KVxuYGBgIn0= -->
-<pre class="r"><code>#checking data
-titanic_modif %&gt;% 
-  count(crew)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIyIMOXIDIiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFQeXc3Q0lCRGNZdEZJNGlQeEd6eTJGdy82QWNZUE1KcDR4WXJhV0tHaE5CcFBmcmwxUVRqSWhaMmR6QXc3Mi9WaHdRNE1BSHFRSmdSNkZDSFEvVzZUclFCU2drc0NLUXp0ZktKb2hzQ1N6RTl3QW9EUmI2ZHoxTHdpSTVYOExob0VVeWY2a1dtaHhTTWt5OGd4MU9xUkI1ZUxmdVBUZGQwbmppNHEzb1RvUUxJVE56dy9hL1RqRmxzR3FqYWxrbWdpdGd5TnpJbU9pRWtyN1NXbnJMaTI4cFl0ZmZuRWx4OTVUUDZ4L1pKMFBvcjZxTDZRbDFLS2NIdkZqNkx5eXhnYnU4SjVyVXRwUWhOa205d293NE9PRmFvS2pPc0dueS9ua3oxSHd3RUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["crew"],"name":[1],"type":["lgl"],"align":["right"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"FALSE","2":"1317"},{"1":"TRUE","2":"890"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG50aXRhbmljX21vZGlmICU+JSBcbiAgY291bnQocGFzc2VuZ2VycylcbmBgYCJ9 -->
-<pre class="r"><code>
-titanic_modif %&gt;% 
-  count(passengers)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIyIMOXIDIiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFRUVc3Q01CRGNPSEdyV0lKVzZoczRKcGNleWdNUUQ2aEF5dFVOaGtZRU83SWRnVGoxNVlTMVl4L3FpM2QydERPNzQrOU44OGthQmdBNUZCbUJuQ0lFdXQ5dHF6VkFRYkRKb0lEUzFSc09mU0J3SkFzVi9BREFZdTd6TzRwWGlaQktmaEVHd2JzZm1razJjR09FUEFsdG9yOU1kS1ZXMXpwcS9ZSS9mS1pwZXFRTDJoN053b0pJc2dPM3ZENXExR09YU2w3VllEc2xVVVJjSkpxSU01MFFiNk4wbHh5cTluZVU1K29yZkVFV3ZtQVJNUG1QM1VveUJTc2FyRjR3ZFNkRnZMM25QNklQelJJVCs4RDFvRHRwWXhKa1RXMlY1WEdPdGFxUGpNOEdqeWVIUlBHdHlRRUFBQT09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["passengers"],"name":[1],"type":["lgl"],"align":["right"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"FALSE","2":"890"},{"1":"TRUE","2":"1317"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2FwcGx5aW5nIGVxdWF0aW9uc1xuI2FkZCBjb2x1bW5zIG9mIHBhc3NlbmdlciBhbmQgY3JldyB0b2dldGhlciB0byBnZXQgc3Vic2V0XG50aXRhbmljX21vZGlmICU+JSBcbiAgc3VtKHBhc3NlbmdlcnMpICsgc3VtKGNyZXcpXG5gYGAifQ== -->
-<pre class="r"><code>#applying equations
-#add columns of passenger and crew together to get subset
-titanic_modif %&gt;% 
-  sum(passengers) + sum(crew)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gdGl0YW5pY19tb2RpZiAlPiUgc3VtKHBhc3NlbmdlcnMpIDogXG4gIG9iamVjdCAncGFzc2VuZ2Vycycgbm90IGZvdW5kXG4ifQ== -->
-<pre><code>Error in titanic_modif %&gt;% sum(passengers) : 
-  object &#39;passengers&#39; not found</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Have a look at the distinct values of the class variable, this will
-tell you whether each individual was a passenger (1st, 2nd or 3rd class)
-or a member of the crew (treat restaurant staff as crew)</p>
-<p>titanic_modif %&gt;%</p>
-<p>Question 1. If I roll a six-sided dice once, what is the probability
-of getting a number less than 5?</p>
-<p>Question 2. How many outcomes are there in the sample space of an
-experiment in which we toss three dice?</p>
-<p>Question 3. In an experiment where we roll four dice:</p>
-<p>how many outcomes are in the event where the total of the four dice
-equals 5 , 6 or 7 )? what is the probability of this event? what
-assumptions do we apply in answering part ii? Hint</p>
-<p>Question 4. Five chairs are placed in a row in a room, along with
-five people of differing height. The people sit down randomly on the
-chairs. What is the probability that they sit in order of decreasing
-height, left to right?</p>
-<p>Hint</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShwcm9iKQpsaWJyYXJ5KGd0b29scykKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoaGVyZSkKYGBgCmBgYHtyfQojbG9hZGluZyBkYXRhCnRpdGFuaWNfZGYgPC0gcmVhZF9jc3YoaGVyZSgiZGF0YS90aXRhbmljLmNzdiIpKQpgYGAKQSBkYXRhIHNldCBkZXRhaWxpbmcgdGhlIHN1cnZpdmFsIG9yIGRlYXRoIG9mIHBhc3NlbmdlcnMgYW5kIGNyZXcgbWVtYmVycyBvbiB0aGUgUk1TIFRpdGFuaWMgaXMgZ2l2ZW4gaW4gdGhlIGRhdGEgZm9sZGVyIGZvciB0aGlzIGhvbWV3b3JrIC0gdXNlIHRoaXMgZGF0YSBhbmQgbm90IHRoZSBidWlsdC1pbiBUaXRhbmljIGRhdGFzZXQgaW4gUi4KClNvbWUgdGltZSBhZnRlciB0aGUgZGlzYXN0ZXIgYSBqb3VybmFsaXN0IHdyb3RlIHRoYXQgY3JldyBtZW1iZXJzIHdlcmUgbW9yZSBsaWtlbHkgdG8gaGF2ZSBzdXJ2aXZlZCB0aGUgc2lua2luZyB0aGFuIHBhc3NlbmdlcnMuIFRoaXMgd2FzIGRpc3B1dGVkIGJ5IGEgZGVzY2VuZGFudCBvZiBvbmUgb2YgdGhlIHN1cnZpdmluZyBjcmV3IG1lbWJlcnMsIHdobyBzdWdnZXN0ZWQgdGhhdCB0aGUgb3Bwb3NpdGUgd2FzIHRydWUsIGkuZS4gcGFzc2VuZ2VycyB3ZXJlIG1vcmUgbGlrZWx5IHRvIGhhdmUgc3Vydml2ZWQgdGhhbiBjcmV3LgoKUXVlc3Rpb24KQ2FsY3VsYXRlIHRoZSBjb25kaXRpb25hbCBwcm9iYWJpbGl0aWVzIHByb2Ioc3Vydml2ZWTiiKNjcmV3KQogYW5kIHByb2Ioc3Vydml2ZWTiiKNwYXNzZW5nZXIpCiB0byBzZXR0bGUgdGhpcyBkaXNwdXRlLgoKYGBge3J9Cm5hbWVzKHRpdGFuaWNfZGYpCmBgYApgYGB7cn0KZ2xpbXBzZSh0aXRhbmljX2RmKQpoZWFkKHRpdGFuaWNfZGYpCnRhaWwodGl0YW5pY19kZiwgMTAwKQpgYGAKYGBge3J9CiMgZ2V0dGluZyBpbnRpYWwgY291bnQgYW5kIHNldChzKQp0aXRhbmljX2RmICU+JSAKY291bnQoY2xhc3MpCnN1bW1hcmlzZSgpCmBgYAoKYGBge3J9CiNjbGVhbmluZyBkYXRhLCBhZGRpbmcgY29sdW1ucwp0aXRhbmljX21vZGlmIDwtIHRpdGFuaWNfZGYgJT4lIAogIHNlbGVjdChjbGFzcywgc3Vydml2ZWQgKSAlPiUgCiAgbXV0YXRlKGNyZXcgPSBzdHJfZGV0ZWN0KGNsYXNzLCJjcmV3fHN0YWZmIikpICU+JSAKICBtdXRhdGUocGFzc2VuZ2VycyA9IHN0cl9kZXRlY3QoY2xhc3MsICIxc3R8Mm5kfDNyZCIpKSAjY291bGQgYWxzbyBkbyBhIG5lZ2F0ZSBvZiBwcmV2aW91cyBtdXRhdGlvbiwgYnV0IHdhbnQgdG8gZG8gYSBkaWZmZXJlbnQgbWV0aG9kIHRvIHZlcmlmeSBudW1iZXJzCiAgCmBgYAoKCmBgYHtyfQojY2hlY2tpbmcgZGF0YQp0aXRhbmljX21vZGlmICU+JSAKICBjb3VudChjcmV3KQoKdGl0YW5pY19tb2RpZiAlPiUgI2NoZWNraW5nIHRoZSBvdGhlciBlbmQgb2YgY291bnQgdG8gdmVyaWZ5IG51bWJlcnMtLSBzZWVtcyB0byBtYXRjaAogIGNvdW50KHBhc3NlbmdlcnMpCmBgYAoKCmBgYHtyfQojYXBwbHlpbmcgZXF1YXRpb25zCiNhZGQgY29sdW1ucyBvZiBwYXNzZW5nZXIgYW5kIGNyZXcgdG9nZXRoZXIgdG8gZ2V0IHN1YnNldAoKICAKICAKCmBgYAoKCgoKCkhhdmUgYSBsb29rIGF0IHRoZSBkaXN0aW5jdCB2YWx1ZXMgb2YgdGhlIGNsYXNzIHZhcmlhYmxlLCB0aGlzIHdpbGwgdGVsbCB5b3Ugd2hldGhlciBlYWNoIGluZGl2aWR1YWwgd2FzIGEgcGFzc2VuZ2VyICgxc3QsIDJuZCBvciAzcmQgY2xhc3MpIG9yIGEgbWVtYmVyIG9mIHRoZSBjcmV3ICh0cmVhdCByZXN0YXVyYW50IHN0YWZmIGFzIGNyZXcpCgp0aXRhbmljX21vZGlmICU+JSAKCgoKCgpRdWVzdGlvbiAxLgpJZiBJIHJvbGwgYSBzaXgtc2lkZWQgZGljZSBvbmNlLCB3aGF0IGlzIHRoZSBwcm9iYWJpbGl0eSBvZiBnZXR0aW5nIGEgbnVtYmVyIGxlc3MgdGhhbiA1PwoKClF1ZXN0aW9uIDIuCkhvdyBtYW55IG91dGNvbWVzIGFyZSB0aGVyZSBpbiB0aGUgc2FtcGxlIHNwYWNlIG9mIGFuIGV4cGVyaW1lbnQgaW4gd2hpY2ggd2UgdG9zcyB0aHJlZSBkaWNlPwoKCgpRdWVzdGlvbiAzLgpJbiBhbiBleHBlcmltZW50IHdoZXJlIHdlIHJvbGwgZm91ciBkaWNlOgoKaG93IG1hbnkgb3V0Y29tZXMgYXJlIGluIHRoZSBldmVudCB3aGVyZSB0aGUgdG90YWwgb2YgdGhlIGZvdXIgZGljZSBlcXVhbHMgNQosIDYKIG9yIDcKKT8Kd2hhdCBpcyB0aGUgcHJvYmFiaWxpdHkgb2YgdGhpcyBldmVudD8Kd2hhdCBhc3N1bXB0aW9ucyBkbyB3ZSBhcHBseSBpbiBhbnN3ZXJpbmcgcGFydCBpaT8KIEhpbnQKCgpRdWVzdGlvbiA0LgpGaXZlIGNoYWlycyBhcmUgcGxhY2VkIGluIGEgcm93IGluIGEgcm9vbSwgYWxvbmcgd2l0aCBmaXZlIHBlb3BsZSBvZiBkaWZmZXJpbmcgaGVpZ2h0LiBUaGUgcGVvcGxlIHNpdCBkb3duIHJhbmRvbWx5IG9uIHRoZSBjaGFpcnMuIFdoYXQgaXMgdGhlIHByb2JhYmlsaXR5IHRoYXQgdGhleSBzaXQgaW4gb3JkZXIgb2YgZGVjcmVhc2luZyBoZWlnaHQsIGxlZnQgdG8gcmlnaHQ/CgogSGludAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGphbml0b3IpCmxpYnJhcnkoaGVyZSkKYGBgCmBgYHtyfQppdGVtc19kZiA8LSByZWFkX2NzdihoZXJlKCJkYXRhLzIwMTkwOTI4LWl0ZW1zLmNzdiIpKQpgYGAKYGBge3J9Cm5hbWVzKGl0ZW1zX2RmKQpnbGltcHNlKGl0ZW1zX2RmKQpgYGAKYGBge3J9CiNjbGVhbmluZyBuYW1lcyB3aGljaCBhcmVuJ3QgdG9vIGJhZCwgc29tZSBjb2x1bW4gdmFsdWVzIGxvb2sgbWVzc3kKaXRlbXMgPC0gY2xlYW5fbmFtZXMoaXRlbXNfZGYpCgpnbGltcHNlKGl0ZW1zKQoKYGBgCgo=</div>
 
 
 
@@ -2034,7 +1893,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("week6_day1_homework.Rmd");
+  window.initializeSourceEmbed("week6_day2_homework.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
