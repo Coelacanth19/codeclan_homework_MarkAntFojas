@@ -22,4 +22,29 @@ items <- clean_names(items_df)
 glimpse(items)
 
 ```
+```{r}
+items %>% 
+count(brand) %>% 
+arrange(desc(n))
+```
+filter (brand == "Samsung")
+```{r}
+#filtering for top brand and the continuous variable of rating which needs to be binned for this analysis
+top_brand <- items %>% 
+  filter (brand == "Samsung")
 
+top_brand %>% 
+  ggplot(aes(x = rating)) + 
+  geom_histogram(aes(y = ..density..), col = "white", bins = 25) +
+  stat_function(
+    fun = dnorm, #is our data normally distributed?
+    args = list(
+      mean = mean(top_brand$rating),
+      sd = sd(top_brand$rating)
+    ),
+    col = "red"
+  )
+
+#mean(top_brand$rating)
+#sd(top_brand$rating)
+```

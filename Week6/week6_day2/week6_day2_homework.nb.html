@@ -1843,10 +1843,47 @@ $ total_reviews &lt;dbl&gt; 14, 7, 22, 5, 21, 12, 1, 3, 8, 133, 2, 1…
 $ prices        &lt;chr&gt; NA, &quot;$49.95&quot;, NA, NA, NA, NA, &quot;$78.99&quot;, …</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXRlbXMgJT4lIFxuY291bnQoYnJhbmQpICU+JSBcbmFycmFuZ2UoZGVzYyhuKSlcbmBgYCJ9 -->
+<pre class="r"><code>items %&gt;% 
+count(brand) %&gt;% 
+arrange(desc(n))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoxMCwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxMCDDlyAyIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQTExUlRVK0VNQkF0WFNvdXlhcUpSK1BCeENza1ppOWVTZnc4K0JHUnlMVUxpR1JMaC9BUjllWWY4Tzk2WEJ5V2pqR1FQRHB2WnQ2MHIzMjZpSmR1N0RMR1pzeTJPSnNKREptSW5xKzhjOFpzanNSaU5wc1A2d2MySFdJd0pBOFFyaWs0b1N5YlR1ZUdpcUNxVkdiSTdoMjBVSU9TVkx5SGRVRms1eVlLWGk1dmlWMEQ1SDlDT3dUOVNaVzRrRkFXVkFuQ0tLU3RIM1QycUxvR3c4WDJSTXo2eGpWRHBJZ3p4Q25pQkhHTU9ESjl6c1NhMExMTUdtT0xVM0pWUzUyU2VUMlJ6R3Q0OTBrMnpPUmYrT3Y3L21jNk8xR3lvZG1VZEZQWlN2KzFSajJ5elVUaVFOVVdvRkhFaC9zV0U3RlZUeEw3blI1T2tuckpXNmZYM25LOENTeVAzOExFN3IrWWoxdnkzb3dTZE5XWnpndE5qeUNVWEdYS2tEMTB2RFhzVjNXaFczS0MyY1p2b1pYVTV5YWdLTFAxeGphLys2bmdjMllDQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["brand"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Samsung","2":"397"},{"1":"Apple","2":"101"},{"1":"Motorola","2":"100"},{"1":"Nokia","2":"49"},{"1":"HUAWEI","2":"36"},{"1":"Google","2":"33"},{"1":"Sony","2":"29"},{"1":"Xiaomi","2":"27"},{"1":"ASUS","2":"13"},{"1":"OnePlus","2":"7"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>filter (brand == “Samsung”)</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2ZpbHRlcmluZyBmb3IgdG9wIGJyYW5kIGFuZCB0aGUgY29udGludW91cyB2YXJpYWJsZSBvZiByYXRpbmcgd2hpY2ggbmVlZHMgdG8gYmUgYmlubmVkIGZvciB0aGlzIGFuYWx5c2lzXG50b3BfYnJhbmQgPC0gaXRlbXMgJT4lIFxuICBmaWx0ZXIgKGJyYW5kID09IFwiU2Ftc3VuZ1wiKVxuXG50b3BfYnJhbmQgJT4lIFxuICBnZ3Bsb3QoYWVzKHggPSByYXRpbmcpKSArIFxuICBnZW9tX2hpc3RvZ3JhbShhZXMoeSA9IC4uZGVuc2l0eS4uKSwgY29sID0gXCJ3aGl0ZVwiLCBiaW5zID0gMjUpICtcbiAgc3RhdF9mdW5jdGlvbihcbiAgICBmdW4gPSBkbm9ybSwgI2lzIG91ciBkYXRhIG5vcm1hbGx5IGRpc3RyaWJ1dGVkP1xuICAgIGFyZ3MgPSBsaXN0KFxuICAgICAgbWVhbiA9IG1lYW4odG9wX2JyYW5kJHJhdGluZyksXG4gICAgICBzZCA9IHNkKHRvcF9icmFuZCRyYXRpbmcpXG4gICAgKSxcbiAgICBjb2wgPSBcInJlZFwiXG4gIClcblxuI21lYW4odG9wX2JyYW5kJHJhdGluZylcbiNzZCh0b3BfYnJhbmQkcmF0aW5nKVxuYGBgIn0= -->
+<pre class="r"><code>#filtering for top brand and the continuous variable of rating which needs to be binned for this analysis
+top_brand &lt;- items %&gt;% 
+  filter (brand == &quot;Samsung&quot;)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGphbml0b3IpCmxpYnJhcnkoaGVyZSkKYGBgCmBgYHtyfQppdGVtc19kZiA8LSByZWFkX2NzdihoZXJlKCJkYXRhLzIwMTkwOTI4LWl0ZW1zLmNzdiIpKQpgYGAKYGBge3J9Cm5hbWVzKGl0ZW1zX2RmKQpnbGltcHNlKGl0ZW1zX2RmKQpgYGAKYGBge3J9CiNjbGVhbmluZyBuYW1lcyB3aGljaCBhcmVuJ3QgdG9vIGJhZCwgc29tZSBjb2x1bW4gdmFsdWVzIGxvb2sgbWVzc3kKaXRlbXMgPC0gY2xlYW5fbmFtZXMoaXRlbXNfZGYpCgpnbGltcHNlKGl0ZW1zKQoKYGBgCgo=</div>
+top_brand %&gt;% 
+  ggplot(aes(x = rating)) + 
+  geom_histogram(aes(y = ..density..), col = &quot;white&quot;, bins = 25) +
+  stat_function(
+    fun = dnorm, #is our data normally distributed?
+    args = list(
+      mean = mean(top_brand$rating),
+      sd = sd(top_brand$rating)
+    ),
+    col = &quot;red&quot;
+  )
+
+#mean(top_brand$rating)
+#sd(top_brand$rating)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGphbml0b3IpCmxpYnJhcnkoaGVyZSkKYGBgCmBgYHtyfQppdGVtc19kZiA8LSByZWFkX2NzdihoZXJlKCJkYXRhLzIwMTkwOTI4LWl0ZW1zLmNzdiIpKQpgYGAKYGBge3J9Cm5hbWVzKGl0ZW1zX2RmKQpnbGltcHNlKGl0ZW1zX2RmKQpgYGAKYGBge3J9CiNjbGVhbmluZyBuYW1lcyB3aGljaCBhcmVuJ3QgdG9vIGJhZCwgc29tZSBjb2x1bW4gdmFsdWVzIGxvb2sgbWVzc3kKaXRlbXMgPC0gY2xlYW5fbmFtZXMoaXRlbXNfZGYpCgpnbGltcHNlKGl0ZW1zKQoKYGBgCmBgYHtyfQppdGVtcyAlPiUgCmNvdW50KGJyYW5kKSAlPiUgCmFycmFuZ2UoZGVzYyhuKSkKYGBgCmZpbHRlciAoYnJhbmQgPT0gIlNhbXN1bmciKQpgYGB7cn0KI2ZpbHRlcmluZyBmb3IgdG9wIGJyYW5kIGFuZCB0aGUgY29udGludW91cyB2YXJpYWJsZSBvZiByYXRpbmcgd2hpY2ggbmVlZHMgdG8gYmUgYmlubmVkIGZvciB0aGlzIGFuYWx5c2lzCnRvcF9icmFuZCA8LSBpdGVtcyAlPiUgCiAgZmlsdGVyIChicmFuZCA9PSAiU2Ftc3VuZyIpCgp0b3BfYnJhbmQgJT4lIAogIGdncGxvdChhZXMoeCA9IHJhdGluZykpICsgCiAgZ2VvbV9oaXN0b2dyYW0oYWVzKHkgPSAuLmRlbnNpdHkuLiksIGNvbCA9ICJ3aGl0ZSIsIGJpbnMgPSAyNSkgKwogIHN0YXRfZnVuY3Rpb24oCiAgICBmdW4gPSBkbm9ybSwgI2lzIG91ciBkYXRhIG5vcm1hbGx5IGRpc3RyaWJ1dGVkPwogICAgYXJncyA9IGxpc3QoCiAgICAgIG1lYW4gPSBtZWFuKHRvcF9icmFuZCRyYXRpbmcpLAogICAgICBzZCA9IHNkKHRvcF9icmFuZCRyYXRpbmcpCiAgICApLAogICAgY29sID0gInJlZCIKICApCgojbWVhbih0b3BfYnJhbmQkcmF0aW5nKQojc2QodG9wX2JyYW5kJHJhdGluZykKYGBgCg==</div>
 
 
 
