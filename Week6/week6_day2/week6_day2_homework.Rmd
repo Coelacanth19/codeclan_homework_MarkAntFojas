@@ -51,12 +51,12 @@ top_brand %>%
 # counting for 3 sigma values (68%,95%,98.7%)
 ratings scaled
 
+
+  
+```{r}
 ratings_scaled <- top_item %>% 
   filter(top_item$rating) %>% 
   mutate(z_rating = scale(rating))
-  
-```{r}
-
 ```
   
 sd1
