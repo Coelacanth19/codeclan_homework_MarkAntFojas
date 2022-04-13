@@ -48,3 +48,24 @@ top_brand %>%
 #mean(top_brand$rating)
 #sd(top_brand$rating)
 ```
+# counting for 3 sigma values (68%,95%,98.7%)
+ratings scaled
+
+ratings_scaled <- top_item %>% 
+  filter(top_item$rating) %>% 
+  mutate(z_rating = scale(rating))
+  
+```{r}
+
+```
+  
+sd1
+count <-  %>% 
+  filter(between(z_rating, left = -1, right = 1)) %>% 
+  nrow()
+
+count / nrow(rating_scaled)
+
+sd2
+
+sd3
