@@ -33,18 +33,28 @@ sample_200 <- ames %>%
   summarise(
   mean_lot_area = mean(lot_area)
   )
-  
-  
 ```
 
 ```{r}
-#okay, down to business
+#visualizing 
 
-bootstrap_resample <- sample_200 %>% 
-  specify(response = churn, success = "Yes") %>% 
-  generate(reps = 5000, type = "bootstrap") %>% 
-  calculate(stat = "prop")
-head(bootstrap_resample)
+ggplot(sample_200) +
+  aes(x = mean_lot_area) +
+  geom_histogram(col = "white", fill = "steel blue")
+
+  
+
+
 ```
 
+CI
+
+```{r}
+ci_95 <- sample_200 %>% 
+  summarise(
+    mean = mean(mean_lot_area),
+    lower_bound = quantile(mean_lot_area, probs = 0.025),
+    upper_bound = quantile(mean_lot_area, probas = 0.975)
+  )
+```
 
