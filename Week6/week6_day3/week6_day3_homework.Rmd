@@ -1,0 +1,50 @@
+```{r}
+#loading libraries
+library(here)
+library(infer)
+library(janitor)
+library(tidyverse)
+```
+```{r}
+#loading data
+ames <- read_csv(here("data/ames.csv")) %>% 
+  clean_names()
+```
+```{r}
+glimpse(ames)
+```
+task 2
+
+Investigate the distribution of lot_area. Is the distribution roughly normal? If not, what problems do you find?
+```{r}
+ggplot(ames) +
+  aes(x = lot_area) +
+  geom_histogram(col = "white", fill = "steel blue", bins  = 40)
+```
+This is not a normal distribution, skewing right and is also centrally concentrated.
+
+
+Task 3.
+Compute and visualise a bootstrap sampling distribution for the mean(lot_area) of the sold houses.
+
+```{r}
+sample_200 <- ames %>% 
+  rep_sample_n(size = 200, reps = 1000) %>% 
+  summarise(
+  mean_lot_area = mean(lot_area)
+  )
+  
+  
+```
+
+```{r}
+#okay, down to business
+
+bootstrap_resample <- sample_200 %>% 
+  specify(response = churn, success = "Yes") %>% 
+  generate(reps = 5000, type = "bootstrap") %>% 
+  calculate(stat = "prop")
+head(bootstrap_resample)
+```
+
+
