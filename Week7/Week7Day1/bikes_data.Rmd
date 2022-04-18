@@ -20,6 +20,11 @@ When grouping time series data (tsibble), you need to use index_by instead of gr
 
 ```{r}
 nyc_bikes_df %>% 
-  mutate(date =  )
+  mutate(date = ymd_hms(start_time),
+         year = year(date),
+         quarter = quarters(date),
+         month = month(date),
+         day = day(date)
+         )
 ```
 
