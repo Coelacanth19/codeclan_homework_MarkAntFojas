@@ -69,6 +69,9 @@ select(educational_level, age, employment_category) #added employment_category f
 
 ```
 
+```{r}
+
+```
 
 
 

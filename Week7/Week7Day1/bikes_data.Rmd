@@ -1,0 +1,25 @@
+```{r}
+library(tidyverse)
+library(tsibbledata)
+library(tsibble)
+library(lubridate)
+library(slider)
+```
+
+```{r}
+nyc_bikes_df <- nyc_bikes
+
+glimpse(nyc_bikes_df)
+
+```
+
+3 Task hints
+You will probably want to use the data in column start_time to create date, month and year columns.
+Summarising the data by aggregating hire counts by different measures of time (e.g. year, quarter, month, day) and then visualising the results is probably a good idea
+When grouping time series data (tsibble), you need to use index_by instead of group_by
+
+```{r}
+nyc_bikes_df %>% 
+  mutate(date =  )
+```
+
