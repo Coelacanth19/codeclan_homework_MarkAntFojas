@@ -1,0 +1,77 @@
+```{r}
+#loading libraries
+library(CodeClanData)
+library(janitor)
+library(tidyverse)
+library(here)
+```
+```{r}
+#loading and analyzing data
+salaries <- read_csv(here("data/salaries.csv")) %>%
+  clean_names()
+glimpse(salaries)
+```
+1. Use select to see the beginning salary variable and the current salary variable.
+```{r}
+
+salaries %>%
+  select(beginning_salary, current_salary)
+```
+2. Use filter to see the employees aged over 50, who have a salary over £20,000.
+
+```{r}
+over50_salaries <- salaries %>% 
+  filter ("age" >= 50 & "current_salary" >= 20000)
+```
+3. Use arrange to order by the data so that the highest salaries are first.
+
+```{r}
+salaries %>%
+  select(current_salary, age, everything()) %>% 
+  arrange(desc(current_salary), .by_group = TRUE) 
+```
+4. Use mutate to make a new variables beginning_salary_pence and current_salary_pence. These should have the corresponding salaries in pence instead of pounds.
+
+```{r}
+salaries_in_pence <- salaries %>% 
+mutate(beginning_salary_pence = beginning_salary * 100, current_salary_pence = current_salary * 100) %>% 
+select(current_salary_pence, beginning_salary_pence)
+```
+
+5.Use summarise to find the maximum age and the minimum age
+
+```{r}
+salaries %>% 
+summarise(min_age = min(age), max_age = max(age))
+```
+
+6. Find the minimum salary and the maximum salary
+```{r}
+salaries %>% 
+summarise(min_salary = min(current_salary), max_salary = max(current_salary))
+```
+
+7. Find all the employees aged under 30.
+```{r}
+salaries %>% 
+group_by(employment_category) %>% 
+mutate(under_30 = (age < 30)) %>% 
+summarise(under_30 = TRUE, employment_category) 
+```
+8. Order the data in terms of increasing educational level where ties are broken using age.
+
+```{r}
+salaries %>% 
+arrange(educational_level, desc(age)) %>% #sorted age descending just to to see a tidy nest of brackets and remind myself that this was possible.
+group_by(educational_level, age) %>% 
+select(educational_level, age, employment_category) #added employment_category for my own assessment of data
+
+
+```
+
+
+
+
+
+
+

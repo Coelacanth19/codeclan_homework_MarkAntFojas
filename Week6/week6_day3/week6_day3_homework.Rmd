@@ -28,33 +28,27 @@ Task 3.
 Compute and visualise a bootstrap sampling distribution for the mean(lot_area) of the sold houses.
 
 ```{r}
-sample_200 <- ames %>% 
-  rep_sample_n(size = 200, reps = 1000) %>% 
-  summarise(
-  mean_lot_area = mean(lot_area)
-  )
+bootstrap_sample_dist <- ames %>%
+  specify(response = lot_area) %>%
+  generate(reps = 5000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+bootstrap_sample_dist %>%
+  visualise(col = "white", fill = "steel blue", bins = 30)
 ```
 
-```{r}
-#visualizing 
-
-ggplot(sample_200) +
-  aes(x = mean_lot_area) +
-  geom_histogram(col = "white", fill = "steel blue")
-
-  
-
-
-```
-
-CI
+Task 4.
+Use your bootstrap distribution to calculate a 95%
+ CI for mean(lot_area), and visualise it on the distribution
 
 ```{r}
-ci_95 <- sample_200 %>% 
-  summarise(
-    mean = mean(mean_lot_area),
-    lower_bound = quantile(mean_lot_area, probs = 0.025),
-    upper_bound = quantile(mean_lot_area, probas = 0.975)
-  )
+ci_95 <- bootstrap_sample_dist %>%
+  get_ci(level = 0.95, type = "percentile")
+
+ci_95
+
+bootstrap_sample_dist %>% 
+visualise(bins = 30) +
+  shade_confidence_interval(endpoints = ci_95)
 ```
 
