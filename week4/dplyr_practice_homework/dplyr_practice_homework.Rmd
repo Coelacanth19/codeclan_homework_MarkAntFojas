@@ -78,11 +78,25 @@ salaries %>%
 
 ```{r}
 salaries %>% 
+  filter(work_experience < 2 | educational_level < 12) %>% 
+  select(educational_level, work_experience, everything ())
   
+ 
 ```
 
+11. Transform the salary variables so they measure how many 1000s of pounds each salary is.
 
+```{r}
+salaries %>% 
+mutate(salary_in_thousands = current_salary/1000) %>% 
+select(salary_in_thousands, everything ())
 
+```
+
+```{r}
+salaries %>% 
+filter(employment_category == "security officer", gender == "female")
+```
 
 
 
