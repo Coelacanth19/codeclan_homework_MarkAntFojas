@@ -69,8 +69,16 @@ select(educational_level, age, employment_category) #added employment_category f
 
 ```
 
+9. Drop all the non-numeric variables in the tibble.
 ```{r}
+salaries %>% 
+  select(-gender, -employment_category, -is_white)
+```
+10.Find all employees with either less than 2 years work experience or an education level below 12.
 
+```{r}
+salaries %>% 
+  
 ```
 
 
