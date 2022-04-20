@@ -98,5 +98,23 @@ salaries %>%
 filter(employment_category == "security officer", gender == "female")
 ```
 
+Sad Tibble
+
+2 Pipes
+Again, answer these questions using the salaries.csv dataset:
+
+Find the average salary per educational level, for educational levels of 16 and below. Arrange the results from highest salary to lowest. Answer using pipes.
+
+```{r}
+salaries %>% 
+
+```
+
+Find the average salary for each gender in each employment category. Exclude any employees with less than 2 years of work experience. Answer using pipes.
+For each employment category find the difference between the mean salary and the median salary. Arrange so that the greatest difference comes first. Answer using pipes. (The difference between mean salary and median salary gives us a measure of how skewed salaries - we’ll come on to this shortly!)
+
+
+
+
 
 

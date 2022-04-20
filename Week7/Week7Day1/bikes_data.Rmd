@@ -9,8 +9,11 @@ library(slider)
 ```{r}
 nyc_bikes_df <- nyc_bikes
 
-glimpse(nyc_bikes_df)
 
+glimpse(nyc_bikes_df)
+index(nyc_bikes_df)
+head(nyc_bikes)
+tail(nyc_bikes)
 ```
 
 3 Task hints
