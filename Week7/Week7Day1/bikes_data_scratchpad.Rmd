@@ -1,0 +1,47 @@
+```{r}
+library(tidyverse)
+library(tsibbledata)
+library(tsibble)
+library(lubridate)
+library(slider)
+```
+Try to periodically check in - am I answering what is being asked? Do I truly understand what I’m being asked? Do I understand how the answer to these questions/analysis will be implemented and affect the business? Do I know who the end user of my analysis is? It’s ok if not but be sure to ask (specific) questions to the client to find out.
+
+
+
+```{r}
+nyc_bikes_df <- nyc_bikes
+
+
+glimpse(nyc_bikes_df)
+index(nyc_bikes_df)
+head(nyc_bikes)
+tail(nyc_bikes)
+
+#getting unique values for type, gender, subscriber
+
+```
+```{r}
+
+distinct(nyc_bikes_df, type)
+distinct(nyc_bikes_df, gender)
+```
+
+
+3 Task hints
+You will probably want to use the data in column start_time to create date, month and year columns.
+Summarising the data by aggregating hire counts by different measures of time (e.g. year, quarter, month, day) and then visualising the results is probably a good idea
+When grouping time series data (tsibble), you need to use index_by instead of group_by
+
+```{r}
+#creating calendar and age columns
+nyc_bikes_df %>% 
+  mutate(start_date = ymd_hms(start_time),
+         year = year(start_date),
+         quarter = quarters(start_date),
+         month = month(start_date),
+         day = day(start_date),
+         client_age = (year(start_date) - birth_year)
+         )
+```
+
