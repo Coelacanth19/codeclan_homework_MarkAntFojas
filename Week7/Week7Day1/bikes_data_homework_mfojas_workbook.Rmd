@@ -64,6 +64,11 @@ test_tibble <- nyc_bikes %>%
   mutate(day = as_date(start_time)) %>% 
   index_by(day) %>% 
   as_tibble()
+```
+
+```{r}
+# possibly use facets to contrast gender/age/customer type over time in this limited data set-- may possibly incorporate larger datasets from client site but this is out of scope for now!
+
 
 ```
 
