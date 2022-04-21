@@ -1,9 +1,9 @@
 ```{r}
-library(tidyverse)
 library(tsibbledata)
 library(tsibble)
 library(lubridate)
 library(slider)
+library(tidyverse)
 ```
 Try to periodically check in - am I answering what is being asked? Do I truly understand what I’m being asked? Do I understand how the answer to these questions/analysis will be implemented and affect the business? Do I know who the end user of my analysis is? It’s ok if not but be sure to ask (specific) questions to the client to find out.
 
@@ -35,7 +35,7 @@ When grouping time series data (tsibble), you need to use index_by instead of gr
 
 ```{r}
 #creating calendar and age columns
-nyc_bikes_df_clean <- nyc_bikes_df %>% 
+nyc_bikes_df <- nyc_bikes_df %>% 
   mutate(day = as_date(start_time),
          year = year(start_time),
          quarter = quarters(start_time),
@@ -70,8 +70,10 @@ nyc_bikes_df %>%
   count()
 
 nyc_bikes_df %>% 
-  select(biker_age) %>% 
-  summarise(youngest = min(biker_age), oldest = max(biker_age))
+  slice_min(biker_age)
+
+nyc_bikes_df 
+  
 ```
 
 Average user is 35 and male
@@ -97,11 +99,29 @@ test_tibble <- nyc_bikes %>%
 #Visualizing
 # possibly use facets to contrast gender/age/customer type over time in this limited data set-- may possibly incorporate larger datasets from client site but this is out of scope for now!
 
-bikes_data_tsibble %>% 
-  
+nyc_bikes_df%>% 
+  filter(gender == c("Male","Female")) %>% 
 ggplot() +
-  facet_grid
+  aes(x = trip_duration, y = gender) +
+  geom_point() 
+
+  
+
+  
   
 
 ```
+
+```{r}
+nyc_bikes_df%>% 
+filter(gender == c("Male","Female")) %>% 
+ggplot() +
+  aes(day, color = gender) +
+  geom_bar() 
+  
+```
+```{r}
+
+```
+
 
