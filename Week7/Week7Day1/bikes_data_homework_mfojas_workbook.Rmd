@@ -10,7 +10,7 @@ Try to periodically check in - am I answering what is being asked? Do I truly un
 
 
 ```{r}
-nyc_bikes_df <- nyc_bikes
+nyc_bikes_df <- nyc_bikes #seems to already be a tibbble
 
 
 glimpse(nyc_bikes_df)
@@ -35,13 +35,12 @@ When grouping time series data (tsibble), you need to use index_by instead of gr
 
 ```{r}
 #creating calendar and age columns
-nyc_bikes_df <- nyc_bikes_df %>% 
-  mutate(day = as_day(start_time),
-         year = year(start_date),
-         quarter = quarters(start_date),
-         month = month(start_date),
-         day = day(start_date),
-         client_age = (year(start_date) - birth_year),
+nyc_bikes_df_clean <- nyc_bikes_df %>% 
+  mutate(day = as_date(start_time),
+         year = year(start_time),
+         quarter = quarters(start_time),
+         month = month(start_time),
+         biker_age = (year(start_time) - birth_year),
          trip_duration = round(
            (
              ymd_hms(stop_time)) - (ymd_hms(start_time)
@@ -51,10 +50,38 @@ nyc_bikes_df <- nyc_bikes_df %>%
 
 ```
 
+```{r}
+#quick stats, and bike user profile
+
+        
+median(nyc_bikes_df$biker_age)
+
+nyc_bikes_df %>% 
+  filter(gender == "Female") %>% 
+  count()
+ # column is numeric but still get need numeric data even after using na.rm=TRUE
+
+nyc_bikes_df %>% 
+  filter(gender == "Male") %>% 
+  count()
+
+nyc_bikes_df %>% 
+  filter(gender == "Unknown") %>% 
+  count()
+
+nyc_bikes_df %>% 
+  select(biker_age) %>% 
+  summarise(youngest = min(biker_age), oldest = max(biker_age))
+```
+
+Average user is 35 and male
+
+
+
 # transforming into tsibble
 
 ```{r}
-bikes_data_tsibble <- as_tsibble(nyc_bikes_df, key = c(bike_id, start_station, end_station, gender, client_age, year, quarter, month, day, trip_duration), index = start_time)
+bikes_data_tsibble <- as_tsibble(nyc_bikes_df, key = c(bike_id, start_station, end_station, gender, biker_age, year, quarter, month, day, trip_duration), index = start_time)
 bikes_data_tsibble
 ```
 
@@ -67,8 +94,14 @@ test_tibble <- nyc_bikes %>%
 ```
 
 ```{r}
+#Visualizing
 # possibly use facets to contrast gender/age/customer type over time in this limited data set-- may possibly incorporate larger datasets from client site but this is out of scope for now!
 
+bikes_data_tsibble %>% 
+  
+ggplot() +
+  facet_grid
+  
 
 ```
 
