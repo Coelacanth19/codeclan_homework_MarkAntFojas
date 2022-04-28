@@ -41,6 +41,8 @@ nyc_bikes_df <- nyc_bikes_df %>%
          quarter = quarters(start_time),
          month = month(start_time),
          biker_age = (year(start_time) - birth_year),
+         male = gender == "Male",
+         female = gender == "Female",
          trip_duration = round(
            (
              ymd_hms(stop_time)) - (ymd_hms(start_time)
@@ -72,7 +74,8 @@ nyc_bikes_df %>%
 nyc_bikes_df %>% 
   slice_min(biker_age)
 
-nyc_bikes_df 
+nyc_bikes_df %>%
+  slice_max(biker_age)
   
 ```
 
@@ -99,11 +102,7 @@ test_tibble <- nyc_bikes %>%
 #Visualizing
 # possibly use facets to contrast gender/age/customer type over time in this limited data set-- may possibly incorporate larger datasets from client site but this is out of scope for now!
 
-nyc_bikes_df%>% 
-  filter(gender == c("Male","Female")) %>% 
-ggplot() +
-  aes(x = trip_duration, y = gender) +
-  geom_point() 
+
 
   
 
@@ -111,6 +110,14 @@ ggplot() +
   
 
 ```
+```{r}
+bikes_data_tsibble%>%
+filter(biker_age < 100) %>% 
+ggplot() +
+aes(x = biker_age) +
+geom_bar()
+```
+
 
 ```{r}
 nyc_bikes_df%>% 
@@ -120,8 +127,26 @@ ggplot() +
   geom_bar() 
   
 ```
+  
+
+
 ```{r}
+nyc_bikes_df %>%
+filter(gender == c("Male","Female")) %>% 
+ggplot() +
+aes(x = quarter, y = gender, color = gender) +
+geom_col()
 
 ```
+
+
+```{r}
+nyc_bikes_df%>% 
+  filter(gender == c("Male","Female")) %>% 
+ggplot() +
+  aes(x = trip_duration, y = gender) +
+  geom_point() 
+```
+
 
 
